@@ -3,7 +3,7 @@ let pages = [], selected = 0, busy = false, lastFinished = 0;
 async function api(url, options) {
   const res = await fetch(url, options);
   const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'เกิดข้อผิดพลาด');
+  if (!res.ok) throw new Error(data.error || 'An error occurred');
   return data;
 }
 function list() {
@@ -16,7 +16,7 @@ function list() {
     button.setAttribute('aria-current', index === selected ? 'page' : 'false');
     button.textContent = `▤  ${page.name.slice(0, 4)}`;
     const status = document.createElement('small');
-    status.textContent = page.translated ? 'มีผลแปล' : 'รอแปล';
+    status.textContent = page.translated ? 'Translated' : 'Awaiting translation';
     button.append(status);
     button.onclick = () => { selected = index; show(); };
     $('pages').append(button);
@@ -27,8 +27,8 @@ function list() {
 }
 function show() {
   const page = pages[selected];
-  if (!page) { $('title').textContent = 'ยังไม่มีภาพ'; $('translate').disabled = true; return; }
-  $('title').textContent = `หน้า ${page.name.slice(0, 4)}`;
+  if (!page) { $('title').textContent = 'No images yet'; $('translate').disabled = true; return; }
+  $('title').textContent = `Page ${page.name.slice(0, 4)}`;
   $('page-status').textContent = `${page.name} · Japanese → English`;
   $('original').src = `/image/original/${page.name}`;
   const result = `/image/translated/${page.name}?v=${lastFinished}`;
@@ -42,7 +42,7 @@ function show() {
   $('previous').disabled = selected === 0;
   $('next').disabled = selected === pages.length - 1;
   $('translate').disabled = busy;
-  $('translate').textContent = busy ? 'กำลังแปล…' : page.translated ? 'แปลหน้านี้ใหม่ ↗' : 'แปลหน้านี้ ↗';
+  $('translate').textContent = busy ? 'Translating…' : page.translated ? 'Retranslate page ↗' : 'Translate page ↗';
   list();
 }
 $('search').oninput = list;
@@ -57,7 +57,7 @@ document.querySelectorAll('[data-mode]').forEach(button => {
 });
 $('translate').onclick = async () => {
   busy = true; show();
-  $('message').textContent = 'กำลังเริ่มโมเดลแปลภาษา…';
+  $('message').textContent = 'Starting the translation model…';
   try { await api(`/api/translate?page=${pages[selected].name}`, { method: 'POST' }); await poll(); }
   catch (error) { busy = false; show(); $('message').textContent = error.message; }
 };
@@ -66,23 +66,23 @@ async function poll() {
     const job = await api('/api/job');
     busy = job.status === 'running';
     $('translate').disabled = busy || !pages.length;
-    $('log').textContent = job.log || 'ยังไม่มีงานแปลในรอบนี้';
+    $('log').textContent = job.log || 'No translation jobs in this session';
     if (busy) {
-      $('translate').textContent = 'กำลังแปล…';
+      $('translate').textContent = 'Translating…';
       const elapsed = Math.round((Date.now() - (job.started || Date.now())) / 1000);
-      $('message').textContent = `กำลังแปล ${job.page} · ${elapsed} วินาที · สามารถดูหน้าอื่นระหว่างรอได้`;
+      $('message').textContent = `Translating ${job.page} · ${elapsed} seconds · You can browse other pages while waiting`;
     } else if (job.finished && job.finished !== lastFinished) {
       lastFinished = job.finished;
       pages = await api('/api/pages'); show();
-      $('message').textContent = job.status === 'done' ? `แปล ${job.page} เสร็จแล้ว · ตรวจความพอดีของข้อความในบอลลูน` : `แปล ${job.page} ไม่สำเร็จ — เปิดบันทึกด้านล่างเพื่อดูสาเหตุ`;
+      $('message').textContent = job.status === 'done' ? `Translated ${job.page} · Check that the text fits inside the bubbles` : `Failed to translate ${job.page} — open the log below for details`;
     }
-  } catch (error) { $('message').textContent = `เชื่อมต่อเซิร์ฟเวอร์ไม่ได้: ${error.message}`; }
+  } catch (error) { $('message').textContent = `Cannot connect to the server: ${error.message}`; }
 }
-for (const id of ['original', 'translated']) $(id).onerror = () => { $('message').textContent = 'โหลดภาพไม่สำเร็จ ลองเลือกหน้าอีกครั้ง'; };
+for (const id of ['original', 'translated']) $(id).onerror = () => { $('message').textContent = 'Could not load the image. Try selecting the page again'; };
 async function init() {
   try {
     pages = await api('/api/pages'); show();
-    $('message').textContent = pages.length ? 'พร้อมตรวจภาพ · ผลแปลเดิมจะถูกเก็บไว้เมื่อสั่งแปลใหม่' : 'ยังไม่มีภาพ กรุณารัน split_pages.py ก่อน';
+    $('message').textContent = pages.length ? 'Ready for review · Previous results are preserved while retranslating' : 'No images yet. Please run split_pages.py first';
     await poll();
     setInterval(poll, 1500);
   } catch (error) { $('message').textContent = error.message; $('translate').disabled = true; }

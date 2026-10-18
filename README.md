@@ -2,162 +2,162 @@
 
 ## Version control
 
-Git เก็บโค้ด การตั้งค่าที่ไม่มีความลับ คู่มือ และ dependency lockfile ส่วนรูปที่ดาวน์โหลด โมเดล venv cache ผลลัพธ์ และ token เก็บเฉพาะในเครื่อง ไม่รวมในประวัติ Git
+Git tracks code, non-secret configuration, documentation and the dependency lockfile. Downloaded images, models, virtual environments, caches, outputs and tokens stay local and are excluded from Git history.
 
-เครื่องใหม่ให้กู้ upstream ตาม [คู่มือ patch](translator/patches/README.md) ก่อนติดตั้ง Python environment และใช้ `npm ci` สำหรับ Node dependencies รูปตัวอย่างและผลแปลที่ลิงก์ด้านล่างต้องสร้างหรือดาวน์โหลดใหม่
+On a new machine, restore upstream using the [patch guide](translator/patches/README.md) before setting up the Python environment, and run `npm ci` for Node dependencies. Sample images and translations linked below must be generated or downloaded again.
 
 ```powershell
 git status
 git diff
-git add <ไฟล์ที่แก้>
+git add <changed-files>
 git commit -m "Describe the change"
 git log --oneline
 ```
 
-Git ในเครื่องช่วยย้อนเวอร์ชันโค้ด แต่ยังไม่ใช่การสำรองข้อมูลนอกเครื่อง ดู [ข้อมูลฝึกภาษาพูด](translator/DATASETS.md) สำหรับแนวทางปรับโมเดลเกาหลี–อังกฤษ
+Local Git lets you restore earlier code versions, but is not an off-machine backup. See [conversational training data](translator/DATASETS.md) for guidance on adapting Korean–English models.
 
-## Chrome extension — แปลภาพบน Naver
+## Chrome extension — translate Naver images
 
-ภาพเกาหลีจะถูกต่อข้ามรอยต่อไฟล์และแบ่งที่ช่องว่างแนวนอนก่อนแปล ดู [ผลทดลอง 10 หน้าย่อยใหม่](samples/naver-845456-25/english-panels-10/index.html) และ [แผนที่การแบ่งหน้า](samples/naver-845456-25/panels/README.md)
+Korean images are joined across file boundaries and split at horizontal whitespace before translation. See the [new 10-panel trial](samples/naver-845456-25/english-panels-10/index.html) and [page split map](samples/naver-845456-25/panels/README.md).
 
-รัน `npm run extension:serve` แล้วเปิด `chrome://extensions` → Developer mode → Load unpacked → เลือกโฟลเดอร์ `extension` รีเฟรชหน้าอ่าน Naver จะมีปุ่ม **แปลภาพนี้ · EN** และปุ่มสลับกลับต้นฉบับ ดู [วิธีติดตั้งและข้อจำกัด](extension/README.md)
+Run `npm run extension:serve`, then open `chrome://extensions` → Developer mode → Load unpacked → select the `extension` folder. Refresh the Naver reader to see the **Translate image · EN** button and the original-image toggle. See [installation and limitations](extension/README.md).
 
-## Manga Lab — ทดสอบแปลภาพญี่ปุ่นเป็นอังกฤษ
+## Manga Lab — test Japanese-to-English image translation
 
-รัน `npm run lab` แล้วเปิด **http://127.0.0.1:4173** เพื่อเทียบต้นฉบับกับคำแปล เลือกดูภาพที่มีอยู่ และสั่งแปลใหม่ทีละหน้า ดูการวิเคราะห์ ข้อจำกัด และแนวทางต่อ Chrome extension ที่ [lab/README.md](lab/README.md)
+Run `npm run lab` and open **http://127.0.0.1:4173** to compare originals with translations, browse available images and retranslate individual pages. See [lab/README.md](lab/README.md) for analysis, limitations and the path toward a Chrome extension.
 
-เก็บภาพหน้าเว็บด้วย Playwright โดยกำหนด "กรอบ" ที่จะแคปเองได้ผ่านการลากเมาส์
+Capture web pages with Playwright by dragging a custom capture box.
 
-## โครงไฟล์
+## File layout
 
-| ไฟล์ | หน้าที่ |
+| File | Purpose |
 | --- | --- |
-| `config.mjs` | ตั้งค่ากลาง — URL, ช่วงหน้า, viewport, จังหวะรอ |
-| `pick-box.mjs` | เปิดเบราว์เซอร์จริงให้ลากกรอบ แล้วเซฟพิกัดลง `box.json` |
-| `scrape.mjs` | วนทุกหน้า **จาก URL** แคปตามกรอบใน `box.json` |
-| `scrape-click.mjs` | วนหน้าด้วย **การกดลูกศรซ้าย** — snapshot → คลิก → รอโหลด |
-| `pages.log` | URL ของแต่ละหน้าจากโหมดกดลูกศร พร้อมเลขลำดับ |
-| `debug.mjs` | ไล่ปัญหา — รายงานว่าหน้าเว็บมีอะไร กดแล้วเกิดอะไร |
-| `debug/` | ภาพจาก `debug.mjs` (`full-N.png`, `clip-N.png`) |
-| `box.json` | ผลจากขั้นตอนตีกรอบ (สร้างอัตโนมัติ) |
-| `failed.json` | สรุปหน้าที่แคปไม่สำเร็จ (สร้างเมื่อมีปัญหา) |
-| `vol1/` | ปลายทางไฟล์ภาพ |
+| `config.mjs` | Shared settings — URLs, page range, viewport and wait timings |
+| `pick-box.mjs` | Opens a browser to select a box and saves coordinates to `box.json` |
+| `scrape.mjs` | Iterates over pages **by URL**, capturing the box in `box.json` |
+| `scrape-click.mjs` | Navigates with the **left arrow** — snapshot → click → wait for loading |
+| `pages.log` | Page URLs and sequence numbers from arrow navigation |
+| `debug.mjs` | Reports page contents and what happens after navigation |
+| `debug/` | Images from `debug.mjs` (`full-N.png`, `clip-N.png`) |
+| `box.json` | Capture box selection (generated automatically) |
+| `failed.json` | Summary of failed captures (created on failure) |
+| `vol1/` | Output image directory |
 
-## ติดตั้ง
+## Installation
 
 ```powershell
 npm install
 npx playwright install chromium
 ```
 
-## ใช้งาน
+## Usage
 
-### 1. ตั้งค่า
+### 1. Configure
 
-แก้ `config.mjs`
+Edit `config.mjs`.
 
-- URL ไม่มีเลขหน้า เลยไม่มีการไล่เลขใน URL — เลือกเอาอย่างใดอย่างหนึ่ง
-  - `click.startUrl` — หน้าแรกของโหมดกดลูกศร (ทางหลัก ดูข้อ 3b)
-  - `urls: []` — ลิสต์ URL ตรง ๆ ถ้ารู้ทุกหน้าอยู่แล้ว (ใช้กับ `scrape.mjs`)
-- `pad` — จำนวนหลักของชื่อไฟล์ (`4` → `0001.png`)
-- `waitFor` — selector ที่ต้องรอให้โผล่ก่อนแคป ใส่ให้ตรงกับภาพ/เนื้อหาจริงของหน้านั้น ใส่ `null` ถ้าไม่ต้องรอ
+- URLs have no page numbers, so there is no URL counter. Choose one:
+  - `click.startUrl` — starting page for arrow navigation (the main workflow; see 3b).
+  - `urls: []` — explicit URLs if you already know every page (for `scrape.mjs`).
+- `pad` — filename digit count (`4` → `0001.png`).
+- `waitFor` — selector to wait for before capture. Match the actual image/content, or use `null` to skip waiting.
 
-### 2. ตีกรอบ
+### 2. Select a capture box
 
 ```powershell
-npm run pick              # ใช้ click.startUrl (หรือ urls[0]) จาก config
-node pick-box.mjs <url>   # หรือระบุหน้าเอง
+npm run pick              # Uses click.startUrl (or urls[0]) from config
+node pick-box.mjs <url>   # Or specify a page
 ```
 
-เบราว์เซอร์จะเปิดขึ้นมาพร้อม HUD ที่มุมซ้ายบน
+A browser opens with a HUD in the top-left corner.
 
-| คีย์ / การกระทำ | ผล |
+| Key / action | Result |
 | --- | --- |
-| ลากเมาส์ | วาดกรอบ ตัวเลข `x y w h` อัปเดตสด ๆ |
-| `E` | สลับโหมด **เลือกอิลิเมนต์** — เอาเมาส์ชี้ กรอบ snap เข้าขอบให้เอง คลิกเพื่อล็อก |
-| `Esc` | ล้างกรอบ เริ่มใหม่ |
-| `Enter` | ยืนยัน เซฟลง `box.json` แล้วปิดเบราว์เซอร์ |
+| Drag mouse | Draw a box; `x y w h` update live |
+| `E` | Toggle **element selection** — hover to snap to an element, then click to lock |
+| `Esc` | Clear the box and start again |
+| `Enter` | Confirm, save to `box.json` and close the browser |
 
-โหมดเลือกอิลิเมนต์จะบันทึก CSS selector ติดมาให้ด้วย
+Element selection also saves a CSS selector.
 
-### 3. เก็บภาพ (จากลิสต์ URL)
-
-```powershell
-npm run scrape        # ทุก URL ใน config.urls
-node scrape.mjs 5 12  # เฉพาะลำดับที่ 5–12 ในลิสต์
-```
-
-- ไฟล์ออกที่ `vol1/0001.png`, `0002.png`, … (ตาม `pad`)
-- รันซ้ำได้ ไฟล์ที่มีอยู่แล้วจะถูกข้าม (ตั้ง `overwrite: true` ถ้าอยากทับ)
-- แต่ละหน้าลองใหม่ 1 ครั้งถ้าพลาด สุดท้ายที่ยังไม่ผ่านจะไปรวมใน `failed.json`
-
-### 3b. เก็บภาพแบบกดลูกศรซ้าย
-
-ทางหลักของโปรเจกต์นี้ เพราะ URL ไม่มีเลขหน้า ต้องกดลูกศรไล่ไปทีละหน้า
+### 3. Capture images from a URL list
 
 ```powershell
-npm run scrape:click                       # ใช้ config.click.startUrl
-node scrape-click.mjs <url>                # เริ่มจาก url นี้
-node scrape-click.mjs <url> 60             # จำกัด 60 หน้า
+npm run scrape        # All URLs in config.urls
+node scrape.mjs 5 12  # Only entries 5–12 in the list
 ```
 
-ลูปคือ **snapshot → กดลูกศรซ้าย → รอโหลด → วนใหม่**
+- Output files are `vol1/0001.png`, `0002.png`, … (according to `pad`).
+- Reruns skip existing files; set `overwrite: true` to replace them.
+- Each failed page is retried once. Remaining failures are recorded in `failed.json`.
 
-วิธีไปหน้าถัดไป เลือกได้ 3 แบบใน `config.click` (ลำดับความสำคัญ `selector` > `key` > `point`)
+### 3b. Capture with left-arrow navigation
 
-| คีย์ | ความหมาย |
+This is the main workflow because URLs do not contain page numbers; navigation must advance one page at a time.
+
+```powershell
+npm run scrape:click                       # Uses config.click.startUrl
+node scrape-click.mjs <url>                # Start at this URL
+node scrape-click.mjs <url> 60             # Limit to 60 pages
+```
+
+The loop is **snapshot → press left arrow → wait for loading → repeat**.
+
+Choose one of three navigation methods in `config.click` (priority: `selector` > `key` > `point`).
+
+| Key | Meaning |
 | --- | --- |
-| `key: 'ArrowLeft'` | **ค่าเริ่มต้น** — กดลูกศรซ้ายบนคีย์บอร์ด |
-| `selector: '.btn-prev'` | คลิกปุ่มตาม CSS selector |
-| `point: { xPct: 0.25, yPct: 0.5 }` | คลิกพิกัดสัมพัทธ์ของ viewport (สำหรับ reader ที่ใช้โซนคลิกซ้าย/ขวา) |
+| `key: 'ArrowLeft'` | Press the left-arrow key |
+| `selector: '.btn-prev'` | Click a button by CSS selector |
+| `point: { xPct: 0.25, yPct: 0.5 }` | Click relative viewport coordinates (for readers with left/right click zones) |
 
-ถ้าเซ็ต `key: null` และไม่ใส่อย่างอื่น สคริปต์จะเดาปุ่มลูกศรเองจาก `aria-label`/class/ข้อความ/ตำแหน่ง — หาไม่เจอจะพิมพ์ลิสต์อิลิเมนต์ที่เข้าข่ายพร้อมพิกัด/ขนาด และเซฟ `debug-page.png` ไว้ให้ดู
+If `key: null` is set and no other method is provided, the script guesses the arrow button from `aria-label`, class, text and position. If none is found, it prints candidate elements with coordinates and dimensions and saves `debug-page.png`.
 
-- `afterClickMs` (ค่าเริ่ม 5000) — รอหลังกด **นานสุด** เท่านี้ ถ้าเนื้อหาเปลี่ยนก่อนก็ไปต่อเลย ไม่รอเต็มเวลา
-- `imgWaitMs` (ค่าเริ่ม 8000) — เพดานเวลารอรูปโหลด **อย่าเอาออก** รูปที่โหลดไม่ขึ้นจะไม่ยิง event `load` เลย ถ้ารอแบบไม่มีเพดานคือค้างถาวร
-- URL ทุกหน้าถูก append ลง `pages.log` ทันทีที่แคปเสร็จ (crash แล้วยังเหลือของ) หน้าที่ URL เปลี่ยนจากหน้าก่อนจะมีมาร์ก `<- url เปลี่ยน` ต่อท้าย
+- `afterClickMs` (default 5000) — **maximum** wait after navigation; continues early if content changes.
+- `imgWaitMs` (default 8000) — image loading timeout. **Do not remove it.** Broken images may never emit `load`, so an unlimited wait can hang forever.
+- Each URL is appended to `pages.log` immediately after capture, preserving progress after a crash. A URL change is marked with `<- url changed`.
 
+```text
+0001    https://example.com/reader
+0002    https://example.com/reader
+0003    https://example.com/reader/ch2    <- url changed
 ```
-0001	https://example.com/reader
-0002	https://example.com/reader
-0003	https://example.com/reader/ch2	<- url เปลี่ยน
-```
 
-- หยุดเองเมื่อ: ครบ `maxPages` / กดไม่ได้ / **ภาพที่แคปได้ซ้ำกับหน้าก่อนสองครั้งติด** (= สุดเล่ม) หน้าที่ซ้ำไม่กินเลขลำดับ ไม่มีไฟล์ซ้ำใน `vol1/`
-  - จงใจเทียบจาก hash ของภาพ ไม่ใช่จาก DOM เพราะ reader ที่ preload รูปทั้งเล่มไว้ตั้งแต่แรกจะมี `src` เท่าเดิมทุกหน้า ดูจาก DOM แล้วจะเข้าใจผิดว่าจบเล่มตั้งแต่หน้าสอง
-- resume: ตั้ง `click.startIndex` ให้ต่อจากเลขล่าสุด (ไฟล์ที่มีอยู่แล้วจะถูกข้ามถ้า `overwrite: false` แต่ยังต้องคลิกไล่ผ่านอยู่ดี)
+- Stops at `maxPages`, when navigation fails, or when **the capture matches the previous page twice in a row** (the end of the book). Duplicates do not consume sequence numbers or create duplicate files in `vol1/`.
+  - Detection deliberately compares image hashes rather than the DOM: readers that preload the whole book may retain the same `src` values on every page, making DOM comparison falsely detect the end on page two.
+- Resume by setting `click.startIndex` after the last saved number. Existing files are skipped with `overwrite: false`, but the script still needs to click through those pages.
 
-### 4. ไล่ปัญหา (`debug.mjs`)
+### 4. Debug (`debug.mjs`)
 
-รันก่อนปล่อยยาวทุกครั้งที่เจอเว็บใหม่ หรือเวลาสคริปต์ค้าง/ได้ภาพผิด
+Run this before a long capture on a new website, or when the script hangs or captures the wrong content.
 
 ```powershell
-npm run debug                     # url จาก config, กดลูกศร 3 ครั้ง
-node debug.mjs 5                  # กด 5 ครั้ง
-node debug.mjs <url> 5            # ระบุ url เอง
-node debug.mjs <url> 3 --headed   # เปิดหน้าจอให้เห็น แล้วค้างไว้จนกด Ctrl+C
+npm run debug                     # URL from config, 3 arrow presses
+node debug.mjs 5                  # 5 presses
+node debug.mjs <url> 5            # Specify a URL
+node debug.mjs <url> 3 --headed   # Show the browser until Ctrl+C
 ```
 
-รายงานที่ได้
+The report includes:
 
-| หัวข้อ | ใช้ดูอะไร |
+| Section | What to check |
 | --- | --- |
-| เวลา `domcontentloaded` / `waitFor` | `waitFor` ตรงหรือ timeout — ถ้าขึ้น "ไม่เจอ" คือเสียเวลาเปล่า 15 วิ/หน้า |
-| `รอรูปโหลด ... ชนเพดาน imgWaitMs` | มีรูปที่ไม่ยิง `load`/`error` (จุดที่เคยทำให้ค้างถาวร) |
-| ลิสต์ `img`/`canvas` ที่มองเห็น | ขนาด/ตำแหน่งจริง เอาไปเทียบกับ `clip` ใน `box.json` ได้ พร้อมมาร์ก `โหลดไม่ขึ้น!` |
-| `iframe` | เนื้อหาอยู่ในเฟรมลูกหรือเปล่า |
-| ปุ่มที่เข้าข่ายลูกศรซ้าย | ตัวเลือกสำหรับ `click.selector` พร้อมพิกัด |
-| `keydown listener บน window/document` | เว็บรับคีย์บอร์ดจริงไหม (ถ้า "ไม่มี" ก็อย่าใช้ `click.key`) |
-| ต่อการกดแต่ละครั้ง | ภาพในกรอบเปลี่ยนที่วินาทีไหน / url เปลี่ยนไหม / hash ของภาพ |
-| `error` + `request ที่ล้ม` | console error, pageerror, request ที่ถูกบล็อก |
+| `domcontentloaded` / `waitFor` timings | Whether `waitFor` matches or times out; "not found" wastes 15 seconds per page |
+| `Wait for images ... reached imgWaitMs` | Images that never emit `load`/`error`, which previously caused indefinite hangs |
+| Visible `img`/`canvas` elements | Actual dimensions and positions to compare with `box.json`'s `clip`, including `Failed to load!` markers |
+| `iframe` | Whether content is inside a child frame |
+| Candidate left-arrow buttons | Options for `click.selector`, with coordinates |
+| `keydown listener on window/document` | Whether the site handles keyboard input; avoid `click.key` if there are none |
+| Each navigation step | When the captured image changes, whether the URL changes and the image hash |
+| Page errors and failed requests | Console errors, page errors and blocked requests |
 
-ไฟล์ที่ออกใน `debug/` — `full-N.png` (ทั้งหน้า) กับ `clip-N.png` (เฉพาะกรอบ) `N` คือจำนวนครั้งที่กด เอามาเรียงดูว่าหน้าเปลี่ยนจริงและกรอบตรงไหม
+Files in `debug/` are `full-N.png` (full page) and `clip-N.png` (capture box), where `N` is the number of navigation steps. Compare them to verify that pages change and the capture box is correct.
 
-## โน้ตสำคัญ
+## Important notes
 
-### พิกัด vs selector — เลือกได้
+### Coordinates or selector
 
-`box.json` เก็บทั้งสองแบบ
+`box.json` stores both:
 
 ```json
 {
@@ -166,23 +166,23 @@ node debug.mjs <url> 3 --headed   # เปิดหน้าจอให้เ�
 }
 ```
 
-`scrape.mjs` จะใช้ `clip` เป็นหลัก **ถ้าลบคีย์ `clip` ออกเหลือแต่ `selector`** มันจะสลับไปใช้ `locator().screenshot()` ซึ่งทนกว่ามากเวลาเลย์เอาต์แต่ละหน้าไม่ตรงกันเป๊ะ เพราะกรอบขยับตามอิลิเมนต์เอง
+`scrape.mjs` prioritizes `clip`. **Remove `clip` and keep only `selector`** to use `locator().screenshot()`, which tolerates layout differences because the capture box follows the element.
 
-แนะนำ: ถ้าเนื้อหาที่ต้องการอยู่ในกล่องเดียวชัดเจน ลองโหมด selector ก่อน แล้วค่อยถอยไปใช้พิกัดถ้า selector ไม่นิ่ง
+If the content is contained in one clear element, try selector mode first; use coordinates if the selector is unstable.
 
-### viewport ต้องล็อกค่าเดียวกัน
+### Keep the viewport settings consistent
 
-พิกัดที่ลากไว้ผูกกับ `viewport` + `deviceScaleFactor` ใน config **ถ้าไปแก้ค่าพวกนี้ทีหลังต้องรัน `pick` ใหม่** ไม่งั้นกรอบเลื่อน นี่คือเหตุผลที่ทั้งสองสคริปต์อ่านค่าจากไฟล์เดียวกัน
+Selected coordinates depend on `viewport` and `deviceScaleFactor` in config. **Rerun `pick` if either changes**, or the box will shift. Both scripts read the same configuration for this reason.
 
-`deviceScaleFactor: 2` ทำให้ภาพคมขึ้นเท่าตัว (แลกกับไฟล์ใหญ่ขึ้น)
+`deviceScaleFactor: 2` doubles image resolution at the cost of larger files.
 
-### พิกัดเป็น page space ไม่ใช่ viewport
+### Coordinates use page space, not viewport space
 
-`pick-box.mjs` บวก `scrollX/scrollY` เข้าไปแล้ว และ `scrape.mjs` แคปด้วย `fullPage: true` ให้ตรงกัน เลยตีกรอบส่วนที่อยู่ใต้ fold ได้ ไม่ต้องเลื่อนหน้าให้ตรงก่อน
+`pick-box.mjs` includes `scrollX/scrollY`, and `scrape.mjs` captures with `fullPage: true` to match. You can select content below the fold without restoring the same scroll position before capture.
 
-### ถ้าเป้าหมายเป็นรูปเดี่ยว ๆ อย่า screenshot
+### Download standalone images directly
 
-screenshot ได้ภาพที่ผ่านการ resize/รีคอมเพรสจากเบราว์เซอร์ คมสู้ไฟล์ต้นฉบับไม่ได้ ถ้าสิ่งที่ต้องการคือตัวรูปตรง ๆ ให้ดึง `src` มาโหลดแทน จะได้คุณภาพเต็ม
+Screenshots contain browser-resized/recompressed images and may be less sharp than the originals. If you only need the image itself, download its `src` for full quality:
 
 ```js
 const src = await page.locator('#page-img').getAttribute('src');
@@ -190,36 +190,36 @@ const res = await context.request.get(new URL(src, url).href);
 await writeFile(out, await res.body());
 ```
 
-(`context.request` ใช้ cookie/header ชุดเดียวกับเบราว์เซอร์ เลยผ่านพวกเช็ก referer/auth ไปด้วย)
+`context.request` uses the browser context's cookies and configured headers, which can help with referer/authentication checks.
 
-### ตัวเลือก clip อื่นที่ Playwright มี
+### Other Playwright capture options
 
 ```js
-// เอาเฉพาะอิลิเมนต์
+// Capture one element
 await page.locator('#card').screenshot({ path: 'card.png' });
 
-// ขยาย padding รอบอิลิเมนต์
+// Add padding around an element
 const b = await page.locator('#card').boundingBox();
 await page.screenshot({
   clip: { x: b.x - 16, y: b.y - 16, width: b.width + 32, height: b.height + 32 },
 });
 
-// visual regression — mask ปิดส่วนที่เปลี่ยนตลอด กัน test แตก
+// Visual regression: mask changing content to avoid unstable tests
 await expect(page).toHaveScreenshot({ clip: {...}, mask: [page.locator('.ads')] });
 ```
 
-## แก้ปัญหา
+## Troubleshooting
 
-| อาการ | สาเหตุที่เจอบ่อย |
+| Symptom | Common cause |
 | --- | --- |
-| ภาพว่าง / ขาวโพลน | `waitFor` ไม่ตรง หรือ `settleMs` น้อยเกิน ลองเพิ่มเป็น 1500 |
-| ภาพครึ่งเดียว / รูปหายบางส่วน | lazy-load ยังไม่ยิง เช็กว่า `scrollToBottom: true` |
-| กรอบเลื่อนไปจากที่ลาง | `viewport`/`deviceScaleFactor` ถูกแก้หลังตีกรอบ → รัน `pick` ใหม่ |
-| ถูกบล็อก / 429 | เพิ่ม `politeDelayMs` และลองตั้ง `headless: false` |
-| selector ใช้ไม่ได้บางหน้า | เปลี่ยนไปใช้โหมด `clip` หรือแก้ selector ใน `box.json` ให้กว้างขึ้น |
+| Blank / white image | `waitFor` does not match, or `settleMs` is too short; try 1500 |
+| Partial image / missing content | Lazy loading has not triggered; check `scrollToBottom: true` |
+| Capture box shifted | `viewport`/`deviceScaleFactor` changed after selection; rerun `pick` |
+| Blocked / 429 | Increase `politeDelayMs` and try `headless: false` |
+| Selector fails on some pages | Use `clip` mode or broaden the selector in `box.json` |
 
-ดีบักด้วยการตั้ง `headless: false` ใน config จะเห็นว่าหน้าเว็บโหลดถึงไหนแล้ว
+Set `headless: false` in config to inspect loading in the browser.
 
-## ก่อนยิงจริง
+## Before a real run
 
-เช็ก `robots.txt` กับเงื่อนไขการใช้งานของเว็บปลายทางก่อน และอย่าลด `politeDelayMs` ต่ำกว่าค่าเริ่มต้นมาก
+Check the target site's `robots.txt` and terms of use, and avoid reducing `politeDelayMs` far below its default.

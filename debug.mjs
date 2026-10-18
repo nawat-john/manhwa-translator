@@ -1,12 +1,12 @@
-// ตัวไล่ปัญหา — เปิดหน้าเดียว แล้วรายงานว่ามันเห็นอะไร กดแล้วเกิดอะไรขึ้น
+// Debugger — open one page and report its contents and navigation behavior
 //
-//   node debug.mjs                    // ใช้ click.startUrl / urls[0]
-//   node debug.mjs <url>              // ระบุ url เอง
-//   node debug.mjs <url> 5            // กดลูกศร 5 ครั้ง (ค่าเริ่ม 3)
-//   node debug.mjs <url> 3 --headed   // เปิดหน้าจอให้เห็น แล้วค้างไว้จนกด Ctrl+C
+//   node debug.mjs                    // Use click.startUrl / urls[0]
+//   node debug.mjs <url>              // Specify a URL
+//   node debug.mjs <url> 5            // Press the arrow 5 times (default: 3)
+//   node debug.mjs <url> 3 --headed   // Show the browser and keep it open until Ctrl+C
 //
-// ผลลัพธ์: รายงานบนจอ + ไฟล์ใน debug/
-//   full-N.png = ทั้งหน้า   clip-N.png = เฉพาะกรอบใน box.json
+// Output: console report and files in debug/
+//   full-N.png = Full page   clip-N.png = capture box from box.json
 import { chromium } from 'playwright';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -17,7 +17,7 @@ const args = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const flag = (name) => process.argv.includes(`--${name}`);
 
 const click = cfg.click ?? {};
-// argv ยืดหยุ่น: <url> <steps> / <url> / <steps> / ไม่ใส่อะไรเลย
+// Accepted argv: <url> <steps> / <url> / <steps> / no arguments
 const argUrl = args.find((a) => /^\w+:/.test(a));
 const argSteps = args.find((a) => /^\d+$/.test(a));
 const url = argUrl || click.startUrl || cfg.urls[0];
@@ -26,7 +26,7 @@ const headed = flag('headed');
 const outDir = 'debug';
 
 if (!url) {
-  console.error('ไม่มี URL — ส่งมาทาง argv หรือใส่ใน config.click.startUrl / config.urls');
+  console.error('No URL — pass one via argv or set config.click.startUrl / config.urls');
   process.exit(1);
 }
 
@@ -39,9 +39,9 @@ await mkdir(outDir, { recursive: true });
 console.log(`— config —`);
 console.log(`  url            ${url}`);
 console.log(`  viewport       ${cfg.viewport.width}x${cfg.viewport.height} @${cfg.deviceScaleFactor}x`);
-console.log(`  waitFor        ${cfg.waitFor ?? '(ไม่รอ)'}`);
-console.log(`  box.json       ${box ? JSON.stringify(box.clip ?? box.selector) : '(ไม่มี)'}`);
-console.log(`  วิธีไปหน้าถัดไป  ${click.selector ?? click.key ?? JSON.stringify(click.point) ?? '(เดาเอง)'}`);
+console.log(`  waitFor        ${cfg.waitFor ?? '(no wait)'}`);
+console.log(`  box.json       ${box ? JSON.stringify(box.clip ?? box.selector) : '(none)'}`);
+console.log(`  Navigation  ${click.selector ?? click.key ?? JSON.stringify(click.point) ?? '(heuristic)'}`);
 console.log(`  headless       ${!headed}\n`);
 
 const browser = await chromium.launch({ headless: !headed, slowMo: headed ? 200 : 0 });
@@ -51,7 +51,7 @@ const context = await browser.newContext({
 });
 const page = await context.newPage();
 
-// ---- ดักเหตุการณ์จากหน้าเว็บ ----
+// ---- Capture page events ----
 const errors = [];
 const failedReqs = [];
 page.on('console', (m) => {
@@ -67,14 +67,14 @@ page.on('framenavigated', (f) => {
   if (f === page.mainFrame()) console.log(`  » navigate → ${f.url()}`);
 });
 
-// ---- โหลดหน้า ----
+// ---- Load page ----
 let t = Date.now();
-console.log('— โหลดหน้า —');
+console.log('— Load page —');
 try {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
   console.log(`  domcontentloaded  ${ms(t)}`);
 } catch (err) {
-  console.error(`  goto พลาด: ${err.message.split('\n')[0]}`);
+  console.error(`  goto failed: ${err.message.split('\n')[0]}`);
   await browser.close();
   process.exit(1);
 }
@@ -84,7 +84,7 @@ if (cfg.waitFor) {
   const ok = await page
     .waitForSelector(cfg.waitFor, { timeout: 15000 })
     .then(() => true, () => false);
-  console.log(`  waitFor "${cfg.waitFor}"  ${ok ? `เจอ ${ms(t)}` : 'ไม่เจอ (timeout 15s)'}`);
+  console.log(`  waitFor "${cfg.waitFor}"  ${ok ? `found ${ms(t)}` : 'not found (15s timeout)'}`);
 }
 
 t = Date.now();
@@ -104,12 +104,12 @@ const imgReport = await page.evaluate((wait) => {
   ]);
 }, click.imgWaitMs ?? 8000);
 console.log(
-  `  รอรูปโหลด  ค้างอยู่ ${imgReport.pending} ใบ  ${ms(t)}` +
-    (imgReport.timeout ? '  ← ชนเพดาน imgWaitMs (มีรูปที่ไม่ยิง load/error)' : ''),
+  `  Wait for images: ${imgReport.pending} pending  ${ms(t)}` +
+    (imgReport.timeout ? '  ← reached imgWaitMs (some images did not emit load/error)' : ''),
 );
 await page.waitForTimeout(cfg.settleMs);
 
-// ---- หน้านี้มีอะไรอยู่ ----
+// ---- Inspect page contents ----
 const dom = await page.evaluate(() => {
   const vis = (el) => {
     const r = el.getBoundingClientRect();
@@ -152,28 +152,28 @@ const dom = await page.evaluate(() => {
   };
 });
 
-console.log(`\n— หน้านี้มีอะไร —`);
+console.log(`\n— Page contents —`);
 console.log(`  title       ${dom.title}`);
 console.log(`  url         ${dom.href}`);
 console.log(`  page size   ${dom.scroll.w}x${dom.scroll.h}`);
-console.log(`  img ${dom.imgTotal} ใบ / canvas ${dom.canvasTotal} อัน — ที่มองเห็น:`);
+console.log(`  img ${dom.imgTotal} images / ${dom.canvasTotal} canvases — visible:`);
 for (const m of dom.media) {
-  console.log(`    ${m.tag.padEnd(6)} ${m.rect.padEnd(22)} ${m.broken ? 'โหลดไม่ขึ้น! ' : ''}${m.note}`);
+  console.log(`    ${m.tag.padEnd(6)} ${m.rect.padEnd(22)} ${m.broken ? 'Failed to load! ' : ''}${m.note}`);
 }
-if (!dom.media.length) console.log('    (ไม่เจอรูป/canvas ที่มองเห็นเลย — waitFor อาจไม่ตรง หรือเนื้อหาอยู่ใน iframe)');
+if (!dom.media.length) console.log('    (No visible images/canvases — waitFor may not match, or content may be inside an iframe)');
 
 const frames = page.frames().filter((f) => f !== page.mainFrame());
 if (frames.length) {
-  console.log(`  iframe ${frames.length} อัน:`);
+  console.log(`  iframes: ${frames.length}:`);
   for (const f of frames) console.log(`    ${f.url().slice(0, 110)}`);
 }
 
-console.log(`  ปุ่มที่เข้าข่าย "ลูกศรซ้าย": ${dom.arrows.length ? '' : '(ไม่มี)'}`);
+console.log(`  Candidate "left arrow" buttons: ${dom.arrows.length ? '' : '(none)'}`);
 for (const a of dom.arrows) {
   console.log(`    ${a.tag.padEnd(7)} ${a.rect.padEnd(22)} ${a.label}  .${a.cls}`);
 }
 
-// ---- ใครดัก keydown ไว้บ้าง (ผ่าน CDP) ----
+// ---- Inspect keydown listeners via CDP ----
 try {
   const cdp = await context.newCDPSession(page);
   for (const target of ['window', 'document']) {
@@ -183,16 +183,16 @@ try {
     });
     const keys = listeners.filter((l) => l.type.startsWith('key'));
     console.log(
-      `  keydown listener บน ${target}: ${
-        keys.length ? keys.map((k) => `${k.type} (${k.scriptId}:${k.lineNumber})`).join(', ') : 'ไม่มี'
+      `  keydown listener on ${target}: ${
+        keys.length ? keys.map((k) => `${k.type} (${k.scriptId}:${k.lineNumber})`).join(', ') : 'none'
       }`,
     );
   }
 } catch (err) {
-  console.log(`  (อ่าน listener ไม่ได้: ${err.message.split('\n')[0]})`);
+  console.log(`  (Could not read listeners: ${err.message.split('\n')[0]})`);
 }
 
-// ---- แคปตามกรอบได้ไหม ----
+// ---- Check capture box ----
 const shoot = async (tag) => {
   const full = await page.screenshot({ fullPage: true });
   await writeFile(path.join(outDir, `full-${tag}.png`), full);
@@ -204,23 +204,23 @@ const shoot = async (tag) => {
         : await page.screenshot({ fullPage: true, clip: box?.clip });
     await writeFile(path.join(outDir, `clip-${tag}.png`), clip);
   } catch (err) {
-    console.log(`  แคปตามกรอบพลาด: ${err.message.split('\n')[0]}`);
+    console.log(`  Box capture failed: ${err.message.split('\n')[0]}`);
   }
   return { full: hash(full), clip: clip ? hash(clip) : null, bytes: clip?.length ?? 0 };
 };
 
-console.log(`\n— แคปหน้าแรก —`);
+console.log(`\n— Capture the first page —`);
 let prev = await shoot('0');
 console.log(`  full=${prev.full}  clip=${prev.clip} (${(prev.bytes / 1024).toFixed(0)} KB)`);
-console.log(`  ไฟล์อยู่ที่ ${outDir}/full-0.png, ${outDir}/clip-0.png — เปิดดูว่ากรอบตรงที่ต้องการไหม`);
+console.log(`  Files: ${outDir}/full-0.png, ${outDir}/clip-0.png — open them to check the capture box`);
 
-// ---- กดลูกศรแล้วดูว่าอะไรขยับ ----
+// ---- Press the arrow and check what changes ----
 const press = async () => {
   if (click.selector) {
     const loc = page.locator(click.selector).first();
-    if (!(await loc.count())) return `ไม่เจอ selector ${click.selector}`;
+    if (!(await loc.count())) return `Selector not found: ${click.selector}`;
     await loc.click({ timeout: 10000 });
-    return `คลิก ${click.selector}`;
+    return `Click ${click.selector}`;
   }
   if (click.point) {
     const p = {
@@ -228,27 +228,27 @@ const press = async () => {
       y: Math.round(click.point.y ?? click.point.yPct * cfg.viewport.height),
     };
     await page.mouse.click(p.x, p.y);
-    return `คลิก ${p.x},${p.y}`;
+    return `Click ${p.x},${p.y}`;
   }
   const key = click.key ?? 'ArrowLeft';
   await page.keyboard.press(key);
-  return `กด ${key}`;
+  return `Press ${key}`;
 };
 
 for (let i = 1; i <= steps; i++) {
-  console.log(`\n— ครั้งที่ ${i} —`);
+  console.log(`\n— Step ${i} —`);
   const urlBefore = page.url();
   t = Date.now();
   let how;
   try {
     how = await press();
   } catch (err) {
-    console.log(`  กดไม่ผ่าน: ${err.message.split('\n')[0]}`);
+    console.log(`  Click failed: ${err.message.split('\n')[0]}`);
     break;
   }
   console.log(`  ${how}`);
 
-  // เฝ้าดูว่าภาพในกรอบเปลี่ยนตอนไหน
+  // Watch for changes in the captured image
   const deadline = Date.now() + (click.afterClickMs ?? 5000);
   let changedAt = null;
   while (Date.now() < deadline) {
@@ -263,35 +263,35 @@ for (let i = 1; i <= steps; i++) {
         break;
       }
     } catch {
-      /* ระหว่าง navigate แคปไม่ได้ ข้ามไป */
+      /* Cannot capture during navigation; skip this attempt */
     }
   }
   console.log(
     changedAt
-      ? `  ภาพในกรอบเปลี่ยนที่ +${changedAt}`
-      : `  ภาพในกรอบไม่เปลี่ยนเลยจนครบ ${(click.afterClickMs ?? 5000) / 1000}s  ← ตรงนี้คือปัญหา`,
+      ? `  Captured image changed at +${changedAt}`
+      : `  Captured image did not change within ${(click.afterClickMs ?? 5000) / 1000}s  ← this is the problem`,
   );
-  console.log(`  url  ${page.url() === urlBefore ? 'เท่าเดิม' : `เปลี่ยน → ${page.url()}`}`);
+  console.log(`  url  ${page.url() === urlBefore ? 'unchanged' : `changed → ${page.url()}`}`);
 
   await page.waitForTimeout(cfg.settleMs);
   prev = await shoot(String(i));
   console.log(`  full=${prev.full}  clip=${prev.clip} (${(prev.bytes / 1024).toFixed(0)} KB)`);
 }
 
-// ---- สรุปเหตุการณ์ที่ดักไว้ ----
+// ---- Summarize captured events ----
 if (errors.length) {
-  console.log(`\n— error จากหน้าเว็บ (${errors.length}) —`);
+  console.log(`\n— Page errors (${errors.length}) —`);
   for (const e of errors.slice(0, 15)) console.log(`  ${e}`);
 }
 if (failedReqs.length) {
-  console.log(`\n— request ที่ล้ม (${failedReqs.length}) —`);
+  console.log(`\n— Failed requests (${failedReqs.length}) —`);
   for (const r of failedReqs.slice(0, 15)) console.log(`  ${r}`);
 }
 
-console.log(`\nภาพทั้งหมดอยู่ใน ${outDir}/ — เทียบ full-*.png กับ clip-*.png ว่าหน้าเปลี่ยนจริงไหม`);
+console.log(`\nAll images are in ${outDir}/ — compare full-*.png and clip-*.png to check whether the page changed`);
 
 if (headed) {
-  console.log('เปิดค้างไว้ให้ดู — กด Ctrl+C เพื่อปิด');
+  console.log('Keeping the browser open — press Ctrl+C to close');
   await new Promise(() => {});
 }
 await browser.close();

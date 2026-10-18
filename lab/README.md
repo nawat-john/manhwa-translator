@@ -1,58 +1,58 @@
 # Manga Lab
 
-หน้าทดสอบญี่ปุ่น → อังกฤษ ใช้ภาพและโมเดลที่ติดตั้งอยู่ในโปรเจ็กต์ ไม่ต้องเพิ่ม npm dependency
+A Japanese → English test interface using images and models already installed in the project, without additional npm dependencies.
 
 ```powershell
 npm run lab
 ```
 
-เปิด **http://127.0.0.1:4173** (ใช้ IP นี้ ไม่ใช่ localhost)
+Open **http://127.0.0.1:4173** (use this IP, not localhost).
 
-- ค้นหาและเลือกจาก `translator/work/pages` ซึ่งมี 388 หน้าในชุดทดสอบปัจจุบัน
-- ดูต้นฉบับ/คำแปลคู่กัน หรือขยายดูฝั่งเดียว และดาวน์โหลด PNG
-- ผลเดิมอ่านจาก `translator/work/out`; ผลแปลใหม่บันทึกใน `translator/work/lab`
-- ปุ่มแปลเรียก manga-image-translator จริงโดยใช้ config เดิม, manga-ocr, Sugoi, LaMa และ CUDA ทำงานครั้งละหนึ่งหน้า
-- แปลใหม่สำเร็จจึงแทนที่ผลของ Lab; ถ้าล้มเหลวผลก่อนหน้ายังอยู่ ภาพต้นฉบับและชุดผลเดิมไม่ถูกแก้ไข
-- ดูสถานะและ log ได้ใต้ภาพ ระหว่างแปลสามารถเปลี่ยนไปดูหน้าอื่นได้
-- ต้องมี Python environment และโมเดลตาม `translator/README.md`; ครั้งแรกอาจดาวน์โหลดโมเดล อย่ารัน batch pipeline พร้อม Lab เพราะใช้ GPU เดียวกัน
+- Search and select images from `translator/work/pages`, currently containing 388 test pages.
+- Compare originals and translations side by side, expand either side, and download PNGs.
+- Existing results are read from `translator/work/out`; new translations are saved in `translator/work/lab`.
+- The translation button runs manga-image-translator with the existing config, manga-ocr, Sugoi, LaMa and CUDA, one page at a time.
+- Lab results are replaced only after successful retranslation; failures preserve the previous result. Source images and the original output set are unchanged.
+- Status and logs appear below the images. You can browse other pages while translation runs.
+- The Python environment and models described in `translator/README.md` are required. The first run may download models. Do not run the batch pipeline alongside Lab because they share the GPU.
 
-## สิ่งที่วิเคราะห์และแก้
+## Analysis and fixes
 
-Pipeline เดิมมีครบตั้งแต่แยกภาพสองหน้า อ่านข้อความ แปล ลบข้อความ และเขียนภาพใหม่ มีผลครบ 388 ไฟล์ แต่จำนวนไฟล์ไม่ใช่คะแนนคุณภาพ ตัวอย่างหน้า 0010 มี OCR อ่านผิดและข้อความอังกฤษยาวกว่าญี่ปุ่นมาก จึงต้องตรวจทั้งคำแปลและตำแหน่งข้อความ
+The existing pipeline covers splitting double-page images, OCR, translation, text removal and rendering. It produced all 388 output files, but file count is not a quality score. Page 0010, for example, has OCR errors and English text much longer than the Japanese, so both translation and placement need review.
 
-พบสองจุดที่แก้ใน clone ของ manga-image-translator:
+Two fixes were made in the manga-image-translator clone:
 
-1. `rendering/__init__.py`: เมื่อกำหนด `font_size` ชัดเจน ให้ใช้กรอบตรวจจับเดิมและจำกัดพิกัดไว้ในภาพ แทนการขยายกรอบตามความยาวภาษาอังกฤษจนพาดทับภาพ โค้ดวาดข้อความเดิมจะจัดบรรทัดและย่อให้ลงกรอบ ข้อจำกัดคือกรอบข้อความญี่ปุ่นที่แคบมากอาจทำให้ตัวอักษรเล็ก ยังไม่ใช่การตรวจขอบบอลลูน
-2. `__main__.py`: การแปลไฟล์เดียวเดิมละเลย `-o` และเขียน `result/final.png` เสมอ ตอนนี้เคารพปลายทางที่ระบุและไม่บังคับ overwrite เมื่อผู้ใช้ระบุปลายทาง
+1. `rendering/__init__.py`: when `font_size` is explicitly set, use the original detection box and clamp coordinates to the image instead of expanding the box to fit English text over the artwork. Existing rendering code wraps and shrinks text to fit. Very narrow Japanese text boxes can still produce small lettering; this does not detect bubble boundaries.
+2. `__main__.py`: single-file translation previously ignored `-o` and always wrote `result/final.png`. It now respects the specified destination and does not force overwrite when the user supplies a destination.
 
-Patch ทั้งสองอยู่ใน upstream clone โดยตรง หากเปลี่ยน clone หรืออัปเดต upstream ต้องตรวจว่า patch ยังอยู่ ผลเดิม 388 ภาพยังไม่ถูกแปลใหม่ด้วย patch นี้
+Both patches are applied directly to the upstream clone. If you replace the clone or update upstream, verify that they remain applied. The original 388 images have not been retranslated with these patches.
 
-## ทางต่อไปสู่ Chrome extension
+## Path toward a Chrome extension
 
-โครงสร้างที่เหมาะกับโมเดลชุดนี้คือ **extension เลือกภาพ → บริการแปลในเครื่อง → คืนภาพผลลัพธ์ → แสดงทับภาพเดิมพร้อมปุ่มคืนต้นฉบับ** ปัจจุบันโมเดลพึ่ง Python/PyTorch/CUDA; การย้ายทั้งชุดเข้า extension จะเป็นอีกงานหนึ่งที่ต้องเปลี่ยน runtime และทดสอบประสิทธิภาพใหม่
+The suitable architecture for these models is **extension selects an image → local translation service → return the result → overlay it with an original-image toggle**. The models currently depend on Python/PyTorch/CUDA; moving the whole stack into an extension would require a separate runtime migration and performance testing effort.
 
-Lab นี้เป็นฐานตรวจคุณภาพ ยังไม่ได้สร้าง extension และยังไม่ได้เปิด API ให้รับภาพจากเว็บทั่วไป ขั้นต่อไปที่จำเป็น:
+This Lab is a quality-review base; its Japanese workflow does not yet have an extension or an API accepting arbitrary web images. Required next steps:
 
-- รับไฟล์ภาพพร้อมตรวจชนิด ขนาดไฟล์ และจำนวนพิกเซล; บันทึก job แยกด้วย ID
-- ให้ extension เริ่มงานจากการเลือกของผู้ใช้ และจำกัดสิทธิ์ตามรูปแบบการจับภาพที่เลือก
-- เพิ่มการยืนยันตัวตนระหว่าง extension กับบริการในเครื่องก่อนเปิดให้ origin ของ extension เรียก API
-- ผูกผลลัพธ์กับภาพต้นฉบับและ config เพื่อใช้ cache ได้ถูกต้อง
-- ทดสอบทั้งบอลลูนแคบ ข้อความบนพื้นดำ ตัวอักษรตกแต่ง ภาพยาว และหน้าไร้ข้อความ
+- Accept image files with type, file-size and pixel-count validation; store jobs under separate IDs.
+- Start extension jobs from user selections and restrict permissions to the chosen capture method.
+- Authenticate the extension with the local service before allowing its origin to call the API.
+- Associate results with source images and config for correct caching.
+- Test narrow bubbles, text on black backgrounds, decorative lettering, long images and pages without text.
 
-API ปัจจุบันรับเฉพาะชื่อภาพในชุดทดสอบ ไม่รับ path หรือ URL อิสระ และปฏิเสธ POST ข้าม origin รวมถึง Host ที่ไม่ตรงกับ IP ในเครื่อง
+The current API accepts only filenames from the test set, not arbitrary paths or URLs. It rejects cross-origin POST requests and Host headers that do not match the local IP.
 
-## ตรวจงาน
+## Verification
 
 ```powershell
 npm run test:lab
-# เปิด npm run lab ในอีก terminal ก่อน
+# Start npm run lab in another terminal first
 node lab/check-ui.mjs
 node lab/check-ui.mjs --translate
 & translator/.venv/Scripts/python.exe translator/test_render_bounds.py
 ```
 
-`--translate` ทดสอบการแปลจริงของหน้า 0010 ด้วย GPU ใช้เวลามากกว่าการตรวจ UI และเขียนผลใหม่เฉพาะในโฟลเดอร์ Lab ภาพหน้าจออยู่ที่ `lab/screenshots/`
+`--translate` tests real GPU translation of page 0010. It takes longer than UI checks and writes new output only in the Lab directory. Screenshots are saved in `lab/screenshots/`.
 
-ผลตรวจรอบนี้: API tests ผ่าน 2 ข้อ, UI ผ่านทั้งขนาด 1440px และ 390px, regression ของกรอบข้อความผ่าน และแปลหน้า 0010 สำเร็จด้วย RTX 3050 Laptop GPU ประมาณ 39 วินาที ผลใหม่อยู่ที่ `translator/work/lab/0010.png` ข้อความจัดบรรทัดดีขึ้นจากเดิม แต่ยังพบข้อความเล็กในกรอบแคบและการอ่านญี่ปุ่นผิดบางตำแหน่ง ยังไม่ได้ตรวจคุณภาพครบทุกหน้า
+Previous verification results: both API tests passed; the UI passed at 1440px and 390px; the text-bounds regression passed; and page 0010 was translated successfully on an RTX 3050 Laptop GPU in about 39 seconds. The new result is `translator/work/lab/0010.png`. Line wrapping improved, but narrow boxes still produce small text and some Japanese OCR errors remain. Quality has not been reviewed across every page.
 
-ข้อจำกัด: งานแปลหนึ่งงานเก็บสถานะในหน่วยความจำ การปิด server ไม่รองรับ resume; ผลที่เสร็จแล้วคงอยู่บนดิสก์ ควรตรวจคำแปลก่อนใช้งานจริง โดยเฉพาะชื่อคน มุก และข้อความที่ OCR รวมผิดบอลลูน
+Limitations: a translation job's state is stored in memory and cannot resume after server shutdown; completed results remain on disk. Review translations before use, especially names, jokes and text that OCR incorrectly combines across bubbles.

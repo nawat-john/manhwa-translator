@@ -47,9 +47,9 @@ try {
   assert.equal(await all.isDisabled(), true, 'batch cannot overlap a single translation');
   await page.waitForFunction(() => !document.querySelector('[data-manga-lab-toolbar]').shadowRoot.querySelector('button').disabled);
   await all.click();
-  await page.waitForFunction(() => document.querySelector('[data-manga-lab="content_image_1"]').shadowRoot.querySelector('button').textContent === 'กำลังแปล…');
+  await page.waitForFunction(() => document.querySelector('[data-manga-lab="content_image_1"]').shadowRoot.querySelector('button').textContent === 'Translating…');
   await all.click();
-  await page.waitForFunction(() => document.querySelector('[data-manga-lab-toolbar]').shadowRoot.querySelector('span').textContent.startsWith('หยุดแล้ว'));
+  await page.waitForFunction(() => document.querySelector('[data-manga-lab-toolbar]').shadowRoot.querySelector('span').textContent.startsWith('Stopped'));
   assert.deepEqual(submitted, [0, 1], 'stop finishes current image without starting the next');
   assert.equal(await page.locator('#content_image_1').getAttribute('src'), urls[1]);
   failure = true;
@@ -58,13 +58,13 @@ try {
   assert.deepEqual(submitted, [0, 1, 2], 'skip translated and no-text images; stop on errors');
   failure = false;
   await all.click();
-  await page.waitForFunction(() => document.querySelector('[data-manga-lab-toolbar]').shadowRoot.querySelector('span').textContent.startsWith('เสร็จแล้ว'));
+  await page.waitForFunction(() => document.querySelector('[data-manga-lab-toolbar]').shadowRoot.querySelector('span').textContent.startsWith('Done'));
   assert.deepEqual(submitted, [0, 1, 2, 2, 3]);
   assert.match(await status.textContent(), /4\/4/);
   await single(2).click();
   assert.equal(await page.locator('#content_image_2').getAttribute('src'), urls[2]);
   await all.click();
-  await page.waitForFunction(() => document.querySelector('[data-manga-lab-toolbar]').shadowRoot.querySelector('span').textContent.startsWith('เสร็จแล้ว'));
+  await page.waitForFunction(() => document.querySelector('[data-manga-lab-toolbar]').shadowRoot.querySelector('span').textContent.startsWith('Done'));
   assert.match(await page.locator('#content_image_2').getAttribute('src'), /^data:image/);
   assert.equal(submitted.length, 5, 'reuse completed results');
   assert.deepEqual(errors, []);

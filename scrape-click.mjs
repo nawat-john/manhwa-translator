@@ -1,10 +1,10 @@
-// scraper แบบกดลูกศรซ้าย — วน snapshot → คลิก → รอโหลด → snapshot …
+// Left-arrow scraper — repeat snapshot → click → wait for loading → snapshot …
 //
-//   node scrape-click.mjs                 // ใช้ค่าจาก config.click
-//   node scrape-click.mjs <url>           // เริ่มจาก url นี้
-//   node scrape-click.mjs <url> 60        // จำกัดจำนวนหน้า
+//   node scrape-click.mjs                 // Use config.click settings
+//   node scrape-click.mjs <url>           // Start at this URL
+//   node scrape-click.mjs <url> 60        // Limit the page count
 //
-// URL ของแต่ละหน้าถูกบันทึกลง log พร้อมเลขลำดับ (ดู cfg.click.logFile)
+// Each page URL is logged with its sequence number (see cfg.click.logFile)
 import { chromium } from 'playwright';
 import { mkdir, readFile, writeFile, appendFile, access } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -14,7 +14,7 @@ import cfg from './config.mjs';
 const box = await readFile('box.json', 'utf8')
   .then(JSON.parse)
   .catch(() => {
-    console.error('ไม่เจอ box.json — รัน `node pick-box.mjs <url>` ก่อน');
+    console.error('box.json not found — run `node pick-box.mjs <url>` first');
     process.exit(1);
   });
 
@@ -25,33 +25,33 @@ const afterClickMs = click.afterClickMs ?? 5000;
 const logFile = click.logFile ?? 'pages.log';
 
 if (!startUrl) {
-  console.error('ยังไม่ได้ตั้ง URL เริ่มต้น — ใส่ใน config.click.startUrl หรือส่งมาทาง argv');
+  console.error('No starting URL — set config.click.startUrl or pass one via argv');
   process.exit(1);
 }
 
 const exists = (p) => access(p).then(() => true, () => false);
 
-// พิกัดคลิก รับได้ทั้งแบบพิกเซลตรง ๆ { x, y } และแบบสัดส่วน { xPct, yPct }
+// Click coordinates accept pixels { x, y } or proportions { xPct, yPct }
 const toPoint = (pt) => ({
   x: Math.round(pt.x ?? pt.xPct * cfg.viewport.width),
   y: Math.round(pt.y ?? pt.yPct * cfg.viewport.height),
 });
 
-// ---- หา "ลูกศรซ้าย" ----------------------------------------------------
-// ลำดับความสำคัญ: selector > key > point > เดาเอง
+// ---- Find the "left arrow" ----------------------------------------------------
+// Priority: selector > key > point > heuristic
 const findNext = async (page) => {
   if (click.selector) {
     const loc = page.locator(click.selector).first();
     return (await loc.count())
       ? { loc, how: `selector: ${click.selector}` }
-      : { missing: `ไม่เจอ selector "${click.selector}" ในหน้านี้` };
+      : { missing: `Selector "${click.selector}" not found on this page` };
   }
   if (click.key) {
-    return { key: click.key, how: `กดคีย์ ${click.key}` };
+    return { key: click.key, how: `Press key ${click.key}` };
   }
   if (click.point) {
     const p = toPoint(click.point);
-    return { point: p, how: `คลิกพิกัด ${p.x},${p.y}` };
+    return { point: p, how: `Click coordinates ${p.x},${p.y}` };
   }
 
   const guess = await page.evaluate(() => {
@@ -79,7 +79,7 @@ const findNext = async (page) => {
       let score = 0;
       if (HINT.test(text)) score += 10;
       if (NEG.test(text)) score -= 10;
-      // ลูกศรซ้ายมักอยู่ครึ่งซ้ายของจอ
+      // The left arrow is usually in the left half of the screen
       if (r.left + r.width / 2 < innerWidth / 2) score += 3;
       const info = {
         score,
@@ -99,19 +99,19 @@ const findNext = async (page) => {
 
   if (!guess.best) {
     return {
-      missing: 'heuristic หาปุ่มลูกศรไม่เจอ',
+      missing: 'The heuristic could not find an arrow button',
       cands: guess.seen,
       total: guess.total,
     };
   }
   return {
     point: { x: guess.best.x, y: guess.best.y },
-    how: `เดาเอง (${guess.best.tag} "${guess.best.text}" @${guess.best.x},${guess.best.y})`,
+    how: `Heuristic (${guess.best.tag} "${guess.best.text}" @${guess.best.x},${guess.best.y})`,
   };
 };
 
-// ลายเซ็นหน้าแบบหยาบ ๆ — ใช้แค่ "ออกจากการรอเร็วขึ้น" หลังกด
-// ไม่ใช่ตัวตัดสินว่าจบเล่ม (ตัวนั้นใช้ hash ของภาพที่แคปได้)
+// Rough page signature — only used to end the post-click wait early
+// Not used to detect the end of the book (that uses the captured image hash)
 const signature = (page) =>
   page.evaluate(() =>
     [
@@ -123,8 +123,8 @@ const signature = (page) =>
 
 const settle = async (page) => {
   if (cfg.waitFor) await page.waitForSelector(cfg.waitFor, { timeout: 15000 }).catch(() => {});
-  // รอรูปโหลด แต่ต้องมีเพดานเวลา — รูปที่ error หรือ lazy ที่ยังไม่ยิง
-  // จะไม่ส่ง event 'load' เลย ถ้ารอเปล่า ๆ คือค้างถาวร
+  // Image loading needs a timeout — broken or untriggered lazy images
+  // never emit a 'load' event, so an unlimited wait would hang forever
   await page
     .evaluate((ms) => {
       const pending = [...document.images]
@@ -138,14 +138,14 @@ const settle = async (page) => {
         );
       return Promise.race([
         Promise.all(pending),
-        new Promise((r) => setTimeout(r, ms)), // เพดาน
+        new Promise((r) => setTimeout(r, ms)), // Timeout
       ]);
     }, click.imgWaitMs ?? 8000)
     .catch(() => {});
   await page.waitForTimeout(cfg.settleMs);
 };
 
-// คืนเป็น buffer ไม่เขียนไฟล์เอง — จะได้เอาไป hash เทียบหน้าก่อนหน้าได้ด้วย
+// Return a buffer without writing a file so its hash can be compared with the previous page
 const capture = (page) =>
   box.selector && !box.clip
     ? page.locator(box.selector).first().screenshot()
@@ -153,7 +153,7 @@ const capture = (page) =>
 
 const hash = (buf) => createHash('md5').update(buf).digest('hex');
 
-// ---- เริ่ม ------------------------------------------------------------
+// ---- Start ------------------------------------------------------------
 await mkdir(cfg.outDir, { recursive: true });
 
 const browser = await chromium.launch({ headless: cfg.headless });
@@ -163,14 +163,14 @@ const context = await browser.newContext({
 });
 const page = await context.newPage();
 
-console.log(`เปิด ${startUrl}`);
+console.log(`Opening ${startUrl}`);
 await page.goto(startUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
 await settle(page);
 
 await appendFile(logFile, `\n# ${new Date().toISOString()}  start=${startUrl}\n`, 'utf8');
 
 let prevUrl = null;
-let prevShot = null; // hash ของภาพหน้าก่อน — ใช้ดูว่าหน้าใหม่ซ้ำของเดิมไหม
+let prevShot = null; // Previous image hash — detects duplicate pages
 let stuck = 0;
 let announced = false;
 
@@ -190,48 +190,48 @@ while (n < first + maxPages) {
     dup = shot === prevShot;
 
     if (dup) {
-      // ภาพเหมือนหน้าก่อนเป๊ะ — กดแล้วไม่ไปไหน ยังไม่กินเลขลำดับ
+      // Identical to the previous image — navigation did not advance; keep the sequence number
       if (++stuck >= 2) {
-        console.log(`ภาพซ้ำหน้าเดิม ${stuck} ครั้งติด — น่าจะสุดเล่ม จบที่หน้า ${n - 1}`);
+        console.log(`Duplicate image ${stuck} times in a row — likely the end of the book; stopping at page ${n - 1}`);
         break;
       }
-      console.log(`ภาพซ้ำหน้าเดิม (${stuck}/2) — กดใหม่อีกที`);
+      console.log(`Duplicate image (${stuck}/2) — trying another click`);
     } else {
       stuck = 0;
       prevShot = shot;
       if (!cfg.overwrite && (await exists(out))) {
-        console.log(`ข้าม  ${out}`);
+        console.log(`Skip  ${out}`);
       } else {
         await writeFile(out, buf);
-        console.log(`ได้   ${out}  ${url}`);
+        console.log(`Saved ${out}  ${url}`);
       }
-      // บันทึก url ของหน้านี้ + มาร์กตรงที่ url เปลี่ยนจากหน้าก่อน
+      // Log this page URL and mark changes from the previous URL
       const changed = prevUrl && url !== prevUrl;
-      await appendFile(logFile, `${seq}\t${url}${changed ? '\t<- url เปลี่ยน' : ''}\n`, 'utf8');
+      await appendFile(logFile, `${seq}\t${url}${changed ? '\t<- url changed' : ''}\n`, 'utf8');
       prevUrl = url;
       n++;
     }
   } catch (err) {
-    console.warn(`พลาด หน้า ${seq}: ${err.message.split('\n')[0]}`);
+    console.warn(`Failed page ${seq}: ${err.message.split('\n')[0]}`);
     n++;
   }
 
-  // 2) ไปหน้าถัดไป — กดคีย์ / คลิก selector / คลิกพิกัด
+  // 2) Navigate to the next page — key / selector / coordinates
   const next = await findNext(page);
   if (next.missing) {
-    console.log(`ไปต่อไม่ได้: ${next.missing} — จบ`);
+    console.log(`Cannot continue: ${next.missing} — stopping`);
     if (next.cands) {
-      console.log(`ตัวเลือกที่เจอในหน้า (${next.total} ตัว) เรียงตามคะแนน:`);
+      console.log(`Candidates on this page (${next.total}), sorted by score:`);
       for (const c of next.cands) {
         console.log(`  ${String(c.score).padStart(3)}  ${c.tag}  ${c.w}x${c.h} @${c.x},${c.y}  ${c.text}`);
       }
-      console.log('เลือกมาสักตัวแล้วใส่ใน config.click.selector หรือใช้ click.key / click.point แทน');
+      console.log('Choose one for config.click.selector, or use click.key / click.point instead');
     }
     await page.screenshot({ path: 'debug-page.png', fullPage: true }).catch(() => {});
     break;
   }
   if (!announced) {
-    console.log(`ไปหน้าถัดไปด้วย: ${next.how}`);
+    console.log(`Next page via: ${next.how}`);
     announced = true;
   }
 
@@ -241,11 +241,11 @@ while (n < first + maxPages) {
     else if (next.loc) await next.loc.click({ timeout: 10000 });
     else await page.mouse.click(next.point.x, next.point.y);
   } catch (err) {
-    console.warn(`กดไม่ผ่าน: ${err.message.split('\n')[0]} — จบ`);
+    console.warn(`Click failed: ${err.message.split('\n')[0]} — stopping`);
     break;
   }
 
-  // 3) รอโหลด — ออกเร็วถ้าเนื้อหาเปลี่ยนแล้ว ไม่งั้นรอจนครบ afterClickMs
+  // 3) Wait for loading — end early if content changes, otherwise wait for afterClickMs
   const deadline = Date.now() + afterClickMs;
   let after = before;
   while (Date.now() < deadline) {
@@ -257,10 +257,10 @@ while (n < first + maxPages) {
     await page.waitForLoadState('domcontentloaded', { timeout: afterClickMs }).catch(() => {});
   }
   await settle(page);
-  // จบเล่มหรือยัง ตัดสินตอนต้นลูปรอบหน้า ด้วยการเทียบภาพที่แคปได้
+  // Detect the end of the book at the start of the next iteration by comparing captures
 
   await page.waitForTimeout(cfg.politeDelayMs);
 }
 
 await browser.close();
-console.log(`\nลิสต์ URL อยู่ใน ${logFile}`);
+console.log(`\nURL list saved to ${logFile}`);

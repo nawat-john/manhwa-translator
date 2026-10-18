@@ -38,7 +38,7 @@ async function boundedBody(stream, limit) {
   const chunks = [];
   for await (const chunk of stream) {
     size += chunk.length;
-    if (size > limit) throw new Error('ข้อมูลมีขนาดเกินที่รองรับ');
+    if (size > limit) throw new Error('Data exceeds the supported size limit');
     chunks.push(Buffer.from(chunk));
   }
   return Buffer.concat(chunks);
@@ -46,7 +46,7 @@ async function boundedBody(stream, limit) {
 
 async function runTranslation(request, directory, progress, signal) {
   await writeFile(path.join(directory, 'request.json'), JSON.stringify(request));
-  await progress('กำลังต่อภาพข้างเคียงและแบ่งตามช่องว่าง → แปลอังกฤษ');
+  await progress('Joining adjacent images and splitting at whitespace → translating into English');
   const log = await open(path.join(directory, 'worker.log'), 'w');
   // shortcut: a fresh worker per image; keep models loaded when cold-start latency becomes a bottleneck.
   try {
@@ -69,16 +69,16 @@ async function runTranslation(request, directory, progress, signal) {
       child.once('error', reject);
       child.once('close', code => {
         signal.removeEventListener('abort', stop);
-        if (signal.aborted) reject(new Error('งานแปลหยุดหรือใช้เวลานานเกินกำหนด กรุณาลองใหม่'));
+        if (signal.aborted) reject(new Error('Translation stopped or timed out. Please try again'));
         else if (code === 0) resolve();
-        else reject(new Error('แปลไม่สำเร็จ ดูรายละเอียดใน worker.log ของงานนี้'));
+        else reject(new Error('Translation failed. See this job’s worker.log for details'));
       });
     });
   } finally { await log.close(); }
   const summary = JSON.parse(await readFile(path.join(directory, 'result.json'), 'utf8'));
-  if (!Number.isInteger(summary.regions) || summary.regions < 0) throw new Error('ผลแปลไม่สมบูรณ์');
+  if (!Number.isInteger(summary.regions) || summary.regions < 0) throw new Error('Incomplete translation result');
   const result = path.join(directory, 'source.png');
-  if ((await stat(result)).size > maxBytes) throw new Error('ภาพผลลัพธ์ใหญ่เกิน 20 MiB');
+  if ((await stat(result)).size > maxBytes) throw new Error('The output image exceeds 20 MiB');
   return summary;
 }
 
@@ -92,20 +92,20 @@ export function createServer({ token, work = defaultWork, run = runTranslation }
       if (req.headers.host !== `127.0.0.1:${req.socket.localPort}`) return json(res, 403, { error: 'Invalid host' });
       const supplied = Buffer.from(req.headers.authorization || '');
       const expected = Buffer.from(`Bearer ${token}`);
-      if (supplied.length !== expected.length || !timingSafeEqual(supplied, expected)) return json(res, 401, { error: 'เปิดบริการแปลแล้ว Reload extension เพื่อเชื่อมต่อเครื่องนี้' });
+      if (supplied.length !== expected.length || !timingSafeEqual(supplied, expected)) return json(res, 401, { error: 'Start the translation service and reload the extension to connect to this machine' });
       if (req.headers.origin && !/^chrome-extension:\/\/[a-p]{32}$/.test(req.headers.origin)) return json(res, 403, { error: 'Origin rejected' });
       const url = new URL(req.url, 'http://127.0.0.1');
       if (req.method === 'POST' && url.pathname === '/jobs') {
-        if (active) return json(res, 409, { error: 'มีภาพอื่นกำลังแปลอยู่ กรุณารอให้เสร็จแล้วลองใหม่' });
+        if (active) return json(res, 409, { error: 'Another image is being translated. Please wait for it to finish and try again' });
         let body;
         try { body = JSON.parse((await boundedBody(req, 256 * 1024)).toString('utf8')); }
         catch { return json(res, 400, { error: 'Invalid request body' }); }
-        if (!validEpisodeRequest(body)) return json(res, 400, { error: 'ต้องส่งภาพเรียงลำดับจากตอน Naver เดียวกัน กรุณา Reload extension' });
-        if (active) return json(res, 409, { error: 'มีภาพอื่นกำลังแปลอยู่ กรุณารอแล้วลองใหม่' });
+        if (!validEpisodeRequest(body)) return json(res, 400, { error: 'Images must be in order and from the same Naver episode. Please reload the extension' });
+        if (active) return json(res, 409, { error: 'Another image is being translated. Please wait and try again' });
         const id = randomUUID();
         active = id;
         const directory = path.join(work, id);
-        const job = { id, status: 'running', message: 'กำลังเริ่มแปล', url: body.urls[body.index], started: Date.now() };
+        const job = { id, status: 'running', message: 'Starting translation', url: body.urls[body.index], started: Date.now() };
         try {
           await mkdir(directory, { recursive: true });
           await save(path.join(directory, 'job.json'), job);
@@ -117,14 +117,14 @@ export function createServer({ token, work = defaultWork, run = runTranslation }
           let finished;
           try {
             const result = await run({ urls: body.urls, index: body.index }, directory, progress, AbortSignal.any([abort.signal, AbortSignal.timeout(14 * 60 * 1000)]));
-            finished = { ...job, ...result, status: 'done', message: result.regions ? 'แปลเสร็จแล้ว' : 'ไม่พบข้อความเกาหลีที่อ่านได้' };
+            finished = { ...job, ...result, status: 'done', message: result.regions ? 'Translation complete' : 'No readable Korean text found' };
           } catch (error) { finished = { ...job, status: 'error', message: error.message }; }
           finished.finished = Date.now();
           try {
             await save(path.join(directory, 'job.json'), finished);
             jobs.set(id, finished);
           } catch (error) {
-            jobs.set(id, { ...job, status: 'error', message: 'บันทึกผลแปลไม่สำเร็จ กรุณาตรวจพื้นที่ดิสก์' });
+            jobs.set(id, { ...job, status: 'error', message: 'Could not save the translation result. Please check disk space' });
             throw error;
           }
           finally { active = null; }
@@ -136,14 +136,14 @@ export function createServer({ token, work = defaultWork, run = runTranslation }
       const directory = path.join(work, match[1]);
       let job;
       try { job = jobs.get(match[1]) || JSON.parse(await readFile(path.join(directory, 'job.json'), 'utf8')); }
-      catch (error) { if (error.code === 'ENOENT') return json(res, 404, { error: 'ไม่พบงานแปล' }); throw error; }
+      catch (error) { if (error.code === 'ENOENT') return json(res, 404, { error: 'Translation job not found' }); throw error; }
       if (job.status === 'running' && active !== job.id) {
-        job.status = 'error'; job.message = 'บริการแปลหยุดก่อนงานเสร็จ กรุณากดแปลใหม่';
+        job.status = 'error'; job.message = 'The translation service stopped before the job finished. Please translate again';
       }
       if (!match[2]) return json(res, 200, job);
-      if (job.status !== 'done') return json(res, 409, { error: 'ผลแปลยังไม่พร้อม' });
+      if (job.status !== 'done') return json(res, 409, { error: 'The translation result is not ready' });
       const file = path.join(directory, 'source.png');
-      if ((await stat(file)).size > maxBytes) return json(res, 413, { error: 'ผลลัพธ์ใหญ่เกินไป' });
+      if ((await stat(file)).size > maxBytes) return json(res, 413, { error: 'The result is too large' });
       return json(res, 200, { image: `data:image/png;base64,${(await readFile(file)).toString('base64')}` });
     } catch (error) {
       if (!res.headersSent) json(res, 500, { error: error.message });

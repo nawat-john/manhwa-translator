@@ -1,38 +1,38 @@
-// ตั้งค่ากลาง — ใช้ร่วมกันทั้ง pick-box.mjs และ scrape.mjs
-// สำคัญ: viewport/deviceScaleFactor ต้องเหมือนกันทั้งสองสคริปต์
-// ไม่งั้นพิกัดกรอบที่ลากไว้จะเลื่อน
+// Shared configuration for pick-box.mjs and scrape.mjs
+// Important: viewport/deviceScaleFactor must match in both scripts
+// Otherwise, the selected capture box will shift
 export default {
-  // URL ที่จะแคป (ใช้กับ scrape.mjs) — โหมดกดลูกศรใช้ click.startUrl แทน
+  // URLs to capture (scrape.mjs) — arrow navigation uses click.startUrl instead
   urls: ["https://comic-days.com/episode/3270375685434847971"],
 
-  pad: 4, // จำนวนหลักของชื่อไฟล์ (4 → 0001.png)
+  pad: 4, // Filename digits (4 → 0001.png)
 
   outDir: 'vol2',
 
   viewport: { width: 1280, height: 900 },
-  deviceScaleFactor: 2, // 2 = ภาพคมขึ้นเท่าตัว
+  deviceScaleFactor: 2, // 2 = double the image resolution
 
-  waitFor: 'canvas', // selector ที่รอให้โผล่ก่อนแคป (null = ไม่รอ)
-  scrollToBottom: true, // เลื่อนลงล่างก่อน เพื่อกระตุ้น lazy-load
-  settleMs: 600, // รอหลังโหลดเสร็จ ให้ภาพ/ฟอนต์นิ่ง
-  politeDelayMs: 1200, // เว้นระยะระหว่างหน้า อย่ายิงรัวเกินไป
+  waitFor: 'canvas', // Selector to wait for before capture (null = do not wait)
+  scrollToBottom: true, // Scroll to the bottom first to trigger lazy loading
+  settleMs: 600, // Wait after loading for images/fonts to settle
+  politeDelayMs: 1200, // Delay between pages to avoid excessive requests
 
   headless: true,
-  overwrite: false, // false = ข้ามไฟล์ที่มีอยู่แล้ว (resume ได้)
+  overwrite: false, // false = skip existing files (supports resuming)
 
-  // โหมดกดลูกศรซ้าย (scrape-click.mjs) — snapshot → กดลูกศร → รอโหลด → วนใหม่
+  // Left-arrow mode (scrape-click.mjs) — snapshot → press arrow → wait for loading → repeat
   click: {
-    startUrl: '', // หน้าแรกที่จะเริ่มวน (ส่งทาง argv ก็ได้)
+    startUrl: '', // Starting page (can also be passed via argv)
 
-    // วิธีไปหน้าถัดไป เลือกอย่างใดอย่างหนึ่ง (ลำดับความสำคัญ: selector > key > point)
-    key: null, // กดคีย์บอร์ด เช่น 'ArrowLeft'
-    selector: null, // คลิกปุ่มตาม CSS selector
-    point: { x: 0, y: 300 }, // คลิกพิกัดในจอ — ใส่ { xPct, yPct } แทนก็ได้ถ้าอยากคิดเป็นสัดส่วน
+    // Choose a navigation method (priority: selector > key > point)
+    key: null, // Press a keyboard key, e.g. 'ArrowLeft'
+    selector: null, // Click a button by CSS selector
+    point: { x: 0, y: 300 }, // Click screen coordinates — use { xPct, yPct } for relative coordinates
 
-    maxPages: 500, // กันวนไม่รู้จบ
-    afterClickMs: 5000, // รอหลังกดนานสุดเท่านี้ (ออกเร็วถ้าเนื้อหาเปลี่ยนก่อน)
-    imgWaitMs: 8000, // เพดานเวลารอรูปโหลด กันค้างเวลารูปโหลดไม่ขึ้น
-    startIndex: 1, // เลขลำดับเริ่มต้นของชื่อไฟล์/log
-    logFile: 'pages.log', // ไฟล์เก็บ url ของแต่ละหน้า
+    maxPages: 500, // Prevent an endless loop
+    afterClickMs: 5000, // Maximum wait after clicking (ends early if content changes)
+    imgWaitMs: 8000, // Image loading timeout to prevent hanging on broken images
+    startIndex: 1, // Starting sequence number for filenames/logs
+    logFile: 'pages.log', // File containing the URL of each page
   },
 };

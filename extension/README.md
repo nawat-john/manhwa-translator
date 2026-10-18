@@ -1,79 +1,79 @@
 # Manga Lab — Chrome extension for Naver
 
-รุ่นแรก: ปุ่ม **แปลภาพนี้ · EN** สำหรับภาพ `content_image_*` บนหน้าอ่านเว็บตูน Naver ใช้ EasyOCR + M2M100 + LaMa ในเครื่อง แปลเกาหลีเป็นอังกฤษแล้วแสดงภาพผลลัพธ์ในตำแหน่งเดิม กด **ดูต้นฉบับ / ดูคำแปลอังกฤษ** เพื่อสลับได้ทันที
+Initial version: a **Translate image · EN** button for `content_image_*` images on Naver webtoon reader pages. It uses EasyOCR + M2M100 + LaMa locally to translate Korean into English and displays the result in place. Click **View original / View English translation** to toggle immediately.
 
-## เริ่มใช้งานบนเครื่องนี้
+## Getting started on this machine
 
-1. เปิด terminal ที่ root โปรเจ็กต์ แล้วรัน `npm run extension:serve` เปิดหน้าต่างนี้ค้างไว้
-2. เปิด Chrome ที่ `chrome://extensions` แล้วเปิด **Developer mode**
-3. กด **Load unpacked** เลือกโฟลเดอร์ `D:\Code\hanaori-san-scrape\extension`
-4. เปิดหรือรีเฟรช https://comic.naver.com/webtoon/detail?titleId=845456&no=25&week=wed
-5. กด **แปลภาพนี้ · EN** ที่มุมขวาบนของภาพ รอจนปุ่มเปลี่ยนเป็น **ดูต้นฉบับ**
+1. Open a terminal at the project root, run `npm run extension:serve` and leave it open.
+2. Open `chrome://extensions` in Chrome and enable **Developer mode**.
+3. Click **Load unpacked** and select `D:\Code\hanaori-san-scrape\extension`.
+4. Open or refresh https://comic.naver.com/webtoon/detail?titleId=845456&no=25&week=wed.
+5. Click **Translate image · EN** at the top-right of an image and wait for the button to change to **View original**.
 
-บริการสร้าง `config.local.js` สำหรับเชื่อมต่อเครื่องนี้อัตโนมัติในขั้นตอนแรก จึงต้องเปิดบริการก่อนโหลด extension ไม่ต้องเปิด Manga Lab หรือบริการพอร์ต 4173
+The service automatically creates `config.local.js` to connect to this machine in step 1, so start it before loading the extension. Manga Lab and its service on port 4173 are not required.
 
-ถ้า Chrome แจ้งว่า `config.local.js` หาย ให้รันบริการก่อนแล้วกด Reload extension หากบริการแจ้งเชื่อมต่อไม่ถูกต้อง ให้ Reload extension และรีเฟรชหน้า Naver ใหม่
+If Chrome reports a missing `config.local.js`, start the service and reload the extension. If the service reports an invalid connection, reload the extension and refresh the Naver page.
 
-## พฤติกรรม
+## Behavior
 
-- กด **แปลทั้งหมด · EN** ที่มุมขวาล่างเพื่อแปลภาพที่อยู่ในหน้าตอนนี้ตามลำดับทีละภาพ พร้อมแสดงความคืบหน้าและวางผลทับภาพเดิม ใช้การต่อภาพข้ามรอยต่อเหมือนปุ่มแปลรายภาพ
-- กด **หยุดหลังภาพนี้** เพื่อหยุดคิวเมื่อภาพปัจจุบันเสร็จ กดแปลทั้งหมดอีกครั้งเพื่อทำต่อ โดยข้ามภาพที่แปลแล้วหรือไม่พบข้อความในหน้านี้ หากบริการผิดพลาดจะหยุดพร้อมแสดงสาเหตุ ภาพที่แปลแล้วสามารถสลับดูต้นฉบับได้ตามเดิม
-- เริ่มแปลเมื่อกดปุ่มเท่านั้น การรีเฟรชหรือปิดหน้าจะทำให้คิวและสถานะบนหน้าหายไป
-- ก่อนแปล จะต่อภาพก่อนหน้า/ถัดไปจนพบช่องว่างแนวนอน แล้วแบ่งหน้าย่อยที่ช่องว่างนั้น เพื่อให้ข้อความที่คร่อมรอยต่อไฟล์อยู่ครบก่อน OCR
-- ช่องว่างคือแถบสีขาวเกือบล้วนหรือดำเกือบล้วนตลอดความกว้าง หนาอย่างน้อย 24px ตัดกลางแถบและเก็บทุกพิกเซล ไม่ตัดตัวอักษรเพื่อให้พอดีจำนวนพิกเซล
-- ผลของหน้าย่อยถูกตัดกลับตามพิกัดไฟล์ที่กดเท่านั้น จึงไม่เปลี่ยนความสูงภาพหรือตำแหน่งการเลื่อนบนเว็บ เมื่อกดภาพถัดไปจะใช้เนื้อหาข้างเคียงแบบเดียวกัน
-- ทำงานครั้งละหนึ่งภาพ ถ้าอีกภาพกำลังแปลอยู่จะแจ้งให้รอแล้วลองใหม่
-- แสดงภาพเดิมจนกว่าผลจะพร้อมและเปิดอ่านได้ ไม่มีการทับไฟล์ภาพต้นฉบับ
-- งานมี ID แยกกัน ป้องกันนำผลของภาพหนึ่งไปแสดงบนอีกภาพ
-- ถ้า OCR ไม่อ่านข้อความเกาหลีออก จะคงต้นฉบับและแจ้งว่าไม่พบข้อความ
-- รองรับภาพที่เพิ่มภายหลังด้วย lazy loading และจัดตำแหน่งปุ่มใหม่เมื่อเลื่อน/ปรับหน้าต่าง
-- การสลับภาพในแท็บเดิมใช้ผลที่โหลดแล้ว ไม่สั่งแปลซ้ำ
-- ถ้าออกจากหน้า งานที่เริ่มแล้วอาจยังทำต่อในเครื่อง ผลอยู่บนดิสก์ แต่การรีเฟรชหน้าไม่คืนสถานะงานเดิม
-- ถ้าบริการปิดกลางงาน ให้เปิดใหม่แล้วกดแปลใหม่ ไม่รายงานงานที่ค้างว่าเสร็จแล้ว
+- Click **Translate all · EN** at the bottom-right to translate the episode's images sequentially, show progress and replace each image with its result. It joins neighboring images in the same way as individual translation.
+- Click **Stop after this image** to stop the queue once the current image finishes. Click Translate all again to continue, skipping images already translated or found to contain no text on this page. Service errors stop the queue and display the reason. Translated images can still be toggled back to their originals.
+- Translation starts only after a button click. Refreshing or closing the page clears the queue and page state.
+- Before translation, preceding/following images are joined until horizontal whitespace is found, then split into panels at that whitespace so text crossing file boundaries remains intact for OCR.
+- Whitespace is a nearly all-white or all-black band across the full width, at least 24px thick. Splits use the middle of the band and preserve every pixel; text is not cut to meet a pixel limit.
+- Translated panels are cropped back to the selected source image's coordinates, preserving image height and scroll position. The next image uses neighboring context in the same way.
+- Only one image is translated at a time. If another is running, the service asks you to wait and retry.
+- The original remains visible until the result is ready and decodable. Source image files are never overwritten.
+- Each job has its own ID to prevent applying one image's result to another.
+- If OCR finds no readable Korean text, the original is retained and a no-text message appears.
+- Images added by lazy loading are supported; buttons reposition on scrolling/resizing.
+- Toggling in the same tab reuses the loaded result without translating again.
+- Leaving the page may not stop a local job. Results remain on disk, but refreshing does not restore the previous job state.
+- If the service stops during a job, restart it and translate again. Interrupted jobs are not reported as complete.
 
-## ข้อมูลและสิทธิ์
+## Data and permissions
 
-บริการฟังเฉพาะ `127.0.0.1:4174` และใช้ token ที่สร้างในเครื่องทุกคำขอ Token อยู่ใน `translator/work/extension/token` และ `extension/config.local.js` **อย่าส่งสองไฟล์นี้ให้ผู้อื่น** หากเผยแพร่โค้ดให้แต่ละเครื่องสร้าง token เอง
+The service listens only on `127.0.0.1:4174` and requires a locally generated token for every request. The token is stored in `translator/work/extension/token` and `extension/config.local.js`. **Do not share these two files.** Each machine should generate its own token when using published code.
 
-Content script ทำงานเฉพาะ `https://comic.naver.com/webtoon/detail*` ส่วน service worker มี host permission สำหรับ loopback เพื่อคุยกับบริการ ภาพต้นทางดาวน์โหลดโดยบริการจาก `https://image-comic.pstatic.net/webtoon/<title>/<episode>/...` เท่านั้น ไม่รับ path ในเครื่องหรือ URL ไปยังเซิร์ฟเวอร์อื่น และไม่ตาม redirect
+The content script runs only on `https://comic.naver.com/webtoon/detail*`. The service worker has loopback host permission to communicate with the service. Source images are downloaded only from `https://image-comic.pstatic.net/webtoon/<title>/<episode>/...`; local paths, other servers and redirects are rejected.
 
-ตรวจชนิดภาพและจำกัดไฟล์ 20 MiB, ภาพนิ่ง JPEG/PNG/WebP, ไม่เกิน 16 ล้านพิกเซล และด้านละไม่เกิน 16000px ผลลัพธ์จำกัด 20 MiB เช่นกัน รายการภาพต้องเรียงจากตอนเดียวกัน ไม่ซ้ำ และไม่เกิน 300 ภาพ แต่จะดาวน์โหลดเฉพาะภาพที่จำเป็นต่อการหาขอบเขตของภาพที่กด จำกัดบริบทไม่เกิน 32 ไฟล์หรือ 80 MiB ถ้าหาช่องว่างไม่พบภายในขีดจำกัด จะหยุดพร้อมข้อผิดพลาดแทนการตัดเนื้อหา
+Input images are validated: at most 20 MiB, static JPEG/PNG/WebP, at most 16 million pixels and no dimension above 16000px. Results are also limited to 20 MiB. The image list must be ordered, contain no duplicates, come from one episode and contain at most 300 images. Only images needed to find the selected image's boundaries are downloaded. Context is limited to 32 files or 80 MiB. If no whitespace is found within those limits, the job fails instead of cutting content.
 
-ภาพและข้อความประมวลผลในเครื่อง ไม่มีการส่งไป API แปลภาษา บริการอาจติดต่อแหล่งดาวน์โหลดโมเดลเพื่อโหลดโมเดล/ตรวจ cache
+Images and text are processed locally, without sending them to a translation API. The service may contact model download sources to download models or check caches.
 
-แต่ละงานเก็บใน `translator/work/extension/<job-id>/`:
+Each job is stored in `translator/work/extension/<job-id>/`:
 
-- `request.json`, `inputs/`: ลำดับ URL และไฟล์ต้นฉบับที่จำเป็น
-- `panels/`, `context.json`: หน้าย่อยก่อนแปลและแผนที่พิกัดจากไฟล์เดิม
-- `translated/`: ผลแปลหน้าย่อย พร้อม `ocr.json`, `translations.json`, `inputs.json` สำหรับตรวจข้อความและ cache
-- `source.png`: ผลแปลที่ประกอบกลับเฉพาะพื้นที่ของภาพที่กด ขนาดเท่าภาพเดิม
-- `job.json`, `worker.log`: สถานะและรายละเอียดเมื่อเกิดปัญหา
+- `request.json`, `inputs/`: URL order and required source files.
+- `panels/`, `context.json`: panels before translation and coordinate mapping to the source files.
+- `translated/`: translated panels, with `ocr.json`, `translations.json` and `inputs.json` for text review and caching.
+- `source.png`: translated content projected back onto the selected image's area, with the original dimensions.
+- `job.json`, `worker.log`: status and troubleshooting details.
 
-## ข้อจำกัดของรุ่นทดลอง
+## Experimental limitations
 
-ยังใช้โมเดลชุดทดลองเดิม คำแปลเกาหลีอาจผิดและพลาดตัวอักษรเอฟเฟกต์ การต่อภาพแก้การตัดข้อความตรงรอยต่อไฟล์ แต่ไม่แก้การอ่านผิดหรือการแปลผิดของโมเดล ช่องว่างสีอื่นหรือภาพที่ไม่มีช่องว่างชัดเจนยังไม่รองรับ และภาพที่นำมาต่อต้องกว้างเท่ากัน รองรับเฉพาะ Naver เกาหลี → อังกฤษ; ยังไม่เชื่อมหน้าแปลญี่ปุ่น และยังไม่รองรับเว็บที่วาดภาพลง canvas
+This still uses the original experimental models. Korean translations can be incorrect, and sound-effect lettering may be missed. Joining images fixes text cut at file boundaries, but does not fix OCR or translation errors. Other whitespace colors and images without clear whitespace are unsupported, and joined images must have equal widths. Only Naver Korean → English is supported; the Japanese translation page is not connected, and canvas-based readers are unsupported.
 
-เริ่ม Python worker และโหลดโมเดลใหม่ต่อภาพ จึงมีเวลารอช่วงเริ่มต้น โดยใช้ GPU ถ้ามี CUDA หรือ CPU ถ้าไม่มี หลีกเลี่ยงการเปิด batch แปลหรือปุ่มแปลใน Manga Lab พร้อมกัน เพราะบริการคนละตัวใช้ GPU เดียวกัน ไฟล์งานจะสะสมอยู่บนดิสก์ ยังไม่มีระบบล้างอัตโนมัติ
+A new Python worker starts and loads models for each image, adding startup time. CUDA uses the GPU when available; otherwise the CPU is used. Avoid running batch translation or Manga Lab translation simultaneously because the separate services share the GPU. Job files accumulate on disk; there is no automatic cleanup.
 
-## ตรวจการทำงาน
+## Verification
 
 ```powershell
 npm run test:extension
-# ทดสอบปุ่มแปลทั้งหมดด้วยบริการจำลอง ไม่เรียกโมเดลแปล
+# Test Translate all with a mock service, without translation models
 node extension/check-batch.mjs
 & translator/.venv/Scripts/python.exe translator/test_korean_input.py
 & translator/.venv/Scripts/python.exe translator/test_split_webtoon.py
-# เปิดบริการไว้ก่อน: ใช้ Chromium ของ Playwright โหลด extension จริงและแปลภาพจริง
+# Start the service first: load the real extension in Playwright Chromium and translate a real image
 node extension/check-browser.mjs
 ```
 
-บริการ extension ใช้ `translate_webtoon.py` สำหรับต่อภาพและฉายผลกลับ ส่วน `translate_korean_sample.py` ใช้แปลหน้าย่อยร่วมกัน สามารถแบ่งและทดลอง 10 หน้าย่อยแรกในเครื่องได้ดังนี้:
+The extension service uses `translate_webtoon.py` to join images and project results back, while `translate_korean_sample.py` provides shared panel translation. To split and test the first 10 panels locally:
 
 ```powershell
 & translator/.venv/Scripts/python.exe translator/split_webtoon.py samples/naver-845456-25 samples/naver-845456-25/panels
 & translator/.venv/Scripts/python.exe translator/translate_korean_sample.py
 ```
 
-หากนำไปเครื่องใหม่ ต้องตั้ง environment ตาม `translator/README.md` และติดตั้ง EasyOCR ตามคู่มือชุดทดลองเกาหลีก่อน
+On a new machine, set up the environment using `translator/README.md` and install EasyOCR as described in the Korean trial guide.
 
-หลังอัปเดตจากรุ่นแปลไฟล์เดี่ยว ให้ restart `npm run extension:serve`, กด Reload extension และรีเฟรชหน้า Naver เพื่อส่งรายการภาพข้างเคียงได้ ผลทดลองเดิมใน `english-10` เก็บไว้ ผลใหม่อยู่ที่ `english-panels-10` โดยแยก cache และตรวจ fingerprint ของภาพก่อนใช้ซ้ำ
+After upgrading from the single-file translation version, restart `npm run extension:serve`, reload the extension and refresh Naver so neighboring image lists can be sent. Previous trial results remain in `english-10`; new results are in `english-panels-10`, with separate caches and image fingerprint checks before reuse.

@@ -1,7 +1,7 @@
-// ตัว scraper — วนทุก URL ใน config.urls แล้วแคปตามกรอบใน box.json
+// Scraper — iterate over config.urls and capture the box defined in box.json
 //
-//   node scrape.mjs            // ทุก URL
-//   node scrape.mjs 5 12       // เฉพาะลำดับที่ 5–12 ในลิสต์
+//   node scrape.mjs            // All URLs
+//   node scrape.mjs 5 12       // Only entries 5–12 in the list
 import { chromium } from 'playwright';
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import path from 'node:path';
@@ -10,12 +10,12 @@ import cfg from './config.mjs';
 const box = await readFile('box.json', 'utf8')
   .then(JSON.parse)
   .catch(() => {
-    console.error('ไม่เจอ box.json — รัน `node pick-box.mjs` ก่อน');
+    console.error('box.json not found — run `node pick-box.mjs` first');
     process.exit(1);
   });
 
 if (!cfg.urls.length) {
-  console.error('config.urls ว่าง — ใส่ URL ลงไป หรือใช้ `node scrape-click.mjs` แทน');
+  console.error('config.urls is empty — add URLs or use `node scrape-click.mjs` instead');
   process.exit(1);
 }
 
@@ -53,10 +53,10 @@ async function capture(page, url, out) {
   await page.waitForTimeout(cfg.settleMs);
 
   if (box.selector && !box.clip) {
-    // โหมด selector — กรอบขยับตามอิลิเมนต์เอง ทนกว่าเวลาเลย์เอาต์เปลี่ยน
+    // Selector mode — the box follows the element and tolerates layout changes
     await page.locator(box.selector).first().screenshot({ path: out });
   } else {
-    // โหมดพิกัด — clip เทียบกับทั้งหน้าเพจ เพราะใส่ fullPage: true
+    // Coordinate mode — clip is relative to the full page because fullPage is true
     await page.screenshot({ path: out, fullPage: true, clip: box.clip });
   }
 }
@@ -74,7 +74,7 @@ const failed = [];
 for (const { n, url } of jobs) {
   const out = path.join(cfg.outDir, `${String(n).padStart(cfg.pad, '0')}.png`);
   if (!cfg.overwrite && (await exists(out))) {
-    console.log(`ข้าม  ${out}`);
+    console.log(`Skip  ${out}`);
     continue;
   }
 
@@ -82,12 +82,12 @@ for (const { n, url } of jobs) {
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       await capture(page, url, out);
-      console.log(`ได้   ${out}`);
+      console.log(`Saved ${out}`);
       lastErr = null;
       break;
     } catch (err) {
       lastErr = err;
-      console.warn(`พลาด (ครั้งที่ ${attempt}) หน้า ${n}: ${err.message.split('\n')[0]}`);
+      console.warn(`Failed (attempt ${attempt}) page ${n}: ${err.message.split('\n')[0]}`);
       await page.waitForTimeout(2000);
     }
   }
@@ -100,7 +100,7 @@ await browser.close();
 
 if (failed.length) {
   await writeFile('failed.json', `${JSON.stringify(failed, null, 2)}\n`, 'utf8');
-  console.log(`\nไม่สำเร็จ ${failed.length} หน้า — ดูรายละเอียดใน failed.json`);
+  console.log(`\nFailed on ${failed.length} pages — see failed.json for details`);
 } else {
-  console.log('\nครบทุกหน้า');
+  console.log('\nAll pages complete');
 }

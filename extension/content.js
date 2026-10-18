@@ -8,7 +8,7 @@
   toolbar.dataset.mangaLabToolbar = '';
   Object.assign(toolbar.style, { position: 'fixed', bottom: '16px', right: '16px', zIndex: '2147483001', maxWidth: 'calc(100vw - 32px)' });
   const controls = toolbar.attachShadow({ mode: 'open' });
-  controls.innerHTML = `<style>:host{font:13px/1.5 system-ui,Tahoma,sans-serif}section{background:#fff;color:#22382b;padding:12px;border:1px solid #ccd8d0;border-radius:12px;box-shadow:0 3px 18px #0003;max-width:320px}button{font:inherit;background:#24583f;color:white;border:0;border-radius:8px;padding:9px 14px;cursor:pointer}button:disabled{opacity:.55;cursor:wait}button:focus-visible{outline:3px solid #e5b636;outline-offset:2px}span{display:block;margin-top:6px;overflow-wrap:anywhere}</style><section><button type="button">แปลทั้งหมด · EN</button><span role="status" aria-live="polite">แปลภาพในตอนนี้ตามลำดับ</span></section>`;
+  controls.innerHTML = `<style>:host{font:13px/1.5 system-ui,Tahoma,sans-serif}section{background:#fff;color:#22382b;padding:12px;border:1px solid #ccd8d0;border-radius:12px;box-shadow:0 3px 18px #0003;max-width:320px}button{font:inherit;background:#24583f;color:white;border:0;border-radius:8px;padding:9px 14px;cursor:pointer}button:disabled{opacity:.55;cursor:wait}button:focus-visible{outline:3px solid #e5b636;outline-offset:2px}span{display:block;margin-top:6px;overflow-wrap:anywhere}</style><section><button type="button">Translate all · EN</button><span role="status" aria-live="polite">Translate this episode in order</span></section>`;
   const allButton = controls.querySelector('button');
   const progress = controls.querySelector('span');
   document.body.append(toolbar);
@@ -23,7 +23,7 @@
     if (!event.isTrusted) return;
     if (batching) {
       stopRequested = true;
-      allButton.textContent = 'กำลังรอภาพปัจจุบันเสร็จ…';
+      allButton.textContent = 'Waiting for the current image…';
       updateButtons();
       return;
     }
@@ -31,24 +31,24 @@
     const images = episodeImages();
     let completed = 0;
     batching = true; stopRequested = false;
-    allButton.textContent = 'หยุดหลังภาพนี้';
+    allButton.textContent = 'Stop after this image';
     updateButtons();
     try {
       for (const image of images) {
         if (stopRequested) break;
-        if (!image.isConnected) throw new Error('รายการภาพเปลี่ยน กรุณาลองใหม่');
+        if (!image.isConnected) throw new Error('The image list changed. Please try again');
         const state = states.get(image);
-        progress.textContent = `กำลังแปล ${completed + 1}/${images.length} ภาพ`;
+        progress.textContent = `Translating image ${completed + 1}/${images.length}`;
         if (state.translated) show(state, true);
         else if (state.noTextURL !== sourceURL(image)) await translate(state);
         completed++;
       }
-      progress.textContent = `${stopRequested ? 'หยุดแล้ว' : 'เสร็จแล้ว'} · ตรวจแล้ว ${completed}/${images.length} ภาพ (ภาพที่ไม่มีข้อความคงต้นฉบับไว้)`;
+      progress.textContent = `${stopRequested ? 'Stopped' : 'Done'} · Checked ${completed}/${images.length} images (images without text keep the original)`;
     } catch (error) {
-      progress.textContent = `หยุดที่ ${completed}/${images.length} ภาพ · ${error.message} · กดแปลทั้งหมดเพื่อทำต่อ`;
+      progress.textContent = `Stopped at ${completed}/${images.length} images · ${error.message} · Click Translate all to continue`;
     } finally {
       batching = false;
-      allButton.textContent = 'แปลทั้งหมด · EN';
+      allButton.textContent = 'Translate all · EN';
       updateButtons();
     }
   };
@@ -59,7 +59,7 @@
       if (response.error) throw new Error(response.error);
       return response;
     } catch (error) {
-      if (/context invalidated/i.test(error.message)) throw new Error('Extension ถูกโหลดใหม่ กรุณารีเฟรชหน้าเว็บ');
+      if (/context invalidated/i.test(error.message)) throw new Error('The extension was reloaded. Please refresh the page');
       throw error;
     }
   };
@@ -98,9 +98,9 @@
     state.showing = translated;
     state.expectedSrc = image.getAttribute('src');
     state.expectedSrcset = image.getAttribute('srcset');
-    state.button.textContent = translated ? 'ดูต้นฉบับ' : 'ดูคำแปลอังกฤษ';
+    state.button.textContent = translated ? 'View original' : 'View English translation';
     state.button.setAttribute('aria-pressed', String(translated));
-    state.status.textContent = translated ? 'KO → EN · คำแปลอัตโนมัติ' : 'ต้นฉบับภาษาเกาหลี';
+    state.status.textContent = translated ? 'KO → EN · Machine translation' : 'Korean original';
     schedule();
   }
 
@@ -110,7 +110,7 @@
     host.dataset.mangaLab = image.id;
     Object.assign(host.style, { position: 'absolute', zIndex: '2147483000', pointerEvents: 'none' });
     const shadow = host.attachShadow({ mode: 'open' });
-    shadow.innerHTML = `<style>:host{font:13px/1.5 system-ui,Tahoma,sans-serif;text-align:right}button{font:inherit;font-weight:600;color:white;background:#24583f;border:1px solid #fff9;border-radius:9px;padding:8px 14px;cursor:pointer;box-shadow:0 2px 10px #0003;pointer-events:auto}button:hover{background:#173e2c}button:focus-visible{outline:3px solid #f4c75f;outline-offset:3px}button:disabled{background:#56675d;cursor:wait}span{display:block;margin-top:4px;padding:4px 8px;background:#fffffff0;color:#22382b;border-radius:5px;font-size:11px;overflow-wrap:anywhere}span:empty{display:none}</style><button type="button" aria-pressed="false">แปลภาพนี้ · EN</button><span role="status" aria-live="polite"></span>`;
+    shadow.innerHTML = `<style>:host{font:13px/1.5 system-ui,Tahoma,sans-serif;text-align:right}button{font:inherit;font-weight:600;color:white;background:#24583f;border:1px solid #fff9;border-radius:9px;padding:8px 14px;cursor:pointer;box-shadow:0 2px 10px #0003;pointer-events:auto}button:hover{background:#173e2c}button:focus-visible{outline:3px solid #f4c75f;outline-offset:3px}button:disabled{background:#56675d;cursor:wait}span{display:block;margin-top:4px;padding:4px 8px;background:#fffffff0;color:#22382b;border-radius:5px;font-size:11px;overflow-wrap:anywhere}span:empty{display:none}</style><button type="button" aria-pressed="false">Translate image · EN</button><span role="status" aria-live="polite"></span>`;
     const state = { image, host, button: shadow.querySelector('button'), status: shadow.querySelector('span'), showing: false };
     states.set(image, state);
     document.body.append(host);
@@ -133,12 +133,12 @@
       updateButtons();
       state.src = image.getAttribute('src'); state.srcset = image.getAttribute('srcset');
       state.button.disabled = true;
-      state.button.textContent = 'กำลังแปล…';
-      state.status.textContent = 'กำลังต่อเนื้อหาข้ามรอยต่อภาพก่อนแปล';
+      state.button.textContent = 'Translating…';
+      state.status.textContent = 'Joining content across image boundaries before translation';
       try {
         const episode = episodeImages();
         if (!episode.every((image, index) => image.id === `content_image_${index}`)) {
-          throw new Error('ลำดับภาพยังโหลดไม่ครบ กรุณารอแล้วลองใหม่');
+          throw new Error('The image sequence has not fully loaded. Please wait and try again');
         }
         const urls = episode.map(image => {
           const state = states.get(image);
@@ -148,23 +148,23 @@
         let job = await send({ type: 'translate', urls, index: episode.indexOf(image) });
         const deadline = Date.now() + 15 * 60 * 1000;
         while (job.status === 'running') {
-          if (!image.isConnected || sourceURL(image) !== url) throw new Error('ภาพต้นทางเปลี่ยน กรุณากดแปลใหม่');
-          if (Date.now() > deadline) throw new Error('รอนานเกิน 15 นาที กรุณาตรวจหน้าต่างบริการแปล');
-          state.status.textContent = job.message || 'กำลังอ่าน แปล และวางข้อความ…';
+          if (!image.isConnected || sourceURL(image) !== url) throw new Error('The source image changed. Please translate again');
+          if (Date.now() > deadline) throw new Error('Waited more than 15 minutes. Please check the translation service terminal');
+          state.status.textContent = job.message || 'Reading, translating and rendering text…';
           await new Promise(resolve => setTimeout(resolve, 1500));
           job = await send({ type: 'status', id: job.id });
         }
         if (job.status === 'error') throw new Error(job.message);
-        if (!image.isConnected || sourceURL(image) !== url) throw new Error('ภาพต้นทางเปลี่ยน กรุณากดแปลใหม่');
+        if (!image.isConnected || sourceURL(image) !== url) throw new Error('The source image changed. Please translate again');
         if (job.regions === 0) {
           state.noTextURL = url;
-          state.status.textContent = 'ไม่พบข้อความเกาหลีที่อ่านได้ — คงภาพต้นฉบับไว้';
+          state.status.textContent = 'No readable Korean text found — keeping the original image';
           return;
         }
         const result = await send({ type: 'result', id: job.id });
         const preview = new Image(); preview.src = result.image;
         await preview.decode();
-        if (!image.isConnected || sourceURL(image) !== url) throw new Error('ภาพต้นทางเปลี่ยน กรุณากดแปลใหม่');
+        if (!image.isConnected || sourceURL(image) !== url) throw new Error('The source image changed. Please translate again');
         state.translated = result.image;
         show(state, true);
       } catch (error) {
@@ -173,7 +173,7 @@
       } finally {
         busy = false;
         updateButtons();
-        if (!state.translated) state.button.textContent = 'แปลภาพนี้ · EN';
+        if (!state.translated) state.button.textContent = 'Translate image · EN';
       }
   }
 
@@ -189,7 +189,7 @@
         if (state?.translated && (record.target.getAttribute('src') !== state.expectedSrc
             || record.target.getAttribute('srcset') !== state.expectedSrcset)) {
           state.translated = null; state.showing = false;
-          state.button.textContent = 'แปลภาพนี้ · EN'; state.button.setAttribute('aria-pressed', 'false');
+          state.button.textContent = 'Translate image · EN'; state.button.setAttribute('aria-pressed', 'false');
           state.status.textContent = '';
         }
       }

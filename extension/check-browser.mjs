@@ -47,10 +47,10 @@ try {
   assert.equal(context.page_map.pages.length, 1);
   assert.ok(context.page_map.start < context.top && context.page_map.end > context.bottom);
   assert.deepEqual(await image.evaluate(image => [image.naturalWidth, image.naturalHeight]), [690, 1600]);
-  await host.getByRole('button', { name: 'ดูต้นฉบับ' }).click();
+  await host.getByRole('button', { name: 'View original' }).click();
   assert.equal(await image.getAttribute('src'), source);
   assert.equal(await image.getAttribute('srcset'), sourceSet);
-  await host.getByRole('button', { name: 'ดูคำแปลอังกฤษ' }).click();
+  await host.getByRole('button', { name: 'View English translation' }).click();
   assert.match(await image.getAttribute('src'), /^data:image\/png;base64,/);
   await page.setViewportSize({ width: 1000, height: 1000 });
   await image.scrollIntoViewIfNeeded();
@@ -59,11 +59,11 @@ try {
   assert.ok(buttonBox.x >= imageBox.x && buttonBox.x + buttonBox.width <= imageBox.x + imageBox.width + 1);
   await mkdir(path.resolve(extension, '../translator/work/extension/screenshots'), { recursive: true });
   await page.screenshot({ path: path.resolve(extension, '../translator/work/extension/screenshots/naver-translated.png') });
-  await host.getByRole('button', { name: 'ดูต้นฉบับ' }).click();
+  await host.getByRole('button', { name: 'View original' }).click();
   // An image element reused by the site must not keep a previous image's translation.
   await image.evaluate(image => { image.src = document.querySelector('#content_image_2').src; });
   await page.waitForTimeout(100);
-  assert.equal(await host.getByRole('button').textContent(), 'แปลภาพนี้ · EN');
+  assert.equal(await host.getByRole('button').textContent(), 'Translate image · EN');
   const currentSource = await image.getAttribute('src');
   // Keep failure-path checks deterministic after the real GPU translation above.
   await browser.route('http://127.0.0.1:4174/jobs', route => route.fulfill({
@@ -77,7 +77,7 @@ try {
     status: 202, contentType: 'application/json', body: JSON.stringify({ status: 'done', regions: 0 }),
   }));
   await host.getByRole('button').click();
-  await page.waitForFunction(() => document.querySelector('[data-manga-lab="content_image_1"]').shadowRoot.querySelector('span').textContent.includes('ไม่พบข้อความ'));
+  await page.waitForFunction(() => document.querySelector('[data-manga-lab="content_image_1"]').shadowRoot.querySelector('span').textContent.includes('No readable Korean text found'));
   assert.equal(await image.getAttribute('src'), currentSource);
   await page.evaluate(() => {
     const image = document.createElement('img'); image.id = 'content_image_999';

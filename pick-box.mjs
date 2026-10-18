@@ -1,13 +1,13 @@
-// ตัวช่วยตีกรอบ — เปิดเบราว์เซอร์จริง ให้ลากเมาส์คร่อมพื้นที่ที่จะแคป
+// Capture box picker — open a browser and drag over the area to capture
 //
-//   node pick-box.mjs                 // ใช้หน้าแรกจาก config
-//   node pick-box.mjs <url>           // ระบุหน้าเอง
+//   node pick-box.mjs                 // Use the first page from config
+//   node pick-box.mjs <url>           // Specify a page
 //
-// คีย์ในหน้าเว็บ:
-//   ลากเมาส์  = วาดกรอบ
-//   Enter     = ยืนยัน เซฟลง box.json
-//   E         = สลับโหมด "เลือกจากอิลิเมนต์" (เอาเมาส์ชี้แล้วคลิก)
-//   Esc       = ล้างกรอบ เริ่มใหม่
+// Page controls:
+//   Drag mouse = draw a box
+//   Enter     = Confirm and save to box.json
+//   E         = Toggle element selection mode (hover and click)
+//   Esc       = Clear the box and start again
 import { chromium } from 'playwright';
 import { writeFile } from 'node:fs/promises';
 import cfg from './config.mjs';
@@ -15,7 +15,7 @@ import cfg from './config.mjs';
 const url = process.argv[2] || cfg.click.startUrl || cfg.urls[0];
 
 if (!url) {
-  console.error('ไม่มี URL — ส่งมาทาง argv หรือใส่ใน config.click.startUrl / config.urls');
+  console.error('No URL — pass one via argv or set config.click.startUrl / config.urls');
   process.exit(1);
 }
 
@@ -26,7 +26,7 @@ const context = await browser.newContext({
 });
 const page = await context.newPage();
 
-console.log(`เปิด ${url}`);
+console.log(`Opening ${url}`);
 await page.goto(url, { waitUntil: 'domcontentloaded' });
 if (cfg.waitFor) {
   await page.waitForSelector(cfg.waitFor, { timeout: 15000 }).catch(() => {});
@@ -55,7 +55,7 @@ await page.evaluate(() => {
 
   let mode = 'drag'; // 'drag' | 'element'
   let start = null;
-  let box = null; // พิกัดหน้าเพจ (page space) — บวก scroll แล้ว
+  let box = null; // Page coordinates (page space), including scroll offset
   let selector = null;
 
   const round = (n) => Math.round(n);
@@ -69,13 +69,13 @@ await page.evaluate(() => {
 
   const render = () => {
     const lines = [
-      mode === 'drag' ? '● โหมดลากกรอบ' : '● โหมดเลือกอิลิเมนต์',
+      mode === 'drag' ? '● Drag mode' : '● Element selection mode',
       box
         ? `x:${box.x}  y:${box.y}  w:${box.width}  h:${box.height}` +
           (selector ? `\nselector: ${selector}` : '')
-        : 'ยังไม่มีกรอบ',
+        : 'No box selected',
       '',
-      'Enter = ยืนยัน   E = สลับโหมด   Esc = ล้าง',
+      'Enter = Confirm   E = Toggle mode   Esc = Clear',
     ];
     hud.textContent = lines.join('\n');
   };
@@ -102,7 +102,7 @@ await page.evaluate(() => {
     return parts.join(' > ');
   };
 
-  // ---- โหมดลากกรอบ ----
+  // ---- Drag mode ----
   overlay.addEventListener('mousedown', (e) => {
     start = { x: e.clientX, y: e.clientY };
     selector = null;
@@ -126,7 +126,7 @@ await page.evaluate(() => {
   });
   overlay.addEventListener('mouseup', () => (start = null));
 
-  // ---- โหมดเลือกอิลิเมนต์ ----
+  // ---- Element selection mode ----
   const onHover = (e) => {
     if (mode !== 'element') return;
     const el = e.target;
@@ -166,7 +166,7 @@ await page.evaluate(() => {
         render();
       } else if (e.key.toLowerCase() === 'e') {
         mode = mode === 'drag' ? 'element' : 'drag';
-        // โหมดอิลิเมนต์ต้องให้เมาส์ทะลุ overlay ไปโดนของจริง
+        // Element mode needs pointer events to pass through the overlay
         overlay.style.pointerEvents = mode === 'element' ? 'none' : 'auto';
         render();
       }
@@ -179,6 +179,6 @@ await page.evaluate(() => {
 
 const result = await picked;
 await writeFile('box.json', `${JSON.stringify(result, null, 2)}\n`, 'utf8');
-console.log('เซฟลง box.json แล้ว:', result);
-console.log('ถ้าอยากใช้ selector แทนพิกัด ให้ลบคีย์ "clip" ออกจาก box.json');
+console.log('Saved to box.json:', result);
+console.log('To use a selector instead of coordinates, remove the "clip" key from box.json');
 await browser.close();
