@@ -1,0 +1,18 @@
+{
+  "name": "hanaori-san-scrape",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "extension:serve": "node extension/server.mjs",
+    "test:extension": "node --test extension/server.test.mjs",
+    "lab": "node lab/server.mjs",
+    "test:lab": "node --test lab/server.test.mjs",
+    "pick": "node pick-box.mjs",
+    "scrape": "node scrape.mjs",
+    "scrape:click": "node scrape-click.mjs",
+    "debug": "node debug.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

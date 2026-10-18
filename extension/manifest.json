@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Manga Lab — Naver Translator",
+  "version": "0.1.0",
+  "description": "Manhwa translator for Naver Webtoon. Translate Korean webtoons to English.",
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://comic.naver.com/webtoon/detail*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}

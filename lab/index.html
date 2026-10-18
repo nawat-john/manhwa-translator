@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="th">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Manga Lab — Translation studio</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<aside>
+  <a class="brand" href="/"><span class="mark">文</span><span>Manga Lab<small>TRANSLATION STUDIO</small></span></a>
+  <div class="collection"><span class="eyebrow">YOUR COLLECTION</span><h2>Hanaori-san</h2><p>ชุดภาพมังงะสำหรับทดสอบ</p></div>
+  <label for="search">ค้นหาหน้า</label><input id="search" type="search" placeholder="เช่น 0024" autocomplete="off">
+  <div class="list-head"><span>หน้าที่แยกแล้ว</span><span id="count">—</span></div>
+  <nav id="pages" aria-label="เลือกหน้ามังงะ"></nav>
+  <footer><span class="dot"></span> LOCAL WORKSPACE<small>ภาพและโมเดลประมวลผลในเครื่อง</small></footer>
+</aside>
+<main>
+  <header><span class="eyebrow">WORKSPACE / IMAGE TRANSLATION</span><span class="local">JA <span>→</span> EN · Sugoi</span></header>
+  <section class="heading"><div><p class="eyebrow accent">READ BEYOND THE LANGUAGE</p><h1>ทุกเรื่องราว อ่านได้ใกล้ขึ้น<span>.</span></h1><p>ตรวจภาพต้นฉบับ เทียบคำแปล และปรับคุณภาพทีละหน้า</p></div><div class="stat"><strong id="completed">—</strong><span>ภาพที่มีผลแปล / <span id="total">—</span></span></div></section>
+  <section class="workspace" aria-label="พื้นที่เปรียบเทียบภาพ">
+    <div class="toolbar"><div class="page-title"><span class="page-icon">▤</span><div><strong id="title">กำลังโหลด…</strong><small id="page-status">Japanese → English</small></div></div><div class="controls"><button id="previous" aria-label="หน้าก่อนหน้า">←</button><button id="next" aria-label="หน้าถัดไป">→</button><button id="translate" class="primary">แปลหน้านี้ใหม่ ↗</button></div></div>
+    <div class="viewbar"><div class="tabs" role="group" aria-label="รูปแบบการแสดง"><button data-mode="compare" aria-pressed="true">เปรียบเทียบ</button><button data-mode="original" aria-pressed="false">ต้นฉบับ</button><button data-mode="translated" aria-pressed="false">คำแปล</button></div><a id="download" download>ดาวน์โหลด PNG ↓</a></div>
+    <div id="viewer" class="viewer" data-mode="compare">
+      <figure id="original-panel"><figcaption><span>ต้นฉบับ</span><span>JAPANESE</span></figcaption><img id="original" alt="ภาพมังงะต้นฉบับภาษาญี่ปุ่น"></figure>
+      <figure id="translated-panel"><figcaption><span><i class="dot"></i> ผลการแปล</span><span>ENGLISH</span></figcaption><img id="translated" alt="ภาพมังงะที่แปลเป็นภาษาอังกฤษ"><p id="empty" hidden>หน้านี้ยังไม่มีผลแปล กดแปลหน้านี้เพื่อเริ่มต้น</p></figure>
+    </div>
+  </section>
+  <div class="bottom"><p id="message" role="status" aria-live="polite">กำลังอ่านคลังภาพ…</p><span>01 OCR <b>→</b> 02 TRANSLATE <b>→</b> 03 REDRAW</span></div>
+  <details><summary>บันทึกการประมวลผล</summary><pre id="log">ยังไม่มีงานแปลในรอบนี้</pre></details>
+  <p class="note">ตรวจคำแปลและข้อความล้นบอลลูนก่อนนำไปใช้ · โมเดลอาจดาวน์โหลดไฟล์เพิ่มเติมในการรันครั้งแรก</p>
+</main>
+</body></html>

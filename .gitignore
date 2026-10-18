@@ -1,0 +1,26 @@
+# Local extension credentials, downloaded inputs, jobs and test screenshots.
+translator/work/extension/
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+*.log
+.env
+.env.*
+!.env.example
+extension/config.local.js
+/debug/
+/lab/screenshots/
+/samples/
+/vol*/
+/failed.json
+translator/.pip-cache/
+translator/hf-cache/
+translator/models/
+translator/work/
+translator/output/
+translator/.requirements-filtered.txt
+# Upstream checkout is pinned and its local changes saved in translator/patches/.
+translator/manga-image-translator/

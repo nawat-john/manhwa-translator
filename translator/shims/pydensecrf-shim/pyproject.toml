@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pydensecrf-shim"
+version = "0.1.0"
+description = "Pure-numpy no-op stand-in for pydensecrf, which has no Windows/py3.12 wheel and needs an MSVC C++ toolchain to build from source."
+requires-python = ">=3.9"
+dependencies = ["numpy"]
+
+[tool.setuptools]
+packages = ["pydensecrf"]
