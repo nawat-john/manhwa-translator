@@ -1,0 +1,172 @@
+{
+  "conversations": [
+    {
+      "id": "friends",
+      "turns": [
+        {
+          "korean": "이번 주말에 영화 한 편 볼래?",
+          "english": "Do you want to catch a movie this weekend?"
+        },
+        {
+          "korean": "아, 글쎄... 이번엔 좀 힘들 것 같아.",
+          "english": "Ah, well... I don't think I can make it this time."
+        },
+        {
+          "korean": "그럼 다음 주에 시간 비워둘게.",
+          "english": "Then I'll clear my schedule for next week."
+        },
+        {
+          "korean": "그래, 그때 다시 연락하자.",
+          "english": "Sounds good, let's be in touch then."
+        }
+      ]
+    },
+    {
+      "id": "cafe",
+      "turns": [
+        {
+          "korean": "아이스 아메리카노 한 잔 주세요.",
+          "english": "One iced americano, please."
+        },
+        {
+          "korean": "혹시 사이즈는 어떤 걸로 드릴까요?",
+          "english": "Would you like to choose a size for that?"
+        },
+        {
+          "korean": "레귤러 사이즈면 충분합니다.",
+          "english": "A regular size is fine."
+        },
+        {
+          "korean": "네, 잠시만 기다려 주십시오.",
+          "english": "Understood, please wait a moment."
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "turns": [
+        {
+          "korean": "설거지 좀 제때 해두면 안 돼?",
+          "english": "Can't you just do the dishes on time?"
+        },
+        {
+          "korean": "나도 지금 진짜 바빴단 말이야.",
+          "english": "I've been really busy too, you know."
+        },
+        {
+          "korean": "그래도 이건 좀 너무하잖아.",
+          "english": "Still, this is a bit much."
+        },
+        {
+          "korean": "미안, 내일 아침에 무조건 끝낼게.",
+          "english": "Sorry, I'll finish them for sure tomorrow morning."
+        }
+      ]
+    },
+    {
+      "id": "school",
+      "turns": [
+        {
+          "korean": "이번 수학 시험 진짜 너무 어렵더라.",
+          "english": "This math exam was really too hard."
+        },
+        {
+          "korean": "다들 점수 망쳤다고 난리야.",
+          "english": "Everyone is freaking out about their scores."
+        },
+        {
+          "korean": "그래도 이미 끝난 일이니까 잊자.",
+          "english": "But it's already over, so let's just forget it."
+        },
+        {
+          "korean": "우리 다 같이 힘내서 다음번에 잘하자.",
+          "english": "Let's all hang in there and do better next time."
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "turns": [
+        {
+          "korean": "보고서 제출 기한이 내일 모레입니다.",
+          "english": "The deadline for the report is the day after tomorrow."
+        },
+        {
+          "korean": "일정이 조금 무리일 것 같아 죄송해요.",
+          "english": "I'm sorry, but that schedule seems a bit too tight."
+        },
+        {
+          "korean": "그럼 목요일까지 부탁해도 되겠습니까?",
+          "english": "Then could I ask you to finish by Thursday?"
+        },
+        {
+          "korean": "네, 그 시간까지 완료하겠습니다.",
+          "english": "Yes, I will have it completed by then."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "turns": [
+        {
+          "korean": "나 이번에 합격했어!",
+          "english": "I passed the exam!"
+        },
+        {
+          "korean": "대박, 진짜 고생 많았어!",
+          "english": "No way, you really worked hard!"
+        },
+        {
+          "korean": "이제 정말 끝이야, 너무 홀가분해.",
+          "english": "It's finally over, I feel so relieved."
+        },
+        {
+          "korean": "오늘 밤에 우리 제대로 축하하자.",
+          "english": "Let's celebrate properly tonight."
+        }
+      ]
+    },
+    {
+      "id": "directions",
+      "turns": [
+        {
+          "korean": "실례지만 시청역까지 어떻게 가나요?",
+          "english": "Excuse me, how do I get to City Hall Station?"
+        },
+        {
+          "korean": "저기 큰 건물 지나서 두 블록 더 가세요.",
+          "english": "Go past that big building and walk two more blocks."
+        },
+        {
+          "korean": "걸어서 5분이면 도착할 수 있을까요?",
+          "english": "Can I get there in five minutes on foot?"
+        },
+        {
+          "korean": "아뇨, 도보로 10분 정도 걸립니다.",
+          "english": "No, it takes about 10 minutes on foot."
+        }
+      ]
+    },
+    {
+      "id": "fantasy",
+      "turns": [
+        {
+          "korean": "지훈아, 저 숲속 빛은 대체 뭐지?",
+          "english": "Jihoon, what on earth is that light in the forest?"
+        },
+        {
+          "korean": "민서야, 절대 가까이 가지 마 위험해.",
+          "english": "Minseo, don't go near it, it's dangerous."
+        },
+        {
+          "korean": "하지만 저 안에 유물이 있는 것 같아.",
+          "english": "But it feels like there's an artifact inside."
+        },
+        {
+          "korean": "일단 검부터 뽑고 천천히 접근하자.",
+          "english": "Draw your sword first, let's approach slowly."
+        }
+      ]
+    }
+  ]
+}

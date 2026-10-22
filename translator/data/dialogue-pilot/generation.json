@@ -1,0 +1,12 @@
+{
+  "requested_model": "gemini/gemini-3.1-flash-lite",
+  "returned_model": "gemini-3.1-flash-lite",
+  "response_id": null,
+  "usage": {
+    "prompt_tokens": 279,
+    "completion_tokens": 2478
+  },
+  "provenance_recovered_from": "local OmniRoute successful call metadata",
+  "gateway_call_id": "c36a2f58-91e8-46de-b335-6b78633151e8",
+  "timestamp": "2026-10-22T02:23:33.383Z"
+}

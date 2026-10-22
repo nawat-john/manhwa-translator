@@ -1,0 +1,9 @@
+{
+  "reviewer": "Codex assistant; not a human reference review",
+  "excluded_pairs": {
+    "cafe-1": "English adds a yes/no choice instead of naturally asking which size; prefer a direct size question.",
+    "school-0": "English really too hard is awkward for the requested natural spoken-English target.",
+    "surprise-0": "Exam is not stated in the standalone Korean sentence; acceptance/passing context is underspecified."
+  },
+  "rejected_originals_preserved": true
+}

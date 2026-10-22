@@ -1,0 +1,54 @@
+{
+  "synthetic": true,
+  "human_reviewed": false,
+  "generated_at": "2026-10-22T02:25:59.163869+00:00",
+  "generation": {
+    "requested_model": "gemini/gemini-3.1-flash-lite",
+    "returned_model": "gemini-3.1-flash-lite",
+    "response_id": null,
+    "usage": {
+      "prompt_tokens": 279,
+      "completion_tokens": 2478
+    },
+    "provenance_recovered_from": "local OmniRoute successful call metadata",
+    "gateway_call_id": "c36a2f58-91e8-46de-b335-6b78633151e8",
+    "timestamp": "2026-10-22T02:23:33.383Z"
+  },
+  "review": {
+    "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+    "returned_model": "minimax/minimax-m3.1-flash:free",
+    "response_id": "gen-1792635894-ckElEk9VnVmk10qpt1Lh",
+    "usage": {
+      "prompt_tokens": 1960,
+      "completion_tokens": 6657,
+      "total_tokens": 8617,
+      "prompt_tokens_details": {
+        "cached_tokens": 187,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5804,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      },
+      "cost": 0
+    }
+  },
+  "counts": {
+    "train": 21,
+    "validation": 4,
+    "test": 4
+  },
+  "rejected": 3,
+  "prompt_sha256": "6c690d7614d9560eb12357e0bae32194a7114d00a74818b2e9dad20f93314d17",
+  "limitations": [
+    "LLM review is not human reference validation.",
+    "Pilot split is too small for reliable model quality estimates.",
+    "Check upstream model output-use terms before large-scale distillation.",
+    "Three teacher-approved pairs were held out of training by an additional AI assistant audit; see assistant-audit.json."
+  ],
+  "teacher_rejected": 0,
+  "assistant_rejected": 3
+}

@@ -1,5 +1,7 @@
 # Manga Lab — Chrome extension for Naver
 
+บริการ Python ใช้ฐานแปล trimmed เมื่อมี `translator/models/m2m100-ko-en/` และ OCR แบบ FP16 บน CUDA โดยเก็บชุดอักษรเกาหลี–อังกฤษครบ ดู [ผลทดสอบและการเตรียมข้อมูล LoRA](../translator/OPTIMIZATION.md)
+
 Initial version: a **Translate image · EN** button for `content_image_*` images on Naver webtoon reader pages. It uses EasyOCR + M2M100 + LaMa locally to translate Korean into English and displays the result in place. Click **View original / View English translation** to toggle immediately.
 
 ## Getting started on this machine

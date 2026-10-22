@@ -1,0 +1,164 @@
+{
+  "reviews": [
+    {
+      "id": "friends-0",
+      "accept": true,
+      "reason": "Natural invitation that accurately preserves the weekend timing and offer to watch a movie."
+    },
+    {
+      "id": "friends-1",
+      "accept": true,
+      "reason": "Naturally conveys hesitation and difficulty in accepting this time's invitation."
+    },
+    {
+      "id": "friends-2",
+      "accept": true,
+      "reason": "Accurately expresses clearing one's schedule for the following week."
+    },
+    {
+      "id": "friends-3",
+      "accept": true,
+      "reason": "Natural, idiomatic response agreeing to make contact later."
+    },
+    {
+      "id": "cafe-0",
+      "accept": true,
+      "reason": "Clear and natural café order with the correct quantity and drink."
+    },
+    {
+      "id": "cafe-1",
+      "accept": true,
+      "reason": "Politely and naturally asks which size the customer prefers."
+    },
+    {
+      "id": "cafe-2",
+      "accept": true,
+      "reason": "Accurately states that a regular size is sufficient."
+    },
+    {
+      "id": "cafe-3",
+      "accept": true,
+      "reason": "Polite and appropriate acknowledgment with a request to wait."
+    },
+    {
+      "id": "family-0",
+      "accept": true,
+      "reason": "Natural complaint that accurately conveys the request to do the dishes on time."
+    },
+    {
+      "id": "family-1",
+      "accept": true,
+      "reason": "Conversational English accurately conveys that the speaker has also been very busy."
+    },
+    {
+      "id": "family-2",
+      "accept": true,
+      "reason": "Naturally expresses that the situation is still excessive or unreasonable."
+    },
+    {
+      "id": "family-3",
+      "accept": true,
+      "reason": "Accurately conveys an apology and a definite promise to finish the dishes tomorrow morning."
+    },
+    {
+      "id": "school-0",
+      "accept": true,
+      "reason": "Natural and accurate statement that the math exam was extremely difficult."
+    },
+    {
+      "id": "school-1",
+      "accept": true,
+      "reason": "Naturally conveys everyone's widespread reaction to their poor scores."
+    },
+    {
+      "id": "school-2",
+      "accept": true,
+      "reason": "Accurately suggests letting the finished exam go because it is already over."
+    },
+    {
+      "id": "school-3",
+      "accept": true,
+      "reason": "Natural supportive expression that preserves the group's resolve to improve next time."
+    },
+    {
+      "id": "work-0",
+      "accept": true,
+      "reason": "The relative date is translated correctly and unambiguously."
+    },
+    {
+      "id": "work-1",
+      "accept": true,
+      "reason": "Polite and natural apology explaining that the schedule is too tight."
+    },
+    {
+      "id": "work-2",
+      "accept": true,
+      "reason": "Natural polite request that accurately preserves the Thursday deadline."
+    },
+    {
+      "id": "work-3",
+      "accept": true,
+      "reason": "Professional confirmation clearly promises completion by the specified time."
+    },
+    {
+      "id": "surprise-0",
+      "accept": true,
+      "reason": "Natural celebratory announcement of successfully passing the exam."
+    },
+    {
+      "id": "surprise-1",
+      "accept": true,
+      "reason": "Appropriate spontaneous reaction that accurately recognizes the person's hard work."
+    },
+    {
+      "id": "surprise-2",
+      "accept": true,
+      "reason": "Naturally conveys both that the ordeal is over and the speaker's relief."
+    },
+    {
+      "id": "surprise-3",
+      "accept": true,
+      "reason": "Natural invitation to celebrate properly tonight."
+    },
+    {
+      "id": "directions-0",
+      "accept": true,
+      "reason": "Polite and natural request for directions to City Hall Station."
+    },
+    {
+      "id": "directions-1",
+      "accept": true,
+      "reason": "Clear directional instruction with the correct landmark and distance."
+    },
+    {
+      "id": "directions-2",
+      "accept": true,
+      "reason": "Accurately asks whether the destination can be reached in five minutes on foot."
+    },
+    {
+      "id": "directions-3",
+      "accept": true,
+      "reason": "Correctly preserves the negation and the ten-minute walking estimate."
+    },
+    {
+      "id": "fantasy-0",
+      "accept": true,
+      "reason": "Natural expression of surprise about the light, with the name and setting correctly retained."
+    },
+    {
+      "id": "fantasy-1",
+      "accept": true,
+      "reason": "Strong warning that accurately preserves the prohibition and the danger."
+    },
+    {
+      "id": "fantasy-2",
+      "accept": true,
+      "reason": "Naturally conveys the speaker's tentative belief that an artifact is inside."
+    },
+    {
+      "id": "fantasy-3",
+      "accept": true,
+      "reason": "Clear action instruction that preserves drawing the sword first and approaching slowly."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 # hanaori-san vol. 1 — JA→EN overlay translation
 
 Korean model size experiment: [vocabulary trimming results](VOCAB_TRIM.md).
+Current Korean runtime, FP16 OCR and OmniRoute data setup: [optimization guide](OPTIMIZATION.md).
 
 Burns English translations into the scans in place of the Japanese, the way
 Google Translate's camera overlay does, using

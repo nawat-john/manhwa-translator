@@ -24,6 +24,7 @@ import torch
 from easyocr.utils import CTCLabelConverter
 from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
 from transformers.models.m2m_100.modeling_m2m_100 import M2M100ScaledWordEmbedding
+from korean_translation import remap_inputs
 
 
 def write_json(path, data):
@@ -47,13 +48,6 @@ def allowed_piece(piece):
     # Keep Latin/Hangul plus punctuation, symbols and numbers, including mixed names.
     return all(not ch.isalpha() or any(script in unicodedata.name(ch, '')
                for script in ('LATIN', 'HANGUL')) for ch in piece.replace('▁', ''))
-
-
-def remap_inputs(ids, old_to_new):
-    mapped = old_to_new[ids]
-    if (mapped < 0).any():
-        raise ValueError('Input contains a removed token; use the original model')
-    return mapped
 
 
 def generate(model, tokenizer, text, device, old_to_new=None, new_to_old=None):

@@ -22,7 +22,8 @@ import easyocr
 import numpy as np
 from PIL import Image
 import torch
-from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
+from korean_translation import KoreanTranslator
+from ocr_precision import use_fp16
 from manga_translator.config import Inpainter, InpainterConfig
 from manga_translator.inpainting import dispatch as inpaint, prepare
 from manga_translator.rendering import dispatch as render
@@ -70,6 +71,8 @@ async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None):
         print('Loading Korean EasyOCR', flush=True)
         reader = easyocr.Reader(['ko', 'en'], gpu=device == 'cuda',
                                 model_storage_directory=str(HERE / 'models/easyocr'), verbose=False)
+        if device == 'cuda':
+            use_fp16(reader)
         records = []
         for file in files:
             print(f'OCR {file.name}', flush=True)
@@ -92,21 +95,15 @@ async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None):
     if translations.exists():
         records = json.loads(translations.read_text(encoding='utf-8'))
     else:
-        print('Loading facebook/m2m100_418M (Korean -> English)', flush=True)
-        tokenizer = M2M100Tokenizer.from_pretrained('facebook/m2m100_418M', src_lang='ko')
-        model = M2M100ForConditionalGeneration.from_pretrained('facebook/m2m100_418M').to(device).eval()
+        model = KoreanTranslator(device)
         for record in records:
             print(f'Translating {record["source"]}', flush=True)
             for region in record['regions']:
-                inputs = tokenizer(region['korean'], return_tensors='pt').to(device)
-                with torch.inference_mode():
-                    generated = model.generate(**inputs, forced_bos_token_id=tokenizer.get_lang_id('en'),
-                                               max_new_tokens=160, num_beams=5, no_repeat_ngram_size=3)
-                region['english'] = tokenizer.decode(generated[0], skip_special_tokens=True).strip()
+                region['english'] = model.translate(region['korean'])
                 assert region['english'], 'Empty translation'
                 print(f'  {region["korean"]} -> {region["english"]}', flush=True)
         save_json(translations, records)
-        del model, tokenizer
+        del model
         torch.cuda.empty_cache()
 
     ModelWrapper._MODEL_DIR = str(HERE / 'models')

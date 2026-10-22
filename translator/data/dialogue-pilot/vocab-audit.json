@@ -1,0 +1,9 @@
+{
+  "source": "generated.json",
+  "pairs": 32,
+  "pairs_with_missing_tokens": 0,
+  "missing": [],
+  "max_source_tokens": 18,
+  "max_target_tokens": 18,
+  "vocab_size": 70193
+}
