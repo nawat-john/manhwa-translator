@@ -35,7 +35,9 @@ is still needed before claiming that LoRA improves the product.
   This is a textual similarity filter, not a semantic deduplication guarantee.
 - Pilot source lines are excluded, including the pilot's held-out examples.
 - Source and target must fit the installed trimmed vocabulary and be <=128
-  tokens each. All labels remain text; actual training must apply the matching
+  tokens each. Pairs producing the original tokenizer's unknown token are also
+  excluded; they must not silently become unknown labels during LoRA training.
+  All labels remain text; actual training must apply the matching
   token ID map and keep padded loss labels at -100.
 
 ## Generation and operational limits

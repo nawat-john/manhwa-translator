@@ -46,10 +46,11 @@ class CorpusTests(unittest.TestCase):
 
     def test_export_filters_review_vocab_duplicates_and_caps_splits(self):
         def tokenizer(ko, text_target):
-            return {'input_ids': [1], 'labels': [99] if text_target == 'unsupported' else [2]}
+            return {'input_ids': [1], 'labels': [99] if text_target == 'unsupported' else [3] if text_target == 'unknown' else [2]}
+        tokenizer.unk_token_id = 3
         def row(ko, en, split='train', accepted=True):
             return {'korean': ko, 'english': en, 'split': split, 'review': {'accept': accepted}}
-        rows = [row('새 문장 하나', 'unsupported'), row('새 문장 하나', 'A new line.'),
+        rows = [row('다른 문장', 'unknown'), row('새 문장 하나', 'unsupported'), row('새 문장 하나', 'A new line.'),
                 row('새 문장 하나!', 'Duplicate.'), row('새 문장 둘', 'Wrong.', accepted=False),
                 row('평가용 문장', 'Validation.', 'validation'), row('테스트 문장', 'Test.', 'test'),
                 row('초과 문장', 'Surplus.')]
@@ -60,8 +61,9 @@ class CorpusTests(unittest.TestCase):
             summary = export(out, {'train': 1, 'validation': 1, 'test': 1}, tokenizer, {1, 2})
             self.assertTrue(summary['complete'])
             rejected = [json.loads(x) for x in (out / 'rejected.jsonl').read_text().splitlines()]
-            self.assertEqual(len(rejected), 4)
+            self.assertEqual(len(rejected), 5)
             self.assertIn('removed_vocabulary_token', {r['filter_reason'] for r in rejected})
+            self.assertIn('original_tokenizer_unknown', {r['filter_reason'] for r in rejected})
 
 
 if __name__ == '__main__':

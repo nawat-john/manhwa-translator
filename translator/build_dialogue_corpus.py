@@ -214,7 +214,9 @@ def export(out, targets, tokenizer, vocabulary, checked=None):
                 pair = (row['korean'], row['english'])
                 if pair not in checked:
                     encoded = tokenizer(row['korean'], text_target=row['english'])
-                    checked[pair] = ('removed_vocabulary_token' if set(encoded['input_ids'] + encoded['labels']) - vocabulary
+                    ids = encoded['input_ids'] + encoded['labels']
+                    checked[pair] = ('original_tokenizer_unknown' if tokenizer.unk_token_id in ids
+                                    else 'removed_vocabulary_token' if set(ids) - vocabulary
                                     else 'sequence_over_128_tokens' if max(len(encoded['input_ids']), len(encoded['labels'])) > 128 else None)
                 reason = checked[pair]
                 if not reason and not deduper.add(row['korean']):
