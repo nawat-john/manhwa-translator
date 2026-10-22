@@ -1,0 +1,30 @@
+{
+  "baseline_validation_loss": 3.080665283353454,
+  "history": [
+    {
+      "epoch": 1,
+      "validation_loss": 1.6287098775873399
+    },
+    {
+      "epoch": 2,
+      "validation_loss": 1.5429825250212916
+    },
+    {
+      "epoch": 3,
+      "validation_loss": 1.496235552281284
+    }
+  ],
+  "best_validation_loss": 1.496235552281284,
+  "elapsed_s": 909.2820000000065,
+  "seed": 80421,
+  "batch_size": 8,
+  "gradient_accumulation": 4,
+  "learning_rate": 0.0001,
+  "base": "D:\\Code\\hanaori-san-scrape\\translator\\models\\m2m100-ko-en",
+  "dataset": "D:\\Code\\hanaori-san-scrape\\translator\\work\\ko-en-context-data-v1",
+  "sha256": {
+    "work\\ko-en-context-data-v1\\train.jsonl": "a6b549a63942e46d3d8368879b12dc46ebd78d19e90709cbc807ee8410845e84",
+    "work\\ko-en-context-data-v1\\validation.jsonl": "eeb1d780b8c146b6403bdca5c06448d816d6fe34492b5dac0bfe87c87d26daec",
+    "models\\m2m100-ko-en\\id-map.json": "a811a9acd034d4d19f85fb55890b0624c4a23afc485765740dec0267d912532b"
+  }
+}

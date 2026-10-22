@@ -1,0 +1,18 @@
+{
+  "seed": 90421,
+  "writer": "gemini/gemini-3.1-flash-lite",
+  "reviewer": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+  "train_pairs": 100,
+  "validation_pairs": 30,
+  "test_pairs": 30,
+  "synthetic": true,
+  "human_reviewed": false,
+  "note": "Exact normalized and Jaccard >= .9 near-duplicate current sentences excluded across splits and original corpus; lexical families overlap.",
+  "sha256": {
+    "batch-provenance.jsonl": "9ced81f2b6fce3b37e3d07b2932b766ea11cdda83ab7ea522fd87a94a9a943fa",
+    "test.jsonl": "42b0c2a908fbdb16e0fd393bbd5b65b47e9c46d33a7b2e105492d9e986432739",
+    "train.jsonl": "1794d57cda0a7c99fb66b79aae55997b46d3276ed8105c7f378e6c753c98f9a7",
+    "validation.jsonl": "9e1a5aaccb3e9fb7e75d4f1c69893a4d1a9e53e5f5c565043c5a166dbc4e42f9"
+  },
+  "source_corpus_manifest_sha256": "b0e927b8d8fab5f97b10874dd61f36f29287b5f5e30551a7d7803ec86bdd991c"
+}

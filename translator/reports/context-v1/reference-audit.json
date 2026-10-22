@@ -1,0 +1,932 @@
+[
+  {
+    "id": "ctx007-13",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx001-11",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx005-01",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx012-08",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx006-05",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx011-12",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx016-03",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx014-07",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx000-14",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx001-03",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792649962-k8wUfxZuXuiJ1NxFrZXl",
+      "usage": {
+        "prompt_tokens": 1483,
+        "completion_tokens": 8349,
+        "total_tokens": 9832,
+        "prompt_tokens_details": {
+          "cached_tokens": 184,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 8276,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx010-13",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650246-OR7xmPdIRfPIbmnuCU6k",
+      "usage": {
+        "prompt_tokens": 868,
+        "completion_tokens": 9376,
+        "total_tokens": 10244,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 9335,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx000-01",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650246-OR7xmPdIRfPIbmnuCU6k",
+      "usage": {
+        "prompt_tokens": 868,
+        "completion_tokens": 9376,
+        "total_tokens": 10244,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 9335,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx000-13",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650246-OR7xmPdIRfPIbmnuCU6k",
+      "usage": {
+        "prompt_tokens": 868,
+        "completion_tokens": 9376,
+        "total_tokens": 10244,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 9335,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx015-06",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650246-OR7xmPdIRfPIbmnuCU6k",
+      "usage": {
+        "prompt_tokens": 868,
+        "completion_tokens": 9376,
+        "total_tokens": 10244,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 9335,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx004-03",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650246-OR7xmPdIRfPIbmnuCU6k",
+      "usage": {
+        "prompt_tokens": 868,
+        "completion_tokens": 9376,
+        "total_tokens": 10244,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 9335,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx006-02",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650314-77978hciHaJY43n5lheh",
+      "usage": {
+        "prompt_tokens": 948,
+        "completion_tokens": 4024,
+        "total_tokens": 4972,
+        "prompt_tokens_details": {
+          "cached_tokens": 174,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3986,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx016-07",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650314-77978hciHaJY43n5lheh",
+      "usage": {
+        "prompt_tokens": 948,
+        "completion_tokens": 4024,
+        "total_tokens": 4972,
+        "prompt_tokens_details": {
+          "cached_tokens": 174,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3986,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx013-09",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650314-77978hciHaJY43n5lheh",
+      "usage": {
+        "prompt_tokens": 948,
+        "completion_tokens": 4024,
+        "total_tokens": 4972,
+        "prompt_tokens_details": {
+          "cached_tokens": 174,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3986,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx004-02",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650314-77978hciHaJY43n5lheh",
+      "usage": {
+        "prompt_tokens": 948,
+        "completion_tokens": 4024,
+        "total_tokens": 4972,
+        "prompt_tokens_details": {
+          "cached_tokens": 174,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3986,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx010-05",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650314-77978hciHaJY43n5lheh",
+      "usage": {
+        "prompt_tokens": 948,
+        "completion_tokens": 4024,
+        "total_tokens": 4972,
+        "prompt_tokens_details": {
+          "cached_tokens": 174,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3986,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx005-03",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650357-W3zV1RcIcPT8oIc55GHg",
+      "usage": {
+        "prompt_tokens": 929,
+        "completion_tokens": 6757,
+        "total_tokens": 7686,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 6716,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx006-01",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650357-W3zV1RcIcPT8oIc55GHg",
+      "usage": {
+        "prompt_tokens": 929,
+        "completion_tokens": 6757,
+        "total_tokens": 7686,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 6716,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx010-03",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650357-W3zV1RcIcPT8oIc55GHg",
+      "usage": {
+        "prompt_tokens": 929,
+        "completion_tokens": 6757,
+        "total_tokens": 7686,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 6716,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx000-15",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650357-W3zV1RcIcPT8oIc55GHg",
+      "usage": {
+        "prompt_tokens": 929,
+        "completion_tokens": 6757,
+        "total_tokens": 7686,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 6716,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx015-08",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650357-W3zV1RcIcPT8oIc55GHg",
+      "usage": {
+        "prompt_tokens": 929,
+        "completion_tokens": 6757,
+        "total_tokens": 7686,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 6716,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx007-01",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650407-ohamiL4Gl13oeDSHCsXa",
+      "usage": {
+        "prompt_tokens": 927,
+        "completion_tokens": 1076,
+        "total_tokens": 2003,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1037,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx010-06",
+    "accept": false,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650407-ohamiL4Gl13oeDSHCsXa",
+      "usage": {
+        "prompt_tokens": 927,
+        "completion_tokens": 1076,
+        "total_tokens": 2003,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1037,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx015-14",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650407-ohamiL4Gl13oeDSHCsXa",
+      "usage": {
+        "prompt_tokens": 927,
+        "completion_tokens": 1076,
+        "total_tokens": 2003,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1037,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx014-06",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650407-ohamiL4Gl13oeDSHCsXa",
+      "usage": {
+        "prompt_tokens": 927,
+        "completion_tokens": 1076,
+        "total_tokens": 2003,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1037,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  },
+  {
+    "id": "ctx010-02",
+    "accept": true,
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792650407-ohamiL4Gl13oeDSHCsXa",
+      "usage": {
+        "prompt_tokens": 927,
+        "completion_tokens": 1076,
+        "total_tokens": 2003,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1037,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    },
+    "blind_to_model_predictions": true,
+    "human_reviewed": false
+  }
+]

@@ -1,0 +1,113 @@
+{
+  "trimmed": {
+    "regular": {
+      "bleu": 10.51140225800208,
+      "chrf_plus_plus": 30.587929517366142,
+      "mean_input_tokens": 17.85,
+      "mean_output_words": 8.026
+    },
+    "full_probe_ranking_correct": 30,
+    "full_probe_variants": 60,
+    "full_probe_both_correct_pairs": 0,
+    "reviewer_agreement_ranking_correct": 16,
+    "reviewer_agreement_variants": 32,
+    "reviewer_agreement_both_correct_pairs": 0,
+    "full_probe_chrf_plus_plus": 30.538384975954187,
+    "reviewer_agreement_chrf_plus_plus": 36.864900694819625,
+    "literal_marker_outputs": 0,
+    "peak_cuda_allocated_bytes": 1750109184
+  },
+  "trimmed_prefix_context": {
+    "regular": {},
+    "full_probe_ranking_correct": 37,
+    "full_probe_variants": 60,
+    "full_probe_both_correct_pairs": 7,
+    "reviewer_agreement_ranking_correct": 19,
+    "reviewer_agreement_variants": 32,
+    "reviewer_agreement_both_correct_pairs": 3,
+    "full_probe_chrf_plus_plus": 31.171945119959442,
+    "reviewer_agreement_chrf_plus_plus": 31.816462992748868,
+    "literal_marker_outputs": 58,
+    "peak_cuda_allocated_bytes": 1769791488
+  },
+  "sentence_lora": {
+    "regular": {
+      "bleu": 21.900243972217396,
+      "chrf_plus_plus": 42.34347026922608,
+      "mean_input_tokens": 17.85,
+      "mean_output_words": 9.648
+    },
+    "full_probe_ranking_correct": 30,
+    "full_probe_variants": 60,
+    "full_probe_both_correct_pairs": 0,
+    "reviewer_agreement_ranking_correct": 16,
+    "reviewer_agreement_variants": 32,
+    "reviewer_agreement_both_correct_pairs": 0,
+    "full_probe_chrf_plus_plus": 39.89990047114354,
+    "reviewer_agreement_chrf_plus_plus": 45.16402413095856,
+    "literal_marker_outputs": 0,
+    "peak_cuda_allocated_bytes": 1749126144
+  },
+  "sentence_lora_prefix_context": {
+    "regular": {},
+    "full_probe_ranking_correct": 35,
+    "full_probe_variants": 60,
+    "full_probe_both_correct_pairs": 7,
+    "reviewer_agreement_ranking_correct": 20,
+    "reviewer_agreement_variants": 32,
+    "reviewer_agreement_both_correct_pairs": 4,
+    "full_probe_chrf_plus_plus": 35.75003664706885,
+    "reviewer_agreement_chrf_plus_plus": 36.77059256440318,
+    "literal_marker_outputs": 60,
+    "peak_cuda_allocated_bytes": 1771225088
+  },
+  "context_empty": {
+    "regular": {
+      "bleu": 21.297209977379985,
+      "chrf_plus_plus": 41.75093739766206,
+      "mean_input_tokens": 23.85,
+      "mean_output_words": 9.854
+    },
+    "full_probe_ranking_correct": 30,
+    "full_probe_variants": 60,
+    "full_probe_both_correct_pairs": 0,
+    "reviewer_agreement_ranking_correct": 16,
+    "reviewer_agreement_variants": 32,
+    "reviewer_agreement_both_correct_pairs": 0,
+    "full_probe_chrf_plus_plus": 43.02436224856746,
+    "reviewer_agreement_chrf_plus_plus": 47.32385246457119,
+    "literal_marker_outputs": 0,
+    "peak_cuda_allocated_bytes": 1755209216
+  },
+  "context_previous": {
+    "regular": {
+      "bleu": 21.821009406042663,
+      "chrf_plus_plus": 42.39725641643531,
+      "mean_input_tokens": 46.512,
+      "mean_output_words": 9.916
+    },
+    "full_probe_ranking_correct": 38,
+    "full_probe_variants": 60,
+    "full_probe_both_correct_pairs": 8,
+    "reviewer_agreement_ranking_correct": 22,
+    "reviewer_agreement_variants": 32,
+    "reviewer_agreement_both_correct_pairs": 6,
+    "full_probe_chrf_plus_plus": 43.8956052118688,
+    "reviewer_agreement_chrf_plus_plus": 49.614019458257935,
+    "literal_marker_outputs": 0,
+    "peak_cuda_allocated_bytes": 1783031296
+  },
+  "context_shuffled": {
+    "regular": {},
+    "full_probe_ranking_correct": 34,
+    "full_probe_variants": 60,
+    "full_probe_both_correct_pairs": 5,
+    "reviewer_agreement_ranking_correct": 19,
+    "reviewer_agreement_variants": 32,
+    "reviewer_agreement_both_correct_pairs": 4,
+    "full_probe_chrf_plus_plus": 41.969501631669814,
+    "reviewer_agreement_chrf_plus_plus": 46.19050582563416,
+    "literal_marker_outputs": 0,
+    "peak_cuda_allocated_bytes": 1756930048
+  }
+}

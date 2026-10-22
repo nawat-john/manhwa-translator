@@ -1,5 +1,6 @@
 """Train a reproducible LoRA on the audited corpus; select by validation loss."""
 import json
+import argparse
 import hashlib
 import random
 import time
@@ -38,17 +39,24 @@ def collate(rows):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--data', type=Path, default=DATA)
+    parser.add_argument('--out', type=Path, default=OUT)
+    parser.add_argument('--batch-size', type=int, choices=[2, 4, 8], default=8)
+    args = parser.parse_args()
+    data, out = args.data.resolve(), args.out.resolve()
+    accumulation = 32 // args.batch_size
     torch.manual_seed(80421)
     random.seed(80421)
     torch.set_num_threads(4)
-    OUT.mkdir(parents=True, exist_ok=True)
+    out.mkdir(parents=True, exist_ok=True)
     keep = json.loads((BASE / 'id-map.json').read_text())['new_to_old']
     mapping = {old: new for new, old in enumerate(keep)}
     tokenizer = M2M100Tokenizer.from_pretrained(BASE / 'original-tokenizer', src_lang='ko', tgt_lang='en')
     loaders = {}
     for split in ('train', 'validation'):
-        rows = [json.loads(line) for line in (DATA / f'{split}.jsonl').read_text(encoding='utf-8').splitlines()]
-        loaders[split] = DataLoader(encode(rows, tokenizer, mapping), batch_size=8,
+        rows = [json.loads(line) for line in (data / f'{split}.jsonl').read_text(encoding='utf-8').splitlines()]
+        loaders[split] = DataLoader(encode(rows, tokenizer, mapping), batch_size=args.batch_size,
                                    shuffle=split == 'train', collate_fn=collate)
     model = M2M100ForConditionalGeneration.from_pretrained(BASE, dtype=torch.float16).to('cuda')
     model.config.use_cache = False
@@ -85,8 +93,8 @@ def main():
                 loss = model(**batch).loss
             if not torch.isfinite(loss):
                 raise RuntimeError('Non-finite training loss')
-            scaler.scale(loss / 4).backward()
-            if step % 4 == 0 or step == len(loaders['train']):
+            scaler.scale(loss / accumulation).backward()
+            if step % accumulation == 0 or step == len(loaders['train']):
                 scaler.unscale_(optimizer)
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 scaler.step(optimizer)
@@ -99,14 +107,14 @@ def main():
         history.append({'epoch': epoch, 'validation_loss': score})
         if score < best:
             best = score
-            model.save_pretrained(OUT / 'best')
+            model.save_pretrained(out / 'best')
         report = {'baseline_validation_loss': baseline, 'history': history,
                   'best_validation_loss': best, 'elapsed_s': time.monotonic() - started,
-                  'seed': 80421, 'batch_size': 8, 'gradient_accumulation': 4,
-                  'learning_rate': 0.0001, 'base': str(BASE), 'dataset': str(DATA)}
+                  'seed': 80421, 'batch_size': args.batch_size, 'gradient_accumulation': accumulation,
+                  'learning_rate': 0.0001, 'base': str(BASE), 'dataset': str(data)}
         report['sha256'] = {str(path.relative_to(HERE)): hashlib.sha256(path.read_bytes()).hexdigest()
-                            for path in [DATA / 'train.jsonl', DATA / 'validation.jsonl', BASE / 'id-map.json']}
-        (OUT / 'training.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+                            for path in [data / 'train.jsonl', data / 'validation.jsonl', BASE / 'id-map.json']}
+        (out / 'training.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
         print(json.dumps(report), flush=True)
 
 
