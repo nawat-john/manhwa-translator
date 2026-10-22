@@ -122,6 +122,9 @@ async def main(out):
     from context_data import CONTEXT_OUT, source_with_context
     from korean_translation import KoreanTranslator, TRIMMED
     from translate_korean_sample import main as render_sample, validate_source
+    from balloon_text import merge_balloon_text
+    import numpy as np
+    from PIL import Image
     from manga_translator.config import Inpainter
     from manga_translator.inpainting import unload
 
@@ -137,9 +140,12 @@ async def main(out):
         assert hashlib.sha256(file.read_bytes()).hexdigest() == fingerprint['sha256'], 'Sample changed'
     records = ordered_records(json.loads((SOURCE / 'english-panels-10/ocr.json').read_text(encoding='utf-8')))
     assert [r['source'] for r in records] == [f.name for f in files]
+    for record, file in zip(records, files):
+        with Image.open(file) as image:
+            record['regions'] = merge_balloon_text(np.array(image.convert('RGB')), record['regions'])
     out.mkdir(parents=True, exist_ok=False)
     result = {'ocr': records, 'inputs': fingerprints, 'precision': 'FP32', 'num_beams': 5,
-              'max_new_tokens': 160, 'ocr_reused': True, 'history_turns_max': 3,
+              'max_new_tokens': 160, 'ocr_reused': True, 'balloon_grouping': True, 'history_turns_max': 3,
               'adapter_sha256': hashlib.sha256((CONTEXT_OUT / 'best/adapter_model.safetensors').read_bytes()).hexdigest(),
               'id_map_sha256': hashlib.sha256((TRIMMED / 'id-map.json').read_bytes()).hexdigest(),
               'models': {key: {'runs': []} for key in ('baseline', 'context')}}

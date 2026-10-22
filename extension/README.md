@@ -43,6 +43,8 @@ Input images are validated: at most 20 MiB, static JPEG/PNG/WebP, at most 16 mil
 
 Images and text are processed locally, without sending them to a translation API. The service may contact model download sources to download models or check caches.
 
+New translations join OCR fragments sharing an enclosed white balloon before translation. Open, dark and colored balloons keep existing OCR grouping. Restart the local service and refresh Naver to request fresh results; images already translated in the current tab retain their previous output. See `translator/BALLOON-GROUPING-RESULTS.md` for the ten-panel trial and limitations.
+
 Each job is stored in `translator/work/extension/<job-id>/`:
 
 - `request.json`, `inputs/`: URL order and required source files.

@@ -13,7 +13,7 @@ import time
 HERE = Path(__file__).resolve().parent
 UPSTREAM = HERE / 'manga-image-translator'
 SOURCE = HERE.parent / 'samples/naver-845456-25'
-OUT = SOURCE / 'english-panels-10'
+OUT = SOURCE / 'english-balloon-panels-10'
 os.environ['HF_HOME'] = str(HERE / 'hf-cache')
 sys.path.insert(0, str(UPSTREAM))
 
@@ -24,6 +24,7 @@ from PIL import Image
 import torch
 from korean_translation import KoreanTranslator
 from ocr_precision import use_fp16
+from balloon_text import merge_balloon_text
 from manga_translator.config import Inpainter, InpainterConfig
 from manga_translator.inpainting import dispatch as inpaint, prepare
 from manga_translator.rendering import dispatch as render
@@ -76,7 +77,6 @@ async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None, t
         records = []
         for file in files:
             print(f'OCR {file.name}', flush=True)
-            # shortcut: paragraph grouping can merge nearby captions; review ocr.json before production use.
             detected = reader.readtext(file.read_bytes(), paragraph=True, x_ths=0.7, y_ths=0.4)
             regions = []
             for box, text in detected:
@@ -90,6 +90,17 @@ async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None, t
         save_json(cache, records)
         del reader
         torch.cuda.empty_cache()
+
+    grouped = []
+    for record in records:
+        with Image.open(SOURCE / record['source']) as source:
+            regions = merge_balloon_text(np.array(source.convert('RGB')), record['regions'])
+        grouped.append({'source': record['source'], 'regions': regions})
+    if grouped != records:
+        if (OUT / 'translations.json').exists():
+            raise ValueError('Balloon grouping changed OCR; use a new output directory to regenerate translations and images')
+        records = grouped
+        save_json(cache, records)
 
     translations = OUT / 'translations.json'
     if translations.exists():
@@ -125,7 +136,13 @@ async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None, t
         blocks = []
         for region in record['regions']:
             points = np.asarray(region['box'], dtype=np.int32)
-            cv2.fillConvexPoly(mask, points, 255)
+            for source_box in region.get('source_boxes', [region['box']]):
+                cv2.fillConvexPoly(mask, np.asarray(source_box, dtype=np.int32), 255)
+            if 'balloon_outline' in region:
+                interior = np.zeros_like(mask)
+                cv2.fillPoly(interior, [np.asarray(region['balloon_outline'], dtype=np.int32)], 255)
+                interior = cv2.erode(interior, np.ones((9, 9), dtype=np.uint8))
+                mask[(interior > 0) & (image.min(axis=2) < 200)] = 255
             blocks.append(TextBlock([points], texts=[region['korean']], translation=region['english'],
                                     font_size=28, direction='h', alignment='center', target_lang='ENG',
                                     fg_color=(0, 0, 0), bg_color=(255, 255, 255)))
