@@ -19,4 +19,4 @@ Lexical families and construction patterns can overlap across splits.
 `manifest.json` records file hashes; `batch-provenance.jsonl` records model
 responses' metadata and all binary review verdicts, including rejected cases.
 Full rejected candidate texts remain in the local ignored batch cache.
-See [the experiment protocol](../../CONTEXT.md) for training and evaluation.
+See [the experiment protocol](../../docs/CONTEXT.md) for training and evaluation.

@@ -1,7 +1,7 @@
 // Capture box picker — open a browser and drag over the area to capture
 //
-//   node pick-box.mjs                 // Use the first page from config
-//   node pick-box.mjs <url>           // Specify a page
+//   node scripts/pick-box.mjs                 // Use the first page from config
+//   node scripts/pick-box.mjs <url>           // Specify a page
 //
 // Page controls:
 //   Drag mouse = draw a box
@@ -10,7 +10,7 @@
 //   Esc       = Clear the box and start again
 import { chromium } from 'playwright';
 import { writeFile } from 'node:fs/promises';
-import cfg from './config.mjs';
+import cfg from '../config.mjs';
 
 const url = process.argv[2] || cfg.click.startUrl || cfg.urls[0];
 

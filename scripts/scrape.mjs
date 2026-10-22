@@ -1,21 +1,21 @@
 // Scraper — iterate over config.urls and capture the box defined in box.json
 //
-//   node scrape.mjs            // All URLs
-//   node scrape.mjs 5 12       // Only entries 5–12 in the list
+//   node scripts/scrape.mjs            // All URLs
+//   node scripts/scrape.mjs 5 12       // Only entries 5–12 in the list
 import { chromium } from 'playwright';
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import path from 'node:path';
-import cfg from './config.mjs';
+import cfg from '../config.mjs';
 
 const box = await readFile('box.json', 'utf8')
   .then(JSON.parse)
   .catch(() => {
-    console.error('box.json not found — run `node pick-box.mjs` first');
+    console.error('box.json not found — run `node scripts/pick-box.mjs` first');
     process.exit(1);
   });
 
 if (!cfg.urls.length) {
-  console.error('config.urls is empty — add URLs or use `node scrape-click.mjs` instead');
+  console.error('config.urls is empty — add URLs or use `node scripts/scrape-click.mjs` instead');
   process.exit(1);
 }
 

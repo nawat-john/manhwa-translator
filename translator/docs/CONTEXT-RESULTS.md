@@ -128,6 +128,6 @@ properly transcribed webtoon evaluation set, including OCR fragments. Preserve
 these test results instead of choosing another checkpoint against this test.
 
 Reproduction: [CONTEXT.md](CONTEXT.md). Raw outputs, timing samples, audit and
-metadata: [reports/context-v1](reports/context-v1/summary.json). Local adapter:
+metadata: [reports/context-v1](../reports/context-v1/summary.json). Local adapter:
 `models/ko-en-context-lora-v1/best/` (ignored by Git). The extension's active
 model and runtime were not changed.

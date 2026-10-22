@@ -3,14 +3,18 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test": "npm run test:extension && npm run test:lab && npm run test:python",
+    "test:python": ".\\translator\\.venv\\Scripts\\python.exe -X utf8 -m unittest discover -s translator -p \"test_*.py\"",
+    "scrape:naver": "node scripts/scrape-naver.mjs",
+    "verify:naver": ".\\translator\\.venv\\Scripts\\python.exe -X utf8 scripts/verify-naver.py",
     "extension:serve": "node extension/server.mjs",
     "test:extension": "node --test extension/server.test.mjs",
     "lab": "node lab/server.mjs",
     "test:lab": "node --test lab/server.test.mjs",
-    "pick": "node pick-box.mjs",
-    "scrape": "node scrape.mjs",
-    "scrape:click": "node scrape-click.mjs",
-    "debug": "node debug.mjs"
+    "pick": "node scripts/pick-box.mjs",
+    "scrape": "node scripts/scrape.mjs",
+    "scrape:click": "node scripts/scrape-click.mjs",
+    "debug": "node scripts/debug.mjs"
   },
   "devDependencies": {
     "playwright": "^1.49.0"

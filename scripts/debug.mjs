@@ -1,9 +1,9 @@
 // Debugger — open one page and report its contents and navigation behavior
 //
-//   node debug.mjs                    // Use click.startUrl / urls[0]
-//   node debug.mjs <url>              // Specify a URL
-//   node debug.mjs <url> 5            // Press the arrow 5 times (default: 3)
-//   node debug.mjs <url> 3 --headed   // Show the browser and keep it open until Ctrl+C
+//   node scripts/debug.mjs                    // Use click.startUrl / urls[0]
+//   node scripts/debug.mjs <url>              // Specify a URL
+//   node scripts/debug.mjs <url> 5            // Press the arrow 5 times (default: 3)
+//   node scripts/debug.mjs <url> 3 --headed   // Show the browser and keep it open until Ctrl+C
 //
 // Output: console report and files in debug/
 //   full-N.png = Full page   clip-N.png = capture box from box.json
@@ -11,7 +11,7 @@ import { chromium } from 'playwright';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
-import cfg from './config.mjs';
+import cfg from '../config.mjs';
 
 const args = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const flag = (name) => process.argv.includes(`--${name}`);

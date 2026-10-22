@@ -3,7 +3,7 @@
 **The context model is not clearly better on these actual images, and the
 translation stage is slower. Keep the active extension baseline.** Both sets
 of translated images and an original/baseline/context gallery were generated:
-[open the ten-panel comparison](../samples/naver-845456-25/context-comparison-10-v1/index.html).
+[open the ten-panel comparison](../../samples/naver-845456-25/context-comparison-10-v1/index.html).
 Images remain local and are excluded from Git.
 
 The input is the same first ten whitespace-delimited panels from Naver episode
@@ -117,4 +117,4 @@ pixel equality, and all 30 gallery image links were checked. A three-column
 preview of panel 0007 was visually inspected. Python tests: **27 passed**.
 
 Numerical results and raw blind judgments are in
-[reports/context-pages-10-v1](reports/context-pages-10-v1/summary.json).
+[reports/context-pages-10-v1](../reports/context-pages-10-v1/summary.json).

@@ -45,7 +45,7 @@ three passes per precision. Whole-OCR median time over 10 panels was
 and converts them in memory; the exported half checkpoints are experiment
 artifacts, not replacements for EasyOCR's MD5-verified downloads.
 
-Details: [OCR report](work/ocr-fp16/report.json).
+Details: [OCR report](../work/ocr-fp16/report.json).
 This checks output agreement on one episode, not accuracy on unseen font styles.
 
 ## OmniRoute synthetic data
@@ -53,7 +53,7 @@ This checks output agreement on one episode, not accuracy on unseen font styles.
 Local installation: OmniRoute 3.8.52, configured Gemini and OpenRouter providers.
 The service was started on loopback at `http://127.0.0.1:20128`.
 The user-supplied project `.env` key authenticated successfully. A real
-[32-pair pilot](data/dialogue-pilot/README.md) was generated and reviewed:
+[32-pair pilot](../data/dialogue-pilot/README.md) was generated and reviewed:
 21 training, 4 validation, 4 test pairs, and 3 held for correction after an
 additional assistant audit. No LoRA training has started.
 
@@ -99,6 +99,6 @@ translator/.venv/Scripts/python.exe -X utf8 translator/translate_korean_sample.p
 ```
 
 A full OCR → trimmed MT → inpaint → render smoke test produced
-[the translated image](work/optimized-smoke/0007.png). New extension jobs use the
+[the translated image](../work/optimized-smoke/0007.png). New extension jobs use the
 new pipeline; existing sample caches retain their previous results, so use a
 new output directory when comparing model versions.

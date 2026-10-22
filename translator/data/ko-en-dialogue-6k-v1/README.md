@@ -31,7 +31,7 @@ they are not independently annotated language labels.
 The selected reviewer matched 20/20 AI-authored consistency controls. Some
 controls also appear in the reviewer instructions, so this is **not** an
 unbiased accuracy score. Pilot and control source texts are excluded from the
-corpus. See [the quantity and generation plan](../../TRAINING_DATA_PLAN.md).
+corpus. See [the quantity and generation plan](../../docs/TRAINING_DATA_PLAN.md).
 
 ## Final audit
 

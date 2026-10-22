@@ -48,7 +48,7 @@ npm run test:lab
 # Start npm run lab in another terminal first
 node lab/check-ui.mjs
 node lab/check-ui.mjs --translate
-& translator/.venv/Scripts/python.exe translator/test_render_bounds.py
+& translator/.venv/Scripts/python.exe -m unittest discover -s translator -p "test_render_bounds.py"
 ```
 
 `--translate` tests real GPU translation of page 0010. It takes longer than UI checks and writes new output only in the Lab directory. Screenshots are saved in `lab/screenshots/`.

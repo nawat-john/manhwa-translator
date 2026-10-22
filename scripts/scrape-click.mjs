@@ -1,20 +1,20 @@
 // Left-arrow scraper — repeat snapshot → click → wait for loading → snapshot …
 //
-//   node scrape-click.mjs                 // Use config.click settings
-//   node scrape-click.mjs <url>           // Start at this URL
-//   node scrape-click.mjs <url> 60        // Limit the page count
+//   node scripts/scrape-click.mjs                 // Use config.click settings
+//   node scripts/scrape-click.mjs <url>           // Start at this URL
+//   node scripts/scrape-click.mjs <url> 60        // Limit the page count
 //
 // Each page URL is logged with its sequence number (see cfg.click.logFile)
 import { chromium } from 'playwright';
 import { mkdir, readFile, writeFile, appendFile, access } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
-import cfg from './config.mjs';
+import cfg from '../config.mjs';
 
 const box = await readFile('box.json', 'utf8')
   .then(JSON.parse)
   .catch(() => {
-    console.error('box.json not found — run `node pick-box.mjs <url>` first');
+    console.error('box.json not found — run `node scripts/pick-box.mjs <url>` first');
     process.exit(1);
   });
 

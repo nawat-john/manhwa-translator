@@ -51,8 +51,8 @@ MB ในหน้านี้เป็นฐานสิบ จำนวนพ�
 
 ## ไฟล์และการทำซ้ำ
 
-- [ผลเทียบรายภาพ](work/vocab-trim-20261022/review.html)
-- [รายงานพร้อมข้อความและเวลา](work/vocab-trim-20261022/report.json)
+- [ผลเทียบรายภาพ](../work/vocab-trim-20261022/review.html)
+- [รายงานพร้อมข้อความและเวลา](../work/vocab-trim-20261022/report.json)
 - `work/vocab-trim-20261022/translation/`: trimmed model, original tokenizer, `id-map.json`
 - `work/vocab-trim-20261022/ocr/`: recognizer weights และ `characters.json`
 
@@ -61,13 +61,13 @@ Artifacts อยู่ใน `work/` จึงไม่เข้า Git แล�
 เลือก output ใหม่ที่ยังไม่มีอยู่เพื่อป้องกันการเขียนทับ:
 
 ```powershell
-translator/.venv/Scripts/python.exe translator/test_vocab_trim.py
+translator/.venv/Scripts/python.exe -m unittest discover -s translator -p "test_vocab_trim.py"
 translator/.venv/Scripts/python.exe translator/experiment_vocab_trim.py --out translator/work/vocab-trim-next
 ```
 
 MT artifact ไม่ใช่คู่ model/tokenizer ที่เรียกใช้แทนรุ่นเดิมได้ทันที:
 ต้องใช้ tokenizer เดิม, remap input IDs, forced English ID และ output IDs
-ตามฟังก์ชัน `generate` ใน [experiment_vocab_trim.py](experiment_vocab_trim.py)
+ตามฟังก์ชัน `generate` ใน [experiment_vocab_trim.py](../experiment_vocab_trim.py)
 หาก input มี token ที่ถูกตัด ฟังก์ชันจะหยุดพร้อมข้อผิดพลาดเพื่อให้กลับไปใช้โมเดลเดิม
 ส่วน OCR checkpoint ต้องใช้ charset/CTC converter ที่ตรงกันตามโค้ดทดลอง
 

@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 
 const source = 'https://comic.naver.com/webtoon/detail?titleId=845456&no=25&week=wed';
-const directory = fileURLToPath(new URL('./samples/naver-845456-25/', import.meta.url));
+const directory = fileURLToPath(new URL('../samples/naver-845456-25/', import.meta.url));
 const browser = await chromium.launch({ headless: true });
 try {
   const context = await browser.newContext();

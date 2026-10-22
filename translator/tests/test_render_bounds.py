@@ -4,7 +4,7 @@ from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / 'manga-image-translator'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'manga-image-translator'))
 from manga_translator.rendering import resize_regions_to_font_size
 
 image = np.zeros((200, 100, 3), dtype=np.uint8)

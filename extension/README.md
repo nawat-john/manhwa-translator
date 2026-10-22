@@ -1,6 +1,6 @@
 # Manga Lab — Chrome extension for Naver
 
-บริการ Python ใช้ฐานแปล trimmed เมื่อมี `translator/models/m2m100-ko-en/` และ OCR แบบ FP16 บน CUDA โดยเก็บชุดอักษรเกาหลี–อังกฤษครบ ดู [ผลทดสอบและการเตรียมข้อมูล LoRA](../translator/OPTIMIZATION.md)
+บริการ Python ใช้ฐานแปล trimmed เมื่อมี `translator/models/m2m100-ko-en/` และ OCR แบบ FP16 บน CUDA โดยเก็บชุดอักษรเกาหลี–อังกฤษครบ ดู [ผลทดสอบและการเตรียมข้อมูล LoRA](../translator/docs/OPTIMIZATION.md)
 
 Initial version: a **Translate image · EN** button for `content_image_*` images on Naver webtoon reader pages. It uses EasyOCR + M2M100 + LaMa locally to translate Korean into English and displays the result in place. Click **View original / View English translation** to toggle immediately.
 
@@ -43,7 +43,7 @@ Input images are validated: at most 20 MiB, static JPEG/PNG/WebP, at most 16 mil
 
 Images and text are processed locally, without sending them to a translation API. The service may contact model download sources to download models or check caches.
 
-New translations join OCR fragments sharing an enclosed white balloon before translation. Open, dark and colored balloons keep existing OCR grouping. Restart the local service and refresh Naver to request fresh results; images already translated in the current tab retain their previous output. See `translator/BALLOON-GROUPING-RESULTS.md` for the ten-panel trial and limitations.
+New translations join OCR fragments sharing an enclosed white balloon before translation. Open, dark and colored balloons keep existing OCR grouping. Restart the local service and refresh Naver to request fresh results; images already translated in the current tab retain their previous output. See `translator/docs/BALLOON-GROUPING-RESULTS.md` for the ten-panel trial and limitations.
 
 Each job is stored in `translator/work/extension/<job-id>/`:
 
@@ -65,8 +65,8 @@ A new Python worker starts and loads models for each image, adding startup time.
 npm run test:extension
 # Test Translate all with a mock service, without translation models
 node extension/check-batch.mjs
-& translator/.venv/Scripts/python.exe translator/test_korean_input.py
-& translator/.venv/Scripts/python.exe translator/test_split_webtoon.py
+& translator/.venv/Scripts/python.exe -m unittest discover -s translator -p "test_korean_input.py"
+& translator/.venv/Scripts/python.exe -m unittest discover -s translator -p "test_split_webtoon.py"
 # Start the service first: load the real extension in Playwright Chromium and translate a real image
 node extension/check-browser.mjs
 ```
