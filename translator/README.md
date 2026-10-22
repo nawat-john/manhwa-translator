@@ -3,6 +3,7 @@
 Korean model size experiment: [vocabulary trimming results](VOCAB_TRIM.md).
 Current Korean runtime, FP16 OCR and OmniRoute data setup: [optimization guide](OPTIMIZATION.md).
 First full LoRA corpus size and generation plan: [training data plan](TRAINING_DATA_PLAN.md).
+Completed synthetic KO→EN data: [5,000 train / 500 validation / 500 test](data/ko-en-dialogue-6k-v1/README.md).
 
 Burns English translations into the scans in place of the Japanese, the way
 Google Translate's camera overlay does, using

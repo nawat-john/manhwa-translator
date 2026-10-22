@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "train": 5000,
+    "validation": 500,
+    "test": 500
+  },
+  "writer": "gemini/gemini-3.1-flash-lite",
+  "reviewer": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+  "prompt_sha256": "a44183335d0f33e16ce87088c07910cbb9f9c350e655503dc46547a818137ae9",
+  "seed": 80421
+}

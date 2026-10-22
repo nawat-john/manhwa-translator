@@ -76,7 +76,10 @@ translator/.venv/Scripts/python.exe -X utf8 translator/build_dialogue_corpus.py 
 Rerun the same command to resume. Corpus configuration and prompts must match
 the saved `config.json`. Progress is in `work/dialogue-corpus-6k-v2/manifest.json`;
 raw and reviewed batches are in `work/dialogue-corpus-6k-v2/batches/`. Generated
-models, raw logs and credentials remain outside Git. Final curated corpus files
-will be copied into `data/` with their own manifest after validation.
+models, raw logs and credentials remain outside Git. The completed and audited
+[6,000-pair corpus](data/ko-en-dialogue-6k-v1/README.md) is versioned under `data/`.
+It contains exactly 5,000 training, 500 validation and 500 test pairs, from
+6,272 reviewed candidates. Unknown/removed tokens and cross-split conversation
+overlap are zero after the final audit.
 
 No LoRA training is part of this data-generation run.
