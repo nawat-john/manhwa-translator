@@ -1,5 +1,7 @@
 # hanaori-san vol. 1 — JA→EN overlay translation
 
+Korean model size experiment: [vocabulary trimming results](VOCAB_TRIM.md).
+
 Burns English translations into the scans in place of the Japanese, the way
 Google Translate's camera overlay does, using
 [manga-image-translator](https://github.com/zyddnys/manga-image-translator):
