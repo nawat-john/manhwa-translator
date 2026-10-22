@@ -37,7 +37,7 @@ def save_json(file, data):
     temp.replace(file)
 
 
-async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None):
+async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None, timings=None):
     explicit_files = input_file is not None or files is not None
     OUT = output_dir
     SOURCE = input_file.parent if input_file else source_dir
@@ -108,13 +108,17 @@ async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None):
 
     ModelWrapper._MODEL_DIR = str(HERE / 'models')
     print('Loading existing LaMa inpainter', flush=True)
+    phase_started = time.perf_counter()
     await prepare(Inpainter.lama_large, device)
+    image_timings = {'inpainter_load_seconds': time.perf_counter() - phase_started,
+                     'inpainting_seconds': 0.0, 'rendering_seconds': 0.0, 'write_seconds': 0.0, 'pages': []}
     config = InpainterConfig(inpainter=Inpainter.lama_large, inpainting_precision='fp32')
     for record in records:
         destination = OUT / Path(record['source']).with_suffix('.png').name
         if destination.exists():
             continue
         print(f'Rendering {destination.name}', flush=True)
+        page_timing = {'source': record['source'], 'inpainting_seconds': 0.0, 'rendering_seconds': 0.0}
         with Image.open(SOURCE / record['source']) as source:
             image = np.array(source.convert('RGB'))
         mask = np.zeros(image.shape[:2], dtype=np.uint8)
@@ -127,17 +131,29 @@ async def main(input_file=None, output_dir=OUT, source_dir=SOURCE, files=None):
                                     fg_color=(0, 0, 0), bg_color=(255, 255, 255)))
         if blocks:
             mask = cv2.dilate(mask, np.ones((3, 3), dtype=np.uint8))
+            phase_started = time.perf_counter()
             clean = await inpaint(Inpainter.lama_large, image, mask, config, inpainting_size=1600, device=device)
+            page_timing['inpainting_seconds'] = time.perf_counter() - phase_started
+            phase_started = time.perf_counter()
             result = await render(clean, blocks, font_path=str(UPSTREAM / 'fonts/anime_ace.ttf'),
                                   font_size_fixed=28, font_size_minimum=1)
+            page_timing['rendering_seconds'] = time.perf_counter() - phase_started
         else:
             result = image
         temp = destination.with_suffix('.tmp.png')
+        phase_started = time.perf_counter()
         Image.fromarray(result).save(temp)
         temp.replace(destination)
         with Image.open(destination) as check:
             check.load()
             assert check.size == (image.shape[1], image.shape[0])
+        page_timing['write_seconds'] = time.perf_counter() - phase_started
+        image_timings['pages'].append(page_timing)
+        for key in ('inpainting_seconds', 'rendering_seconds', 'write_seconds'):
+            image_timings[key] += page_timing[key]
+
+    if timings is not None:
+        timings.update(image_timings)
 
     if explicit_files:
         print(f'Completed {len(files)} image(s): {OUT}', flush=True)

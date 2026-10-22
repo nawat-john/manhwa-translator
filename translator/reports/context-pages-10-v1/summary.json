@@ -1,0 +1,195 @@
+{
+  "sample": "first 10 whitespace-delimited panels",
+  "ocr_regions": 24,
+  "ocr_reused": true,
+  "repeats": 3,
+  "precision": "FP32",
+  "models": {
+    "baseline": {
+      "median_translation_seconds": 3.5078084999113344,
+      "translation_runs_seconds": [
+        4.171571800019592,
+        3.5078084999113344,
+        3.3563085001078434
+      ],
+      "median_model_load_seconds": 1.5423804000020027,
+      "english_whitespace_words": 71,
+      "image_pipeline_single_pass_seconds": 38.78602940001292,
+      "image_timings": {
+        "inpainter_load_seconds": 0.7745285999844782,
+        "inpainting_seconds": 6.2411136999726295,
+        "rendering_seconds": 30.801634899980854,
+        "write_seconds": 0.7758421000326052,
+        "pages": [
+          {
+            "source": "0000.png",
+            "inpainting_seconds": 1.2855392000055872,
+            "rendering_seconds": 1.9432002999819815,
+            "write_seconds": 0.05785059998743236
+          },
+          {
+            "source": "0001.png",
+            "inpainting_seconds": 0.664090899983421,
+            "rendering_seconds": 6.439251100004185,
+            "write_seconds": 0.11684859998058528
+          },
+          {
+            "source": "0002.png",
+            "inpainting_seconds": 0.8035204999614507,
+            "rendering_seconds": 0.9600217000115663,
+            "write_seconds": 0.060820800019428134
+          },
+          {
+            "source": "0003.png",
+            "inpainting_seconds": 0.0,
+            "rendering_seconds": 0.0,
+            "write_seconds": 0.057521000038832426
+          },
+          {
+            "source": "0004.png",
+            "inpainting_seconds": 0.7401527999900281,
+            "rendering_seconds": 1.4140838999883272,
+            "write_seconds": 0.08826190000399947
+          },
+          {
+            "source": "0005.png",
+            "inpainting_seconds": 0.0,
+            "rendering_seconds": 0.0,
+            "write_seconds": 0.09010500001022592
+          },
+          {
+            "source": "0006.png",
+            "inpainting_seconds": 0.5452721000183374,
+            "rendering_seconds": 0.9553385000326671,
+            "write_seconds": 0.04511629999615252
+          },
+          {
+            "source": "0007.png",
+            "inpainting_seconds": 0.6012209000182338,
+            "rendering_seconds": 3.8001645999611355,
+            "write_seconds": 0.08507839997764677
+          },
+          {
+            "source": "0008.png",
+            "inpainting_seconds": 0.7212718999944627,
+            "rendering_seconds": 5.0228092999896035,
+            "write_seconds": 0.0858021000167355
+          },
+          {
+            "source": "0009.png",
+            "inpainting_seconds": 0.8800454000011086,
+            "rendering_seconds": 10.266765500011388,
+            "write_seconds": 0.08843740000156686
+          }
+        ]
+      },
+      "translation_plus_image_pass_seconds": 42.293837899924256
+    },
+    "context": {
+      "median_translation_seconds": 6.327454699901864,
+      "translation_runs_seconds": [
+        7.02417579991743,
+        6.327454699901864,
+        6.012079200008884
+      ],
+      "median_model_load_seconds": 1.8777158999582753,
+      "english_whitespace_words": 130,
+      "image_pipeline_single_pass_seconds": 34.096666699973866,
+      "image_timings": {
+        "inpainter_load_seconds": 0.7985686999745667,
+        "inpainting_seconds": 5.390273900062311,
+        "rendering_seconds": 26.874735700082965,
+        "write_seconds": 0.8285680999979377,
+        "pages": [
+          {
+            "source": "0000.png",
+            "inpainting_seconds": 0.6325071000028402,
+            "rendering_seconds": 2.9821555000380613,
+            "write_seconds": 0.053995100024621934
+          },
+          {
+            "source": "0001.png",
+            "inpainting_seconds": 0.657360500015784,
+            "rendering_seconds": 6.688045200018678,
+            "write_seconds": 0.14203819999238476
+          },
+          {
+            "source": "0002.png",
+            "inpainting_seconds": 0.6169768000254408,
+            "rendering_seconds": 1.2748708000290208,
+            "write_seconds": 0.05881040001986548
+          },
+          {
+            "source": "0003.png",
+            "inpainting_seconds": 0.0,
+            "rendering_seconds": 0.0,
+            "write_seconds": 0.05829559999983758
+          },
+          {
+            "source": "0004.png",
+            "inpainting_seconds": 0.7133333999663591,
+            "rendering_seconds": 0.5553501999820583,
+            "write_seconds": 0.06753749999916181
+          },
+          {
+            "source": "0005.png",
+            "inpainting_seconds": 0.0,
+            "rendering_seconds": 0.0,
+            "write_seconds": 0.09430060000158846
+          },
+          {
+            "source": "0006.png",
+            "inpainting_seconds": 0.5237260000430979,
+            "rendering_seconds": 0.879389000008814,
+            "write_seconds": 0.05332239996641874
+          },
+          {
+            "source": "0007.png",
+            "inpainting_seconds": 0.6009812999982387,
+            "rendering_seconds": 6.042190800013486,
+            "write_seconds": 0.08177170000271872
+          },
+          {
+            "source": "0008.png",
+            "inpainting_seconds": 0.8126352999825031,
+            "rendering_seconds": 2.4392823000089265,
+            "write_seconds": 0.0907349000335671
+          },
+          {
+            "source": "0009.png",
+            "inpainting_seconds": 0.8327535000280477,
+            "rendering_seconds": 6.01345189998392,
+            "write_seconds": 0.1277616999577731
+          }
+        ]
+      },
+      "translation_plus_image_pass_seconds": 40.42412139987573
+    }
+  },
+  "judges": {
+    "minimax": {
+      "baseline": 10,
+      "context": 9,
+      "tie": 3,
+      "unclear": 2
+    },
+    "nemotron": {
+      "baseline": 8,
+      "context": 9,
+      "tie": 6,
+      "unclear": 1
+    }
+  },
+  "human_reviewed": false,
+  "active_extension_model_changed": false,
+  "gallery": "samples/naver-845456-25/context-comparison-10-v1/index.html",
+  "translation_overhead_percent": 80.3819877870129,
+  "judge_agreement": {
+    "baseline": 5,
+    "context": 6,
+    "tie": 2,
+    "unclear": 0
+  },
+  "judge_disagreement": 11,
+  "timing_limit": "Translation measured three passes per model with alternating model order. Images measured once per model, baseline first; shared caches and run variation prevent a causal image-stage speed comparison. Phase sums are not one uninterrupted end-to-end run and exclude OCR."
+}

@@ -1,0 +1,1075 @@
+[
+  {
+    "id": "r00",
+    "page": "0000.png",
+    "previous_korean": [],
+    "current_korean": "별증",
+    "A": "Uncertainly",
+    "B": "Current: Uncertainty",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "unclear",
+    "winner": "unclear",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-95cf7aba-6738-4c1e-a857-7aca39fd41e6",
+      "usage": {
+        "prompt_tokens": 559,
+        "completion_tokens": 55,
+        "total_tokens": 614,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r01",
+    "page": "0001.png",
+    "previous_korean": [
+      "별증"
+    ],
+    "current_korean": "그 자같은 거 안 집어넣어요?",
+    "A": "Don’t take something like him?",
+    "B": "Don't you take something like that?",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "B",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-95cf7aba-6738-4c1e-a857-7aca39fd41e6",
+      "usage": {
+        "prompt_tokens": 559,
+        "completion_tokens": 55,
+        "total_tokens": 614,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r02",
+    "page": "0001.png",
+    "previous_korean": [
+      "별증",
+      "그 자같은 거 안 집어넣어요?"
+    ],
+    "current_korean": "아",
+    "A": "Oh yeah",
+    "B": "Oh, you don't put something like that?",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-95cf7aba-6738-4c1e-a857-7aca39fd41e6",
+      "usage": {
+        "prompt_tokens": 559,
+        "completion_tokens": 55,
+        "total_tokens": 614,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r03",
+    "page": "0001.png",
+    "previous_korean": [
+      "별증",
+      "그 자같은 거 안 집어넣어요?",
+      "아"
+    ],
+    "current_korean": "아 ",
+    "A": "Oh, you don't put something like that?",
+    "B": "Oh yeah",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "A",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-95cf7aba-6738-4c1e-a857-7aca39fd41e6",
+      "usage": {
+        "prompt_tokens": 559,
+        "completion_tokens": 55,
+        "total_tokens": 614,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r04",
+    "page": "0001.png",
+    "previous_korean": [
+      "그 자같은 거 안 집어넣어요?",
+      "아",
+      "아 "
+    ],
+    "current_korean": "오해가 있으신거 같은데",
+    "A": "I think you have a misunderstanding.",
+    "B": "I think you've had a misunderstanding.",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "A",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-95cf7aba-6738-4c1e-a857-7aca39fd41e6",
+      "usage": {
+        "prompt_tokens": 559,
+        "completion_tokens": 55,
+        "total_tokens": 614,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r05",
+    "page": "0001.png",
+    "previous_korean": [
+      "아",
+      "아 ",
+      "오해가 있으신거 같은데"
+    ],
+    "current_korean": "이게 그",
+    "A": "This is that.",
+    "B": "This is that",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-95cf7aba-6738-4c1e-a857-7aca39fd41e6",
+      "usage": {
+        "prompt_tokens": 559,
+        "completion_tokens": 55,
+        "total_tokens": 614,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r06",
+    "page": "0001.png",
+    "previous_korean": [
+      "아 ",
+      "오해가 있으신거 같은데",
+      "이게 그"
+    ],
+    "current_korean": "같은 게 아니라 아그러니까 자 같은 게 아니라요-",
+    "A": "It's not the same, but that's why it isn't the same.",
+    "B": "Not the same, not the same.",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "A",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6ee1f323-ac2c-4348-9079-c03407a64896",
+      "usage": {
+        "prompt_tokens": 615,
+        "completion_tokens": 54,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r07",
+    "page": "0002.png",
+    "previous_korean": [
+      "오해가 있으신거 같은데",
+      "이게 그",
+      "같은 게 아니라 아그러니까 자 같은 게 아니라요-"
+    ],
+    "current_korean": "적",
+    "A": "The Enemy",
+    "B": "Enemy: I think there's a misunderstanding, but this isn't the same, so it's not the same.",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6ee1f323-ac2c-4348-9079-c03407a64896",
+      "usage": {
+        "prompt_tokens": 615,
+        "completion_tokens": 54,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r08",
+    "page": "0004.png",
+    "previous_korean": [
+      "이게 그",
+      "같은 게 아니라 아그러니까 자 같은 게 아니라요-",
+      "적"
+    ],
+    "current_korean": "터",
+    "A": "This isn't the same, so that's why it's not the same.",
+    "B": "to.",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "B",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6ee1f323-ac2c-4348-9079-c03407a64896",
+      "usage": {
+        "prompt_tokens": 615,
+        "completion_tokens": 54,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r09",
+    "page": "0006.png",
+    "previous_korean": [
+      "같은 게 아니라 아그러니까 자 같은 게 아니라요-",
+      "적",
+      "터"
+    ],
+    "current_korean": "으 씨",
+    "A": "The Mr.",
+    "B": "Hey Mr.",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6ee1f323-ac2c-4348-9079-c03407a64896",
+      "usage": {
+        "prompt_tokens": 615,
+        "completion_tokens": 54,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r10",
+    "page": "0007.png",
+    "previous_korean": [
+      "적",
+      "터",
+      "으 씨"
+    ],
+    "current_korean": "저거",
+    "A": "That is what.",
+    "B": "that",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "B",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6ee1f323-ac2c-4348-9079-c03407a64896",
+      "usage": {
+        "prompt_tokens": 615,
+        "completion_tokens": 54,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r11",
+    "page": "0007.png",
+    "previous_korean": [
+      "터",
+      "으 씨",
+      "저거"
+    ],
+    "current_korean": "아저씨가 한 거야?",
+    "A": "Did you do that?",
+    "B": "You did it?",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "A",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6ee1f323-ac2c-4348-9079-c03407a64896",
+      "usage": {
+        "prompt_tokens": 615,
+        "completion_tokens": 54,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r12",
+    "page": "0007.png",
+    "previous_korean": [
+      "으 씨",
+      "저거",
+      "아저씨가 한 거야?"
+    ],
+    "current_korean": "어. 네???",
+    "A": "Oh. Are you doing that?",
+    "B": "Oh yeah ?",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "B",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-69073204-a965-4813-a30c-9aa35a738f4c",
+      "usage": {
+        "prompt_tokens": 568,
+        "completion_tokens": 54,
+        "total_tokens": 622,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r13",
+    "page": "0007.png",
+    "previous_korean": [
+      "저거",
+      "아저씨가 한 거야?",
+      "어. 네???"
+    ],
+    "current_korean": "마",
+    "A": "Don't do that?",
+    "B": "not",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "B",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-69073204-a965-4813-a30c-9aa35a738f4c",
+      "usage": {
+        "prompt_tokens": 568,
+        "completion_tokens": 54,
+        "total_tokens": 622,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r14",
+    "page": "0007.png",
+    "previous_korean": [
+      "아저씨가 한 거야?",
+      "어. 네???",
+      "마"
+    ],
+    "current_korean": "맞아요",
+    "A": "It's right.",
+    "B": "right is.",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "A",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-69073204-a965-4813-a30c-9aa35a738f4c",
+      "usage": {
+        "prompt_tokens": 568,
+        "completion_tokens": 54,
+        "total_tokens": 622,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r15",
+    "page": "0008.png",
+    "previous_korean": [
+      "어. 네???",
+      "마",
+      "맞아요"
+    ],
+    "current_korean": "어떻계_",
+    "A": "How to",
+    "B": "How about?",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "A",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-69073204-a965-4813-a30c-9aa35a738f4c",
+      "usage": {
+        "prompt_tokens": 568,
+        "completion_tokens": 54,
+        "total_tokens": 622,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r16",
+    "page": "0008.png",
+    "previous_korean": [
+      "마",
+      "맞아요",
+      "어떻계_"
+    ],
+    "current_korean": "실은 제가 사회에서 마법사 엿거등요.",
+    "A": "I'm really a wizard in society.",
+    "B": "I am a wizard in society.",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-69073204-a965-4813-a30c-9aa35a738f4c",
+      "usage": {
+        "prompt_tokens": 568,
+        "completion_tokens": 54,
+        "total_tokens": 622,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r17",
+    "page": "0008.png",
+    "previous_korean": [
+      "맞아요",
+      "어떻계_",
+      "실은 제가 사회에서 마법사 엿거등요."
+    ],
+    "current_korean": "마술사?",
+    "A": "Wizard?",
+    "B": "The wizard?",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "A",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-69073204-a965-4813-a30c-9aa35a738f4c",
+      "usage": {
+        "prompt_tokens": 568,
+        "completion_tokens": 54,
+        "total_tokens": 622,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r18",
+    "page": "0008.png",
+    "previous_korean": [
+      "어떻계_",
+      "실은 제가 사회에서 마법사 엿거등요.",
+      "마술사?"
+    ],
+    "current_korean": "마법사요 마법사!",
+    "A": "A wizard, a wizard!",
+    "B": "The Wizard!",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "A",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6fc270aa-a76d-42a2-b738-0837f60ecac0",
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 54,
+        "total_tokens": 708,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r19",
+    "page": "0009.png",
+    "previous_korean": [
+      "실은 제가 사회에서 마법사 엿거등요.",
+      "마술사?",
+      "마법사요 마법사!"
+    ],
+    "current_korean": "세상에 마법사가 어뒷어 마술사켓지",
+    "A": "The Wizard in the World.",
+    "B": "Wizards in the world are the magic jackets.",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "B",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6fc270aa-a76d-42a2-b738-0837f60ecac0",
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 54,
+        "total_tokens": 708,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r20",
+    "page": "0009.png",
+    "previous_korean": [
+      "마술사?",
+      "마법사요 마법사!",
+      "세상에 마법사가 어뒷어 마술사켓지"
+    ],
+    "current_korean": "그럼",
+    "A": "and then",
+    "B": "Then then.",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "A",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6fc270aa-a76d-42a2-b738-0837f60ecac0",
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 54,
+        "total_tokens": 708,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r21",
+    "page": "0009.png",
+    "previous_korean": [
+      "마법사요 마법사!",
+      "세상에 마법사가 어뒷어 마술사켓지",
+      "그럼"
+    ],
+    "current_korean": "저런 괴물은 세상에 있있습니까?",
+    "A": "Is there such a monster in the world?",
+    "B": "Is there such a monster in the world?",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6fc270aa-a76d-42a2-b738-0837f60ecac0",
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 54,
+        "total_tokens": 708,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r22",
+    "page": "0009.png",
+    "previous_korean": [
+      "세상에 마법사가 어뒷어 마술사켓지",
+      "그럼",
+      "저런 괴물은 세상에 있있습니까?"
+    ],
+    "current_korean": "그",
+    "A": "that",
+    "B": "Are there such monsters in the world?",
+    "assignment": [
+      "baseline",
+      "context"
+    ],
+    "verdict": "A",
+    "winner": "baseline",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6fc270aa-a76d-42a2-b738-0837f60ecac0",
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 54,
+        "total_tokens": 708,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  },
+  {
+    "id": "r23",
+    "page": "0009.png",
+    "previous_korean": [
+      "그럼",
+      "저런 괴물은 세상에 있있습니까?",
+      "그"
+    ],
+    "current_korean": "그건또 그래!",
+    "A": "That is something else!",
+    "B": "And again yes!",
+    "assignment": [
+      "context",
+      "baseline"
+    ],
+    "verdict": "A",
+    "winner": "context",
+    "metadata": {
+      "requested_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "returned_model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "response_id": "chatcmpl-6fc270aa-a76d-42a2-b738-0837f60ecac0",
+      "usage": {
+        "prompt_tokens": 654,
+        "completion_tokens": 54,
+        "total_tokens": 708,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      },
+      "request_options": {
+        "max_tokens": 12000,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "human_reviewed": false
+  }
+]
