@@ -1,0 +1,27 @@
+{
+  "test_sha256": "cd6175c80a7140cdc2f582db86482a56ee0d58119da08fb3908ad6ab61c51334",
+  "precision": "FP32",
+  "batch_size": 1,
+  "num_beams": 5,
+  "max_new_tokens": 160,
+  "no_repeat_ngram_size": 3,
+  "quality_inputs": 500,
+  "latency_inputs": 50,
+  "latency_repeats": 3,
+  "latency_includes": [
+    "tokenization",
+    "generation",
+    "decoding"
+  ],
+  "latency_excludes": [
+    "loading",
+    "OCR",
+    "inpainting",
+    "rendering"
+  ],
+  "blind_sample_seed": 80421,
+  "blind_synthetic_inputs": 100,
+  "blind_real_ocr_inputs": 24,
+  "human_reviewed": false,
+  "active_extension_model_changed": false
+}

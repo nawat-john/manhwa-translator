@@ -1,0 +1,4590 @@
+[
+  {
+    "id": "9",
+    "korean": "네, 박자 맞추기가 좀 힘들어서요. 지금보다 반 정도만요.",
+    "A": "Yes, it’s a bit more difficult to get back, half more than now.",
+    "B": "Yes, it's a bit difficult to match the stick. It's just half more than now.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "14",
+    "korean": "헐, 대박! 세상에, 여기서 널 볼 줄이야.",
+    "A": "Hey, big! In the world, I'm looking forward to seeing you here.",
+    "B": "In the world, I will see you here.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "21",
+    "korean": "그냥 똑같이 나누는 게 깔끔하려나?",
+    "A": "Do you want to share the same?",
+    "B": "Do you want to just share the same way?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "22",
+    "korean": "그게 제일 낫겠지? 일단 내가 먼저 내고 나중에 정산하자.",
+    "A": "That's the best thing, right? Let's give it first and refining it later.",
+    "B": "Let’s get it first and let’s go later.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "34",
+    "korean": "선생님, 덕분에 이번 대결에서 이길 수 있었습니다.",
+    "A": "Thank you, I was able to win this match.",
+    "B": "Teacher, thanks to you, I was able to win this match.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "35",
+    "korean": "나는 그저 네가 준비한 걸 보여줬을 뿐인데 뭘.",
+    "A": "I just showed you what you were preparing.",
+    "B": "I just showed you what you've prepared.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "38",
+    "korean": "오늘 약속 취소해서 너무 미안해요.",
+    "A": "I'm so sorry for canceling my appointment today.",
+    "B": "Sorry for canceling the promise today.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "41",
+    "korean": "그래요, 너무 부담 갖지 마세요. 담에 봐요.",
+    "A": "Don’t get too loud, look at it.",
+    "B": "Yeah, don't take too much burden. Look at it.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "52",
+    "korean": "바쁘다고 해도 연락 한 통 없는 건 너무하잖아.",
+    "A": "If you’re busy, you don’t have any contact.",
+    "B": "Even if you're busy, it's too hard to have no contact.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "73",
+    "korean": "그건 제가 결정할 문제가 아니니 양해 바랍니다.",
+    "A": "That’s not my decision, sorry.",
+    "B": "I'm sorry that's not my decision.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642974-UmgsL4PK228tvEZYu5Qq",
+      "usage": {
+        "prompt_tokens": 873,
+        "completion_tokens": 1640,
+        "total_tokens": 2513,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1595,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "74",
+    "korean": "왼쪽 골목으로 가야 하는 거 아냐?",
+    "A": "Do you have to go to the left corner?",
+    "B": "Do you have to go to the left street?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "83",
+    "korean": "미안, 그냥 뇌절했어.",
+    "A": "I'm sorry, I just broke my brain.",
+    "B": "Sorry, I was brainwashed.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "84",
+    "korean": "다음부턴 좀 같이 움직이자.",
+    "A": "Let's move together from next time.",
+    "B": "Let’s move together next time.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "88",
+    "korean": "어제 분명 꼼꼼히 확인하셨잖아요.",
+    "A": "You have checked it thoroughly yesterday.",
+    "B": "You definitely checked it carefully yesterday.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "105",
+    "korean": "아마 오해하신 모양입니다, 저 아이는 방에 있었거든요.",
+    "A": "You probably misunderstood, because that child was in the room.",
+    "B": "Maybe you misunderstood, the child was in the room.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "111",
+    "korean": "아니, 이제 더는 못 해.",
+    "A": "No, can’t do it anymore.",
+    "B": "No, I can't do it again.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "117",
+    "korean": "네, 서둘러서 이동하도록 하겠습니다.",
+    "A": "Yes, I'll make sure you move quickly.",
+    "B": "Yes, I’m going to move quickly.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "123",
+    "korean": "음, 애매하네. 내가 좀 더 낼까?",
+    "A": "I am sorry, can I get a bit more?",
+    "B": "Okay, it's a bit upset. Can I give it a bit more?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "124",
+    "korean": "그래도 될까? 괜찮겠어?",
+    "A": "Could it be? Will it be fine?",
+    "B": "Would it be? okay?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "128",
+    "korean": "아, 저기 노란색 건물 뒤편으로 돌아가면 바로 나와요.",
+    "A": "When you go back to the yellow building, you get out.",
+    "B": "Oh, if you turn back to the yellow building there, you'll just go out.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792642993-RAUdbRsORbPWHRLqdLez",
+      "usage": {
+        "prompt_tokens": 810,
+        "completion_tokens": 5249,
+        "total_tokens": 6059,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "129",
+    "korean": "야, 진짜 고맙다. 이거 없었으면 어쩔 뻔했어.",
+    "A": "Thank you very much, I would have done it without it.",
+    "B": "Hey, thank you so much. If this didn't happen, what would I do?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "132",
+    "korean": "아까 그 채팅에서 분위기가 좀 안 좋았죠?",
+    "A": "The atmosphere was a bit bad at that chat earlier, right?",
+    "B": "It was bad at the chat, right?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "133",
+    "korean": "네, 농담으로 한 건데 다들 진지하게 받아들이더라고요.",
+    "A": "I was a joke and everyone took it seriously.",
+    "B": "Yes, it was a joke, everyone took it seriously.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "135",
+    "korean": "위로해 주셔서 감사합니다. 마음이 좀 놓이네요.",
+    "A": "Thank you for comforting me. I'm a bit confused.",
+    "B": "Thank you for comforting me.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "136",
+    "korean": "저희 이번 주말에 다 같이 모이는 거 맞죠?",
+    "A": "We're all gathering together this weekend, right?",
+    "B": "We’re going to get together this weekend, right?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "137",
+    "korean": "아니요, 다음 주 일요일로 변경된 걸로 아는데요.",
+    "A": "No, I know it changed to Sunday next week.",
+    "B": "No, I know it changed to the next Sunday.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "141",
+    "korean": "글쎄, 아까 떨어뜨려서 그런 거 아냐?",
+    "A": "Well, isn't that because I got down earlier?",
+    "B": "Well, that’s not the case when you’ve fallen?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "146",
+    "korean": "알겠습니다. 제가 더 확실하게 준비해서 임하겠습니다.",
+    "A": "I’m going to get ready more clearly.",
+    "B": "Understood. I'll get ready more clearly.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "147",
+    "korean": "야, 우리 담주로 째는 거 어때? 좀 빡세서.",
+    "A": "Hey, what about our package? Get a bit tight.",
+    "B": "What do you do with our shelter? a bit tight.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "149",
+    "korean": "아니 그게 아니라 일정만 좀 밀자고. 안 돼?",
+    "A": "No, but just a timetable, right?",
+    "B": "No, that's not that, let's just push the schedule. Can't it?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643045-nYHNgkqHMQoDbd6FhKWo",
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 2800,
+        "total_tokens": 3676,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2755,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "155",
+    "korean": "잠시만요, 그거 지금 옮기시면 안 돼요.",
+    "A": "Just a moment, you can't move it right now.",
+    "B": "For a while, you can’t move it now.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "177",
+    "korean": "선배님, 오늘 너무 힘들어 보이시는데 괜찮으세요?",
+    "A": "You look so hard today, you’re okay?",
+    "B": "Sir, you look so hard today, are you fine?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "179",
+    "korean": "그래도 금요일이니까 오늘은 푹 쉬셨으면 좋겠어요.",
+    "A": "Still, it's Friday, so I would like you to rest well today.",
+    "B": "It’s Friday, I want you to rest today.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "180",
+    "korean": "고맙다. 따뜻한 차 한 잔 마시면 좀 나아지겠지.",
+    "A": "If you drink a warm tea, it will be better.",
+    "B": "Thanks. If you drink a cup of warm tea, it'll be better.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "183",
+    "korean": "매번 이런 식이니까 티어 올리기가 힘들지.",
+    "A": "Every time, it’s hard to get up.",
+    "B": "It's like this every time, so it's hard to lift it up.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "187",
+    "korean": "그러면 제가 먼저 낼 테니 나중에 송금해 주시겠어요?",
+    "A": "Then I'll pay it first, so can you transfer it later?",
+    "B": "I’m going to send you first, then you can send me later.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "198",
+    "korean": "제 마음대로 되는 게 하나도 없는데 대단하죠?",
+    "A": "I don’t want anything to do, it’s great, right?",
+    "B": "There's nothing to do as I want, it's amazing, right?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "203",
+    "korean": "알아, 들이받지 말고 그냥 뒤로 바짝 붙으라고!",
+    "A": "Don’t take it, just get back!",
+    "B": "Alright, don't get them up, just get it back!",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "208",
+    "korean": "헐, 뭐야. 이 떡볶이 가격 왜 이래?",
+    "A": "Why is the price of this puppy?",
+    "B": "Huh, what? Why is that the price for this bread?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "211",
+    "korean": "진짜 에바다. 다른 데 갈까?",
+    "A": "I really want to go anywhere else?",
+    "B": "Really Evada. Let's go elsewhere?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643074-4O902d11Uitj7I8ddX5C",
+      "usage": {
+        "prompt_tokens": 889,
+        "completion_tokens": 1242,
+        "total_tokens": 2131,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1196,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "214",
+    "korean": "저도 할 일이 많은데 매번 저만 하게 되는 것 같아요.",
+    "A": "I have a lot to do too, I think I'm just doing it every time.",
+    "B": "I have a lot of work to do, and I can do it every time.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "220",
+    "korean": "김 대리님, 아까 요청드린 자료 아직 준비 안 됐나요?",
+    "A": "Mr. Kim, are you still not ready for the information you requested earlier?",
+    "B": "Don't you have the information you asked before?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "223",
+    "korean": "재촉하지 마세요. 곧 정리해서 보내드릴 테니까요.",
+    "A": "Don't worry, I'll send you up soon.",
+    "B": "Don't call it up. I'll clean it up and send you soon.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "227",
+    "korean": "스승님, 이번 마법 주문은 불을 일으키는 게 아니지 않습니까?",
+    "A": "Master, isn't this magic order causing fire, right?",
+    "B": "Master, this magical order does not burn fire, right?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "228",
+    "korean": "분명 화염을 부르는 주문이라고 전해 내려왔는데 말이다.",
+    "A": "I'm sure I came down telling you I called the fire.",
+    "B": "I’m sure I’ve got an order for the fire.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "233",
+    "korean": "그러다간 우리 둘 다 잡히고 말 거예요. 빨리 가시죠.",
+    "A": "Then we'll both get caught and talk. Let's go quickly.",
+    "B": "I’m going to get you both, let’s go quickly.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "236",
+    "korean": "잠깐 잠깐 신은 건데 좀 빌려 신을 수도 있지.",
+    "A": "I'm talking about God for a moment, but I can borrow it for God.",
+    "B": "I can borrow God for a while.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "241",
+    "korean": "혼자였으면 아마 다 잃었을 거예요. 정말 다행입니다.",
+    "A": "I'd probably lost everything if I was alone. I'm so happy.",
+    "B": "If I were alone, I would have lost everything.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "255",
+    "korean": "와, 방금 저 플레이 실화야?",
+    "A": "Is that just the game?",
+    "B": "Wow, that game is just real?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "283",
+    "korean": "소절 전체를 말하는 거야, 아니면 박자만?",
+    "A": "Are you talking about the whole slope, or just the slope?",
+    "B": "Are you talking about the whole, or the whole?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643115-NBGRxQZB8Zv3oP80YD0h",
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 5404,
+        "total_tokens": 6303,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5356,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "290",
+    "korean": "길을 잃어버린 것 같아요. 너무 불안해요.",
+    "A": "I think I lost my way. I'm so anxious.",
+    "B": "I think I’ve lost my way, I’m so worried.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "292",
+    "korean": "여기가 어딘지 정말 모르겠어요.",
+    "A": "I really don't know where this is.",
+    "B": "I really don't know where it is here.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "296",
+    "korean": "믿을 수 없네요. 제가 그렇게 많이 썼나요?",
+    "A": "I can’t believe, have I written so much?",
+    "B": "I can't believe it. Did I use so much?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "308",
+    "korean": "그게 최선이었어? 고칠 수는 있는 거야?",
+    "A": "That was the best thing. Can you fix it?",
+    "B": "Is it the best? can you fix it?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "309",
+    "korean": "어떻게든 고쳐볼게. 일단 정말 미안해.",
+    "A": "I'll fix it somehow. I'm really sorry.",
+    "B": "I'm going to fix it somehow, sorry.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "312",
+    "korean": "술 때문이 아니라 그냥 계산 편하게 하려고 한 건데.",
+    "A": "It wasn't because of the alcohol, I just tried to make the calculation comfortable.",
+    "B": "Not because of drinking, but just because of computing.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "316",
+    "korean": "됐어, 신경 쓰지 마. 그럴 수도 있지 뭐.",
+    "A": "Don’t worry, it can be.",
+    "B": "Alright, don't worry about it. That might be something.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "325",
+    "korean": "뭐, 그럴 수도 있죠. 저도 감정이 좀 앞섰네요.",
+    "A": "Yes, maybe, I’m feeling a bit ahead.",
+    "B": "Well, that might be. I've got my feelings a bit ahead too.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "339",
+    "korean": "콜! 내일 바로 도와줄게, 고마워.",
+    "A": "Call! I'll help you tomorrow, thank you.",
+    "B": "I will help you tomorrow, thank you.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "342",
+    "korean": "그냥 시험 기간이라 좀 예민했나 봐.",
+    "A": "It’s just a sensitive time for the exam.",
+    "B": "It's just the exam period, I think I was a bit sensitive.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643155-D2JuF0jvRR0XQgSkOW7B",
+      "usage": {
+        "prompt_tokens": 853,
+        "completion_tokens": 831,
+        "total_tokens": 1684,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 786,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "344",
+    "korean": "오늘 마감인데 벌써 커피만 네 잔째 마시는 거 아니에요?",
+    "A": "You’re not just drinking a cup of coffee today?",
+    "B": "It's over today, you're not just drinking your cup of coffee right now?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "348",
+    "korean": "아니거든? 꽤 잘 됐는데 뭘 그러냐.",
+    "A": "Not that? It's been pretty good, what do you do?",
+    "B": "It’s pretty good, but what do you do?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "352",
+    "korean": "왜 그래? 재밌잖아, 가끔씩은 해도 되지.",
+    "A": "Why? It's funny, I can do it sometimes.",
+    "B": "It’s fun, sometimes it can be done.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "356",
+    "korean": "말도 안 돼, 빨리 뛰어! 뒤 돌아보지 말고!",
+    "A": "Go quickly, don’t look back!",
+    "B": "No way, run fast! Don't look back!",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "358",
+    "korean": "정신 차려! 아직 안 끝났으니까 계속 뛰어야 해.",
+    "A": "Be careful! It's not finished yet, so I have to keep running.",
+    "B": "It’s not finished yet, so you have to keep running.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "361",
+    "korean": "응, 내가 급하게 버릴 거 있었거든. 대박이야.",
+    "A": "Oh, I had to take it urgently.",
+    "B": "Yeah, I was going to go away quickly. That's a big deal.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "362",
+    "korean": "다행이네. 그럼 지금 같이 나가서 버릴까?",
+    "A": "Fortunately. Let's go out together right now?",
+    "B": "Fortunately, we’ll go out with you now?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "374",
+    "korean": "말이 참 많네. 일단 좀 더 뛰자고.",
+    "A": "I have a lot of things to say, let’s run a little more.",
+    "B": "There's a lot of words. Let's run a bit more.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "375",
+    "korean": "와, 설거지 다 해놨네? 진짜 고맙다.",
+    "A": "Wow, you've done all the dishes? Thank you so much.",
+    "B": "Have you washed it all? thank you.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "381",
+    "korean": "말도 안 돼. 아까 그 각도에서 빗나가는 게 말이 돼?",
+    "A": "It's no way. Is it meaningful to go out of that corner earlier?",
+    "B": "No way, do you want to go out of that corner?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643163-9mQFyagum2v3KPI0lDxd",
+      "usage": {
+        "prompt_tokens": 894,
+        "completion_tokens": 2371,
+        "total_tokens": 3265,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2326,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "387",
+    "korean": "잠깐만, 혹시 나 좀 태워다 줄 수 있어?",
+    "A": "Just a moment, can you let me burn a bit?",
+    "B": "Can you let me burn?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "391",
+    "korean": "저기, 택배 좀 대신 받아줄 수 있을까?",
+    "A": "Can I get a choice in place?",
+    "B": "Hey, can I get a package in place?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "399",
+    "korean": "강아지가 다행히 아무 데도 안 다쳤어.",
+    "A": "Fortunately, my dog didn't hurt anywhere.",
+    "B": "Fortunately, the dog was not injured.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "402",
+    "korean": "다친 데 없다니 다행이네. 정말 놀랐겠다.",
+    "A": "I'm glad I haven't been injured. I'd be really surprised.",
+    "B": "Fortunately I’m not injured, I’ll be surprised.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "411",
+    "korean": "야, 진짜 오랜만이다! 대박, 이게 누구야?",
+    "A": "Hey, it's been a long time! Big, who is this?",
+    "B": "Oh, it’s a long time, who is this?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "412",
+    "korean": "진짜 반갑다. 여기서 다 만나고, 세상 참 좁네.",
+    "A": "I am very pleased to see you here, the world is very small.",
+    "B": "It's really a pleasure. We meet all here, the world is so narrow.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "418",
+    "korean": "즉시 현장 상황을 재확인하도록 하겠습니다.",
+    "A": "We will immediately confirm the situation.",
+    "B": "We'll make sure we re-confirm the situation on the scene immediately.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "419",
+    "korean": "혹시 이번 회식비는 잊으신 건 아니겠죠?",
+    "A": "Have you not forgotten this event?",
+    "B": "You've never forgotten this turnover fee, right?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "421",
+    "korean": "정말 잊으신 건지, 아니면 피하시는 건지 궁금하네요.",
+    "A": "I wonder if you’ve forgotten or avoided it.",
+    "B": "I'm wondering if you really forgot it, or you're avoiding it.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "424",
+    "korean": "그렇군요. 제가 너무 예민하게 받아들였나 봐요.",
+    "A": "I thought I was too sensitive.",
+    "B": "Yes. I thought I accepted it so sensitively.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643187-uvkUeq537abPDZiDsKGE",
+      "usage": {
+        "prompt_tokens": 858,
+        "completion_tokens": 1669,
+        "total_tokens": 2527,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "426",
+    "korean": "괜찮습니다. 앞으로는 더 조심하겠습니다.",
+    "A": "OK, I will be more careful in the future.",
+    "B": "It's fine. I'll be more careful in the future.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "428",
+    "korean": "왜? 무슨 일 있어? 꼭 가야 하는 거 아냐?",
+    "A": "What is happening? do you have to go?",
+    "B": "Why? What's happening? Shouldn't we definitely go?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "429",
+    "korean": "글쎄, 그냥 좀 귀찮기도 하고 잘 모르겠어.",
+    "A": "Well, I just don't know how to bother you.",
+    "B": "Well, I just worry and don’t know.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "431",
+    "korean": "이 기계 좀 고쳐줄 수 있어? 소리가 계속 나.",
+    "A": "Can you fix this machine? The noise continues.",
+    "B": "Can you repair this machine? the sound continues.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "439",
+    "korean": "아까 그 채팅방에서 한 농담은 지금 바로 삭제하시는 게 좋겠어요.",
+    "A": "I'd like you to remove the joke from that chat room earlier right now.",
+    "B": "I would like to remove a joke in the chat room right now.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "444",
+    "korean": "네, 가능해요. 어떤 분위기의 식당을 원하시나요?",
+    "A": "What kind of restaurant do you want?",
+    "B": "Yes, it's possible. What kind of restaurant do you want?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "445",
+    "korean": "그냥 조용하게 가족끼리 대화 나눌 수 있는 곳이면 좋겠어요.",
+    "A": "I'd just want to have a place where you can talk with your family quietly.",
+    "B": "I would like to have a quiet place to talk with my family.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "451",
+    "korean": "알겠네, 즉시 전략팀을 소집해서 움직이도록 하겠네.",
+    "A": "Alright, I'll call the strategic team to move right away.",
+    "B": "I know, I’m going to call the strategic team right away.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "458",
+    "korean": "와, 내 정신 좀 봐. 진짜 미안, 내가 다시 시켜줄게.",
+    "A": "Wow, look at my mind. I'm really sorry, I'll give you it again.",
+    "B": "Look at my mind, sorry, I’m going to give you back.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "462",
+    "korean": "진짜지? 말 바꾸기 없기다.",
+    "A": "Really? I can't change my words.",
+    "B": "I don’t change words.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643201-5MfT8MznxzeOp3fU7OSH",
+      "usage": {
+        "prompt_tokens": 890,
+        "completion_tokens": 1947,
+        "total_tokens": 2837,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1899,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "464",
+    "korean": "역시 우리 부장님, 성적보다 동아리가 중요한 분이시죠.",
+    "A": "You are more important than sex.",
+    "B": "My boss, you're more important than sex.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "466",
+    "korean": "그러게요, 우리 부장님 덕분에 이번 시험은 다들 망하겠네요.",
+    "A": "Thank you, this exam will be done by everyone.",
+    "B": "I'm sure, thanks to our boss, everyone's going to ruin this exam.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "467",
+    "korean": "대리님, 마감 시한이 지났는데 아직도 안 끝내신 건 아니죠?",
+    "A": "The time has passed, but it has not yet ended, right?",
+    "B": "Agent, the deadline has passed, but you haven't finished yet, right?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "474",
+    "korean": "그렇게까지 신경 써주셔서 감사합니다, 덕분에 마음이 놓이네요.",
+    "A": "Thank you for paying so much attention, thanks to me.",
+    "B": "Thank you for taking care of it, thank you for it.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "476",
+    "korean": "몬스터들이 지금 네 마력을 감지하고 쫓아오고 있잖아.",
+    "A": "The monsters are now seeing and pursuing your magic.",
+    "B": "The monsters are seeing and pursuing your magic right now.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "478",
+    "korean": "이렇게 무모하게 도망치는 게 최선입니까?",
+    "A": "Is it the best way to escape so absurdly?",
+    "B": "Is it best to escape so badly?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "480",
+    "korean": "아무리 그래도 너무 위험한 방식이라 불만이 좀 있네요.",
+    "A": "Anyway, it’s a very dangerous way to complain.",
+    "B": "Anyway, it's a way that's too dangerous, I have some complaints.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "489",
+    "korean": "알겠어, 최대한 신경 쓸 테니까 넌 공격에만 집중해.",
+    "A": "I know, you’ll be worried as much as you can, focus on the attack.",
+    "B": "Alright, you'll be worried as much as you can, so focus on the attack.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "490",
+    "korean": "이 옷 지금 살지 말지 너무 고민되네.",
+    "A": "I'm so worried not to buy these clothes right now.",
+    "B": "Don’t wear this clothes right now.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "498",
+    "korean": "아 씨, 그냥 먹어. 딴 건 다 품절이라 어쩔 수 없었다고.",
+    "A": "Oh sir, just eat. Everything else was good, I couldn't do anything.",
+    "B": "Just eat, everything else is good.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643243-GzAZAjsWIaPUT1VMRVeC",
+      "usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 2113,
+        "total_tokens": 3022,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2068,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-0",
+    "korean": "별증",
+    "A": "The awareness.",
+    "B": "Uncertainly",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-1",
+    "korean": "그 자같은 거 안 집어넣어요?",
+    "A": "Don’t take something like him?",
+    "B": "Don't you take something like that?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-2",
+    "korean": "아",
+    "A": "Oh yeah",
+    "B": "Oh my.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-3",
+    "korean": "아 ",
+    "A": "Oh yeah",
+    "B": "Oh my.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-4",
+    "korean": "오해가 있으신거 같은데",
+    "A": "I think there's a misunderstanding.",
+    "B": "I think you have a misunderstanding.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-5",
+    "korean": "이게 그",
+    "A": "This is that.",
+    "B": "This is that",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-6",
+    "korean": "같은 게 아니라 아그러니까 자 같은 게 아니라요-",
+    "A": "It's not the same thing, it's just because it isn't the same.",
+    "B": "Not the same, not the same.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-7",
+    "korean": "적",
+    "A": "The Enemy",
+    "B": "The Enemy",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-8",
+    "korean": "터",
+    "A": "to.",
+    "B": "Third.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-9",
+    "korean": "으 씨",
+    "A": "Oh Mr.",
+    "B": "The Mr.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643262-NCtKkZuIuj8yblCpvV7G",
+      "usage": {
+        "prompt_tokens": 653,
+        "completion_tokens": 4333,
+        "total_tokens": 4986,
+        "prompt_tokens_details": {
+          "cached_tokens": 187,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4268,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-10",
+    "korean": "저거",
+    "A": "that",
+    "B": "That is that.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-11",
+    "korean": "아저씨가 한 거야?",
+    "A": "Did you do that?",
+    "B": "You did it?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-12",
+    "korean": "어. 네???",
+    "A": "Ugh. Yes?",
+    "B": "Oh yeah ?",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-13",
+    "korean": "마",
+    "A": "not",
+    "B": "Don't be",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-14",
+    "korean": "맞아요",
+    "A": "It's right.",
+    "B": "right is.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-15",
+    "korean": "어떻계_",
+    "A": "How to",
+    "B": "How about?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-16",
+    "korean": "실은 제가 사회에서 마법사 엿거등요.",
+    "A": "I am a wizard in society.",
+    "B": "I'm really a magist in society.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-17",
+    "korean": "마술사?",
+    "A": "The wizard?",
+    "B": "The magician?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-18",
+    "korean": "마법사요 마법사!",
+    "A": "The Wizard!",
+    "B": "A wizard, a wizard!",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "B",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-19",
+    "korean": "세상에 마법사가 어뒷어 마술사켓지",
+    "A": "The Wizard is behind the world.",
+    "B": "The Wizard in the World.",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "B",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643304-jVYsJvXEBBWDc0s1e4tt",
+      "usage": {
+        "prompt_tokens": 660,
+        "completion_tokens": 5243,
+        "total_tokens": 5903,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5175,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-20",
+    "korean": "그럼",
+    "A": "Then.",
+    "B": "and then",
+    "assignment": [
+      "lora_merged",
+      "trimmed"
+    ],
+    "verdict": "A",
+    "winner": "lora_merged",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643396-UXuuZa96xPWiOqVJvpq2",
+      "usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 360,
+        "total_tokens": 796,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 330,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-21",
+    "korean": "저런 괴물은 세상에 있있습니까?",
+    "A": "Is there such a monster in the world?",
+    "B": "Is there such a monster in the world?",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643396-UXuuZa96xPWiOqVJvpq2",
+      "usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 360,
+        "total_tokens": 796,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 330,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-22",
+    "korean": "그",
+    "A": "that",
+    "B": "That.",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "tie",
+    "winner": "tie",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643396-UXuuZa96xPWiOqVJvpq2",
+      "usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 360,
+        "total_tokens": 796,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 330,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  },
+  {
+    "id": "ocr-23",
+    "korean": "그건또 그래!",
+    "A": "And again yes!",
+    "B": "That's that again!",
+    "assignment": [
+      "trimmed",
+      "lora_merged"
+    ],
+    "verdict": "A",
+    "winner": "trimmed",
+    "metadata": {
+      "requested_model": "openrouter/minimax/minimax-m3.1-flash:free",
+      "returned_model": "minimax/minimax-m3.1-flash:free",
+      "response_id": "gen-1792643396-UXuuZa96xPWiOqVJvpq2",
+      "usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 360,
+        "total_tokens": 796,
+        "prompt_tokens_details": {
+          "cached_tokens": 128,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 330,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        },
+        "cost": 0
+      },
+      "request_options": {
+        "max_tokens": 12000
+      }
+    }
+  }
+]

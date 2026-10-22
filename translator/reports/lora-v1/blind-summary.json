@@ -1,0 +1,12 @@
+{
+  "synthetic_test": {
+    "lora_merged": 76,
+    "trimmed": 22,
+    "tie": 2
+  },
+  "real_ocr": {
+    "tie": 5,
+    "lora_merged": 7,
+    "trimmed": 12
+  }
+}

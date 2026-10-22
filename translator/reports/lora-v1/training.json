@@ -1,0 +1,47 @@
+{
+  "baseline_validation_loss": 2.355672981964344,
+  "history": [
+    {
+      "epoch": 1,
+      "validation_loss": 1.5832838380878622
+    },
+    {
+      "epoch": 2,
+      "validation_loss": 1.5105420207791922
+    },
+    {
+      "epoch": 3,
+      "validation_loss": 1.4564993035493856
+    }
+  ],
+  "best_validation_loss": 1.4564993035493856,
+  "elapsed_s": 841.469000000041,
+  "seed": 80421,
+  "batch_size": 8,
+  "gradient_accumulation": 4,
+  "learning_rate": 0.0001,
+  "base": "D:\\Code\\hanaori-san-scrape\\translator\\models\\m2m100-ko-en",
+  "dataset": "D:\\Code\\hanaori-san-scrape\\translator\\data\\ko-en-dialogue-6k-v1",
+  "r": 16,
+  "alpha": 32,
+  "dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "v_proj"
+  ],
+  "precision": "FP16 autocast; FP32 adapters",
+  "trainable_parameters": 2359296,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "versions": {
+    "python": "3.12.13",
+    "torch": "2.6.0+cu124",
+    "transformers": "5.14.1",
+    "peft": "0.21.2"
+  },
+  "sha256": {
+    "translator\\data\\ko-en-dialogue-6k-v1\\train.jsonl": "b1dc5966eebc00149f01732a4b333d42f388fe8d8877d225cf8e52eaff4fe2b5",
+    "translator\\data\\ko-en-dialogue-6k-v1\\validation.jsonl": "41c3be44857c098198aab00e2df2d9c3cb96df2db89ffb38fd30333b8a62324b",
+    "translator\\models\\m2m100-ko-en\\id-map.json": "a811a9acd034d4d19f85fb55890b0624c4a23afc485765740dec0267d912532b",
+    "translator\\models\\ko-en-dialogue-lora-v1\\best\\adapter_model.safetensors": "a0f143ed120f720c9cb9aee82b52e135360bcc0ad8d1f699ad07a16d6035f1e3"
+  }
+}
