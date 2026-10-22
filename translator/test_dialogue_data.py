@@ -4,11 +4,27 @@ import json
 import os
 from pathlib import Path
 import tempfile
-from unittest.mock import patch
-from generate_dialogue_data import SCENARIOS, main, validate_conversations, validate_reviews, split_rows
+from unittest.mock import Mock, patch
+from generate_dialogue_data import SCENARIOS, GatewayError, call, main, parse_json, validate_conversations, validate_reviews, split_rows
 
 
 class DialogueTests(unittest.TestCase):
+    def test_json_mode_nvidia_options_and_rate_limit_metadata(self):
+        response = Mock(ok=True)
+        response.json.return_value = {'model': 'reviewer', 'choices': [
+            {'finish_reason': 'stop', 'message': {'content': '{"reviews":[]}'}}]}
+        with patch('generate_dialogue_data.requests.post', return_value=response) as post:
+            data, meta = call('http://localhost/v1', 'test-key', 'nvidia/nvidia/nemotron-test', 'system', 'prompt')
+            self.assertEqual(data, {'reviews': []})
+            self.assertEqual(post.call_args.kwargs['json']['response_format'], {'type': 'json_object'})
+            self.assertEqual(meta['request_options']['chat_template_kwargs'], {'enable_thinking': False})
+        with patch('generate_dialogue_data.requests.post', return_value=Mock(ok=False, status_code=429, headers={'Retry-After': '45'})):
+            with self.assertRaises(GatewayError) as raised:
+                call('http://localhost/v1', 'test-key', 'writer', 'system', 'prompt')
+            self.assertEqual(raised.exception.retry_after, 45)
+        with self.assertRaises(ValueError):
+            parse_json(None)
+
     def test_parallel_validation_and_duplicate_normalization(self):
         data = {'conversations': [{'id': 'friends', 'turns': [
             {'korean': text, 'english': 'Natural English.'}

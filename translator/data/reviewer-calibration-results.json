@@ -1,0 +1,31 @@
+{
+  "human_reviewed": false,
+  "purpose": "Reviewer consistency checks, not general quality estimates; some examples also appear in reviewer instructions",
+  "results": [
+    {
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "correct": 15,
+      "total": 20,
+      "wrong_ids": [
+        "c07",
+        "c10",
+        "c04",
+        "c11",
+        "c03"
+      ]
+    },
+    {
+      "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "correct": 20,
+      "total": 20,
+      "wrong_ids": []
+    },
+    {
+      "model": "minimax/minimax-m3.1-flash:free",
+      "correct": 20,
+      "total": 20,
+      "wrong_ids": []
+    }
+  ],
+  "selected_model": "nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b"
+}

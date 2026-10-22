@@ -28,6 +28,13 @@ SCENARIOS = [
 ]
 
 
+class GatewayError(RuntimeError):
+    def __init__(self, status, model, retry_after=0):
+        super().__init__(f'OmniRoute HTTP {status} for {model}')
+        self.status = status
+        self.retry_after = retry_after
+
+
 def load_env():
     path = HERE.parent / '.env'
     if path.exists():
@@ -38,6 +45,8 @@ def load_env():
 
 
 def parse_json(content):
+    if not isinstance(content, str) or not content.strip():
+        raise ValueError('Model returned no JSON text')
     content = content.strip()
     if content.startswith('```'):
         content = re.sub(r'^```(?:json)?\s*', '', content)
@@ -100,24 +109,35 @@ def split_rows(rows):
     return outputs
 
 
-def call(base, key, model, system, prompt):
+def call(base, key, model, system, prompt, *, max_tokens=7000, response_schema=None):
+    payload = {'model': model, 'messages': [{'role': 'system', 'content': system},
+               {'role': 'user', 'content': prompt}], 'stream': False, 'max_tokens': max_tokens,
+               'response_format': {'type': 'json_object'}}
+    if model.startswith('nvidia/') and 'nemotron' in model:
+        payload['chat_template_kwargs'] = {'enable_thinking': False}
+    if response_schema is not None:
+        payload['response_format'] = {'type': 'json_schema', 'json_schema': {
+            'name': 'translation_reviews', 'strict': True, 'schema': response_schema}}
     response = requests.post(base + '/chat/completions',
         headers={'Authorization': 'Bearer ' + key},
-        json={'model': model, 'messages': [{'role': 'system', 'content': system},
-              {'role': 'user', 'content': prompt}], 'stream': False, 'max_tokens': 7000}, timeout=(10, 180))
+        json=payload, timeout=(10, 180))
     if not response.ok:
         # Error bodies may echo credentials; keep diagnostics to status and selected model.
-        raise RuntimeError(f'OmniRoute HTTP {response.status_code} for {model}')
+        delay = response.headers.get('Retry-After', '0')
+        raise GatewayError(response.status_code, model, int(delay) if delay.isdigit() else 0)
     data = response.json()
     choice = data['choices'][0]
     if choice.get('finish_reason') == 'length':
         raise ValueError('Model response truncated; no training data exported')
     return parse_json(choice['message']['content']), {'requested_model': model,
-        'returned_model': data.get('model'), 'response_id': data.get('id'), 'usage': data.get('usage')}
+        'returned_model': data.get('model'), 'response_id': data.get('id'), 'usage': data.get('usage'),
+        'request_options': {k: payload[k] for k in ('max_tokens', 'chat_template_kwargs') if k in payload}}
 
 
 def save_json(path, data):
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+    temp = path.with_suffix(path.suffix + '.tmp')
+    temp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+    temp.replace(path)
 
 
 def main():

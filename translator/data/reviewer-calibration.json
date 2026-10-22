@@ -1,0 +1,26 @@
+{
+  "human_reviewed": false,
+  "purpose": "AI-authored unambiguous control cases to check reviewer consistency; excluded from corpus",
+  "pairs": [
+    {"id":"c00","korean":"시험 끝나고 만나자.","english":"Let's meet after the exam.","accept":true},
+    {"id":"c01","korean":"시험 끝나고 만나자.","english":"Let's meet before the exam.","accept":false},
+    {"id":"c02","korean":"그때 다시 얘기하자.","english":"Let's talk again then.","accept":true},
+    {"id":"c03","korean":"그때 다시 얘기하자.","english":"Let's talk again after your wedding.","accept":false},
+    {"id":"c04","korean":"나 이번에 합격했어!","english":"I passed this time!","accept":true},
+    {"id":"c05","korean":"나 이번에 합격했어!","english":"I passed the medical licensing exam!","accept":false},
+    {"id":"c06","korean":"그 사람한테 물어봐.","english":"Ask that person.","accept":true},
+    {"id":"c07","korean":"그 사람한테 물어봐.","english":"Ask your boyfriend.","accept":false},
+    {"id":"c08","korean":"진짜 마법사야?","english":"Are you really a wizard?","accept":true},
+    {"id":"c09","korean":"진짜 마법사야?","english":"Are you really a doctor?","accept":false},
+    {"id":"c10","korean":"안 가고 싶어.","english":"I don't want to go.","accept":true},
+    {"id":"c11","korean":"안 가고 싶어.","english":"I want to go.","accept":false},
+    {"id":"c12","korean":"내일 세 시에 만나자.","english":"Let's meet at three tomorrow.","accept":true},
+    {"id":"c13","korean":"내일 세 시에 만나자.","english":"Let's meet at four tomorrow.","accept":false},
+    {"id":"c14","korean":"지훈아, 잠깐 기다려.","english":"Jihoon, wait a second.","accept":true},
+    {"id":"c15","korean":"지훈아, 잠깐 기다려.","english":"Minseo, wait a second.","accept":false},
+    {"id":"c16","korean":"잘 모르겠는데.","english":"I'm not sure.","accept":true},
+    {"id":"c17","korean":"잘 모르겠는데.","english":"I know for sure.","accept":false},
+    {"id":"c18","korean":"문 좀 닫아 줘.","english":"Please close the door.","accept":true},
+    {"id":"c19","korean":"문 좀 닫아 줘.","english":"Please open the door.","accept":false}
+  ]
+}
